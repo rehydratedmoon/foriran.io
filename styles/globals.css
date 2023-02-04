@@ -1,0 +1,127 @@
+html,
+body {
+  direction: rtl;
+  font-family: "IRANSans", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+  color-scheme: dark light;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Side Menu Styles */
+
+:root {
+  --aside-width: 14.5rem;
+  --side-menu-transition-time: 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --side-menu-transition-time: 1ms;
+  }
+}
+
+.side-menu-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-template-areas: "aside main";
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.main {
+  grid-area: main;
+}
+
+@media (max-width: 640px) {
+  .aside {
+    grid-area: main;
+  }
+}
+
+.aside {
+  --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+  --side-menu-transition-time: 0.6s;
+}
+
+.w-aside {
+  width: var(--aside-width);
+}
+
+.max-w-main {
+  max-width: calc(100vw - var(--aside-width));
+}
+
+@media (min-width: 641px) {
+  .aside {
+    position: sticky;
+    inset-block-start: 0;
+    max-height: 100vh;
+    overflow: hidden auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .aside {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    max-height: 100vh;
+    overflow: hidden auto;
+    overscroll-behavior: contain;
+
+    visibility: hidden; /* not keyboard accessible when closed */
+    transform: translateX(110vw);
+    will-change: transform;
+    transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
+      visibility 0s linear var(--side-menu-transition-time);
+  }
+  .aside.drawer-open {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform var(--side-menu-transition-time) var(--easeOutExpo);
+  }
+}
+
+/* End of Side menu styles */
+
+label,
+input {
+  display: block;
+}
+
+p a,
+.in-text-link {
+  text-decoration-line: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 2px;
+}
+
+a {
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 2px;
+}
+
+
+.moz-appearance-textfield {
+  -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 640px) {
+  .desktop-only {
+    display: none;
+  }
+}
+@media screen and (min-width: 640px) {
+  .mobile-only {
+    display: none;
+  }
+}
