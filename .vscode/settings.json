@@ -1,3 +1,23 @@
 {
-  "cSpell.words": ["کردن"]
+  "cSpell.words": ["کردن"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#8185b3",
+    "activityBar.background": "#8185b3",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#77484c",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#8185b3",
+    "statusBar.background": "#6166a0",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#8185b3",
+    "statusBarItem.remoteBackground": "#6166a0",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#6166a0",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#6166a099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#6166a0"
 }

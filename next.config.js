@@ -22,7 +22,7 @@ const nextConfig = withMDX({
     );
     return config;
   },
-  pageExtensions: ['tsx' ,'js', 'jsx', 'mdx'],
+  pageExtensions: ['tsx' , 'md' , 'rtl.md' , 'rtl.mdx' ,'js', 'jsx', 'mdx'],
 });
 
 module.exports = withContentlayer(nextConfig)

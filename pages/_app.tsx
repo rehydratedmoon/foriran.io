@@ -14,7 +14,7 @@ import Icon from '@/components/Icon';
 import { ThemeProvider } from 'next-themes';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
-
+// import { useMDXComponents } from '@next/mdx'
 
 import Head from "next/head";
 import Link from "next/link";
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
-
+  // useMDXComponents()
   return (
 
     <ThemeProvider attribute="class">
@@ -58,7 +58,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 export default MyApp;
 
-
+// export function useMDXComponents(components:  any) {
+//   // return components
+//   // Allows customizing built-in components, e.g. to add styling.
+//   return {
+//     h1: ({ children }: Children) => <h1 className='H1'>{children}</h1>,
+//     h2: ({ children }: Children) => <h2 className='H2'>{children}</h2>,
+//     h3: ({ children }: Children) => <h3 className='H3'>{children}</h3>,
+//     h4: ({ children }: Children) => <h1 className='H4'>{children}</h1>,
+//     ...components,
+//   }
+// }
 
 type Props = {
   isSideMenuOpen: boolean;

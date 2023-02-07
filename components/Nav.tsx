@@ -6,8 +6,7 @@ const Nav = ({ className }: ClassName) => {
     <nav className={className}>
       <Lnk href='/' className='no-underline leading-none ls-tighter ' title='Home'>
         <div className='display-none sm:(flex flex-col)'>
-          <span className='fw-900 c-orange10 '>برای</span>
-          <span className='fw-300 c-gray11 '>ایران</span>
+          <span className='fw-900 c-gray11 '>برای ایران</span>
         </div>
       </Lnk>
       <div className='flex flex-col gap-6 mb-auto'>
