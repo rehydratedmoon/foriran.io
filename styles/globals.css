@@ -1,3 +1,7 @@
+.max-w-page {
+  max-width: min(100%, 60rem);
+}
+
 html,
 body {
   direction: rtl;
@@ -105,6 +109,10 @@ p a,
   text-decoration-thickness: 2px;
 }
 
+p + p {
+  margin-top: 1 rem;
+}
+
 a {
   text-underline-offset: 0.15em;
   text-decoration-thickness: 2px;
@@ -126,8 +134,7 @@ a {
   }
 }
 
-
-h1 {
+ h1 {
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
@@ -135,7 +142,7 @@ h1 {
   letter-spacing: -0.02em;
 }
 
-h2 {
+ h2 {
   font-size: 1.2rem;
   letter-spacing: -0.01em;
   font-weight: 700;
@@ -144,7 +151,24 @@ h2 {
   margin-bottom: 1rem;
 }
 
-p a {
+ h3 {
+  letter-spacing: 0.00625em;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+ h4 {
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ p a {
   color: rgb(35, 108, 255);
   font-weight: 700;
 }
+

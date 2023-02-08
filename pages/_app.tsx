@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
 
     <ThemeProvider attribute="class">
-      <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-screen">
+      <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
         {/* <Header /> */}
         <Head>
           <meta property="og:title" content="" />
@@ -107,8 +107,8 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside w-aside bg-gray2 z-30  ${isSideMenuOpen && 'drawer-open'} `}>
-        <Nav className='p-4 h-full flex flex-col gap-6 ' />
+      <div className={`aside p-4 w-aside z-30  ${isSideMenuOpen && 'drawer-open'} `}>
+        <Nav className='b-ie-1 b-gray5 h-full flex flex-col gap-6 ' />
       </div>
     </>
   );
