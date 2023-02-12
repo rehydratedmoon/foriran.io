@@ -57,8 +57,3 @@ const PostLayout = ({ post }: { post: Post }) => {
 
 export default PostLayout;
 
-// export const MyButton = ({ children }: { children: any }) => (
-//   <div className='p-4 c-red11'>
-//     <button className='b-1 b-yellow10'>{children}</button>
-//   </div>
-// );

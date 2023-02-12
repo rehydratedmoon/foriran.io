@@ -2,7 +2,6 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { MyButton } from './[slug]';
 
 export async function getStaticProps() {
   const posts: Post[] = allPosts.sort((a, b) => {
@@ -25,7 +24,7 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       {/* <div className="text-sm" dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
-      <MDXContent components={{ MyButton }} />
+      <MDXContent  />
     </div>
   );
 }
