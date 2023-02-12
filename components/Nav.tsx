@@ -6,7 +6,7 @@ const Nav = ({ className }: ClassName) => {
     <nav className={className}>
       <Lnk href='/' className='no-underline leading-none ls-tighter display-none sm:flex gap-1  text-xl' title='Home'>
         <span className='fw-700 c-gray11 '>برای </span>
-       
+
         <span className='fw-700 c-gray11 '> ایـــران</span>
       </Lnk>
       <div className='flex flex-col gap-6 mb-auto'>
@@ -24,8 +24,11 @@ const Nav = ({ className }: ClassName) => {
         </Lnk>
 
       </div>
-      <div className='mt-auto'>
-        <ThemeToggler className="" />
+      <div className='mt-auto flex flex-col gap-6'>
+      
+        <div>
+          <ThemeToggler className="" />
+        </div>
       </div>
     </nav>
   );
