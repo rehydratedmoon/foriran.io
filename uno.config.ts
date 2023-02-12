@@ -7,11 +7,13 @@ import presetTheme from "unocss-preset-theme";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { rules, shortcuts } from "./uno-rules";
 import { darkTheme, lightTheme } from "./uno-radix-colors";
+import transformerCompileClass from "@unocss/transformer-compile-class";
+
 export default defineConfig<Theme>({
   rules,
   shortcuts,
   safelist: ["bg-sky3", "bg-mint3", "bg-yellow3", "bg-teal3", "bg-slate3"],
-  transformers: [transformerVariantGroup()],
+  transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-"})],
   theme: lightTheme,
   presets: [
     presetUno({
