@@ -5,8 +5,8 @@
 html,
 body {
   direction: rtl;
-  font-family: "IRANSans", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Estedad", "IRANSans", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 :root {
@@ -59,9 +59,8 @@ body {
 .w-aside {
   width: var(--aside-width);
 }
-
-.max-w-main {
-  max-width: calc(100vw - var(--aside-width));
+.min-w-aside {
+  min-width: calc(var(--aside-width) * 0.8);
 }
 
 @media (min-width: 641px) {
@@ -118,7 +117,6 @@ a {
   text-decoration-thickness: 2px;
 }
 
-
 .moz-appearance-textfield {
   -moz-appearance: textfield;
 }
@@ -134,32 +132,39 @@ a {
   }
 }
 
- h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
   line-height: 1.2;
   margin-bottom: 3rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  width: fit-content;
+
+  background-color: var(--rdx-colors-yellow-3);
 }
 
- h2 {
-  font-size: 1.2rem;
+h2 {
+  font-size: 1.5rem;
   letter-spacing: -0.01em;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.25;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  width: fit-content;
+  background-color: var(--rdx-colors-teal-3);
 }
 
- h3 {
-  letter-spacing: 0.00625em;
+h3 {
+  /* letter-spacing: 0.00625em; */
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  background-color: var(--rdx-colors-slate-3);
+  width: fit-content;
 }
- h4 {
+h4 {
   font-weight: 900;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -167,8 +172,7 @@ a {
   margin-bottom: 1rem;
 }
 
- p a {
+p a {
   color: rgb(35, 108, 255);
   font-weight: 700;
 }
-

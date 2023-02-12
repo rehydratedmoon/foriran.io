@@ -3,7 +3,8 @@ import '@unocss/reset/tailwind.css';
 import '@/styles/reset.css';
 import 'uno.css';
 import '@/styles/globals.css';
-import '@/public/fonts/iransans/css/iransans.css';
+// import '@/public/fonts/iransans/css/iransans.css';
+import '@/public/fonts/estedad/css/estedad.css';
 
 import type { AppProps } from 'next/app';
 import { QueryClientProvider } from '@tanstack/react-query';
@@ -40,11 +41,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property="og:site_name" content="my-site0name" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <div className='main grid gap-6 h-full' style={{ gridTemplateRows: 'auto 1fr auto' }}>
+        <div className='main grid h-full' style={{ gridTemplateRows: 'auto 1fr auto' }}>
           <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-          <main className='p-4 h-full'>
+          <main className='p-4 sm:pie-8  pb-14 h-full'>
             {/* <BreadCrumb /> */}
-            <div className='h-full px-4 pb-4 p-4 sm:pis-4 sm:pie-0'>
+            <div className='h-full  '>
               <Component {...pageProps} />
             </div>
           </main>
@@ -76,7 +77,7 @@ type Props = {
 };
 const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
-    <header className='py-4 px-4  bg-gray1  bg-blue4  sticky top-0 z-10 '>
+    <header className='p-4 sm:p-0 bg-gray1  bg-blue4  sticky top-0 z-10 '>
       <div className=' grid sm:display-none gap-1' style={{ gridTemplateColumns: '1fr 3fr 1fr' }}>
         <div className='flex justify-start'>
           <button
@@ -93,7 +94,8 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
             className='no-underline leading-none fw-900 text-lg ls-tight c-orange10 sm:display-none ls-tightest  '
             aria-hidden='true'
           >
-            <span className='fw-300 c-gray11'>برای ایران</span>
+            <span className='fw-700 c-gray11 '>برای </span>
+            <span className='fw-700 c-gray11 '> ایـــران</span>
           </Lnk>
 
         </div>
@@ -107,8 +109,8 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside bg-gray1 p-4 w-aside z-30  ${isSideMenuOpen && 'drawer-open'} `}>
-        <Nav className='sm:b-ie-1 b-gray5 h-full flex flex-col gap-6 ' />
+      <div className={`aside bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && 'drawer-open'} `}>
+        <Nav className='sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 ' />
       </div>
     </>
   );

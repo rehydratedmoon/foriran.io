@@ -10,6 +10,7 @@ import { darkTheme, lightTheme } from "./uno-radix-colors";
 export default defineConfig<Theme>({
   rules,
   shortcuts,
+  safelist: ["bg-sky3", "bg-mint3", "bg-yellow3" , "bg-teal3" , "bg-slate3" ],
   transformers: [transformerVariantGroup()],
   theme: lightTheme,
   presets: [
