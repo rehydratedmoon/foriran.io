@@ -24,7 +24,7 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       {/* <div className="text-sm" dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
-      <MDXContent  />
+      <MDXContent />
     </div>
   );
 }

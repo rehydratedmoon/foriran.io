@@ -1,10 +1,9 @@
-const withMDX = require('@next/mdx')({
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
-})
+});
 const UnoCSS = require("@unocss/webpack").default;
 
 const { withContentlayer } = require("next-contentlayer");
-
 
 const nextConfig = withMDX({
   // experimental: {
@@ -22,7 +21,7 @@ const nextConfig = withMDX({
     );
     return config;
   },
-  pageExtensions: ['tsx' , 'md' , 'rtl.md' , 'rtl.mdx' ,'js', 'jsx', 'mdx'],
+  pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
 });
 
-module.exports = withContentlayer(nextConfig)
+module.exports = withContentlayer(nextConfig);

@@ -48,5 +48,6 @@
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/ttf/Estedad-Regular.ttf");
-  src: url("../fonts/woff2/Estedad-Regular.woff2") format("woff2"), url("../fonts/ttf/Estedad-Regular.ttf") format("truetype");
+  src: url("../fonts/woff2/Estedad-Regular.woff2") format("woff2"),
+    url("../fonts/ttf/Estedad-Regular.ttf") format("truetype");
 }

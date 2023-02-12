@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       post,
     },
   };
-}
+};
 
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXContent = useMDXComponent(post.body.code);
@@ -35,25 +35,26 @@ const PostLayout = ({ post }: { post: Post }) => {
           <time dateTime={post.date} className="text-xs text-gray-600 mb-1">
             {format(parseISO(post.date), "LLLL d, yyyy")}
           </time>
-          <h1 className='H1'>{post.title}</h1>
+          <h1 className="H1">{post.title}</h1>
         </div>
         {/* <div dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
-        <MDXContent components={{ 
-          h1: (props) => <h3 className="H1" {...props} />,
-          h2: (props) => <h3 className="H2" {...props} />,
-          h3: (props) => <h3 className="H3" {...props} />,
-          h4: (props) => <h3 className="H4" {...props} />,
-          code: (props) => <code className="bg-gray2 px-2 py-1 rd-md c-gray11" {...props} />,
-          Image: (props) => (
-            <div className="relative overflow-hidden isolate">
-              <NextImage fill={true} {...props} className="object-cover" />
-            </div>
-          ),
-        }} />
+        <MDXContent
+          components={{
+            h1: (props) => <h3 className="H1" {...props} />,
+            h2: (props) => <h3 className="H2" {...props} />,
+            h3: (props) => <h3 className="H3" {...props} />,
+            h4: (props) => <h3 className="H4" {...props} />,
+            code: (props) => <code className="bg-gray2 px-2 py-1 rd-md c-gray11" {...props} />,
+            Image: (props) => (
+              <div className="relative overflow-hidden isolate">
+                <NextImage fill={true} {...props} className="object-cover" />
+              </div>
+            ),
+          }}
+        />
       </article>
     </>
   );
 };
 
 export default PostLayout;
-

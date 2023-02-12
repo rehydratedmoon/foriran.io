@@ -1,35 +1,31 @@
-import '@unocss/reset/sanitize/sanitize.css';
-import '@unocss/reset/tailwind.css';
-import '@/styles/reset.css';
-import 'uno.css';
-import '@/styles/globals.css';
+import "@unocss/reset/sanitize/sanitize.css";
+import "@unocss/reset/tailwind.css";
+import "@/styles/reset.css";
+import "uno.css";
+import "@/styles/globals.css";
 // import '@/public/fonts/iransans/css/iransans.css';
-import '@/public/fonts/estedad/css/estedad.css';
+import "@/public/fonts/estedad/css/estedad.css";
 
-import type { AppProps } from 'next/app';
-import { QueryClientProvider } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import Lnk from '@/components/Lnk';
-import Icon from '@/components/Icon';
-import { ThemeProvider } from 'next-themes';
-import Footer from '@/components/Footer';
-import Nav from '@/components/Nav';
+import type { AppProps } from "next/app";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Lnk from "@/components/Lnk";
+import Icon from "@/components/Icon";
+import { ThemeProvider } from "next-themes";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
 // import { useMDXComponents } from '@next/mdx'
 
 import Head from "next/head";
 import Link from "next/link";
-import ThemeToggler from '@/components/ThemeToggler';
-
+import ThemeToggler from "@/components/ThemeToggler";
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
   // useMDXComponents()
   return (
-
     <ThemeProvider attribute="class">
       <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
         {/* <Header /> */}
@@ -41,11 +37,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property="og:site_name" content="my-site0name" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <div className='main grid h-full' style={{ gridTemplateRows: 'auto 1fr auto' }}>
+        <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
           <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-          <main className='p-4 sm:pie-8  pb-14 h-full'>
+          <main className="p-4 sm:pie-8  pb-14 h-full">
             {/* <BreadCrumb /> */}
-            <div className='h-full  '>
+            <div className="h-full  ">
               <Component {...pageProps} />
             </div>
           </main>
@@ -77,27 +73,26 @@ type Props = {
 };
 const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
-    <header className='p-4 sm:p-0 bg-gray1  bg-blue4  sticky top-0 z-10 '>
-      <div className=' grid sm:display-none gap-1' style={{ gridTemplateColumns: '1fr 3fr 1fr' }}>
-        <div className='flex justify-start'>
+    <header className="p-4 sm:p-0 bg-gray1  bg-blue4  sticky top-0 z-10 ">
+      <div className=" grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
+        <div className="flex justify-start">
           <button
-            className='mobile-only bf-i-ph-list before:mie-0'
-            aria-label='Open Menu'
+            className="mobile-only bf-i-ph-list before:mie-0"
+            aria-label="Open Menu"
             onClick={() => setIsSideMenuOpen((state) => !state)}
           >
-            <span className='sr-only'>باز کردن منو</span>
+            <span className="sr-only">باز کردن منو</span>
           </button>
         </div>
-        <div className='flex ac jc'>
+        <div className="flex ac jc">
           <Lnk
-            href='/'
-            className='no-underline leading-none fw-900 text-lg ls-tight c-orange10 sm:display-none ls-tightest  '
-            aria-hidden='true'
+            href="/"
+            className="no-underline leading-none fw-900 text-lg ls-tight c-orange10 sm:display-none ls-tightest  "
+            aria-hidden="true"
           >
-            <span className='fw-700 c-gray11 '>برای </span>
-            <span className='fw-700 c-gray11 '> ایـــران</span>
+            <span className="fw-700 c-gray11 ">برای </span>
+            <span className="fw-700 c-gray11 "> ایـــران</span>
           </Lnk>
-
         </div>
         <div />
       </div>
@@ -109,8 +104,8 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && 'drawer-open'} `}>
-        <Nav className='sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 ' />
+      <div className={`aside bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
+        <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>
   );
@@ -121,12 +116,12 @@ const MobileSideMenuOverlay = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => 
     <div
       className={`drawer-overlay mobile-only fixed z-20 inset-0 bg-grayA-9 
             opacity-0  transition-opacity duration-600 ease-in-out
-             ${isSideMenuOpen ? 'opacity-100 select-none' : 'pointer-events-none'}`}
-      title='Close Menu'
-      aria-label='Close Menu'
+             ${isSideMenuOpen ? "opacity-100 select-none" : "pointer-events-none"}`}
+      title="Close Menu"
+      aria-label="Close Menu"
       onClick={() => setIsSideMenuOpen(false)}
     >
-      <span className='sr-only'>بستن منو</span>
+      <span className="sr-only">بستن منو</span>
     </div>
   );
 };
