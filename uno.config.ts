@@ -13,11 +13,12 @@ export default defineConfig<Theme>({
   rules,
   shortcuts,
   safelist: ["bg-sky3", "bg-mint3", "bg-yellow3", "bg-teal3", "bg-slate3"],
-  transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-"})],
+  transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-" })],
   theme: lightTheme,
   presets: [
     presetUno({
       dark: "class",
+      variablePrefix: false,
     }),
     presetIcons({
       scale: 1.2,
