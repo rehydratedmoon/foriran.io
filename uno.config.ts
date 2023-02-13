@@ -18,7 +18,7 @@ export default defineConfig<Theme>({
   presets: [
     presetUno({
       dark: "class",
-      variablePrefix: false,
+      variablePrefix: "",
     }),
     presetIcons({
       scale: 1.2,
