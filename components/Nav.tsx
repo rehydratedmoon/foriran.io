@@ -17,11 +17,9 @@ const Nav = ({ className }: ClassName) => {
         <Lnk href={`/fight`} className="in-sub-path:underline bf-i-ph-lightning ">
           نبرد
         </Lnk>
-        <Draft>
-          <Lnk href={`/political-terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
-            واژه‌های سیاسی
-          </Lnk>
-        </Draft>
+        <Lnk href={`/political-terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
+          واژه‌های سیاسی
+        </Lnk>
       </div>
       <div className="mt-auto flex flex-col gap-6">
         <div>

@@ -1,0 +1,5 @@
+/.next
+/.contentlayer
+
+pnpm-lock.yaml
+yarn.lock
