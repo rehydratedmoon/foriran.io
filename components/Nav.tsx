@@ -1,5 +1,6 @@
 import Lnk from "@/components/Lnk";
-import ThemeToggler from "./ThemeToggler";
+import Draft from "@/components/Draft";
+import ThemeToggler from "@/components/ThemeToggler";
 
 const Nav = ({ className }: ClassName) => {
   return (
@@ -13,15 +14,14 @@ const Nav = ({ className }: ClassName) => {
         <Lnk href={`/safety`} className="in-sub-path:underline bf-i-ph-first-aid-kit">
           ایمنی فیزیکی
         </Lnk>
-        {/* <Lnk href={`/online-safety`} className='in-sub-path:underline bf-i-ph-keyhole'>
-          ایمنی آنلاین
-        </Lnk> */}
-        <Lnk href={`/revolution-phases`} className="in-sub-path:underline bf-i-ph-arrows-out">
-          فاز‌های انقلاب
-        </Lnk>
         <Lnk href={`/fight`} className="in-sub-path:underline bf-i-ph-lightning ">
           نبرد
         </Lnk>
+        <Draft>
+          <Lnk href={`/political-terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
+            واژه‌های سیاسی
+          </Lnk>
+        </Draft>
       </div>
       <div className="mt-auto flex flex-col gap-6">
         <div>
@@ -33,3 +33,9 @@ const Nav = ({ className }: ClassName) => {
 };
 
 export default Nav;
+
+// old stuff or comments
+
+//  <Lnk href={`/revolution-phases`} className="in-sub-path:underline bf-i-ph-arrows-out">
+//           فاز‌های انقلاب
+//         </Lnk>
