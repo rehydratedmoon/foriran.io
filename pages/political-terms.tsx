@@ -4,21 +4,14 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { ApiPoliticalTermPoliticalTerm } from "@/schemas";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { renderNoData } from "@/components/renderNoData";
-import type {} from "@strapi/strapi";
 import fetchData from "@/utils/strapi";
-type StrapiResponse<T> = {
-  data: T;
-  meta: any;
-};
-type Term = ApiPoliticalTermPoliticalTerm;
+
 const Page = () => {
-  // const _terms = terms.data.politicalTerms.data;
-  const termsQ = useQuery<StrapiResponse<Term[]>, Error>({
+  const termsQ = useQuery<StrapiResponse<"api::political-term.political-term">, Error>({
     queryKey: ["terms"],
     queryFn: () => fetchData("/political-terms"),
   });
 
-  console.log("🚀 ~ termsQ.data", termsQ.data);
   return (
     <div>
       {renderNoData(termsQ) ??
@@ -40,7 +33,7 @@ export default Page;
 export const getServerSideProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery<StrapiResponse<PoliticalTerm[]>, Error>({
+  await queryClient.prefetchQuery<StrapiResponse<"api::political-term.political-term">, Error>({
     queryKey: ["political-terms"],
     queryFn: () => fetchData("/political-terms"),
   });
