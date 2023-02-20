@@ -20,6 +20,8 @@ specifiers:
   '@unocss/transformer-compile-class': ^0.49.4
   '@unocss/transformer-variant-group': ^0.49.4
   '@unocss/webpack': ^0.49.4
+  babel: ^6.23.0
+  babel-loader: ^9.1.2
   contentlayer: ^0.3.0
   date-fns: ^2.29.3
   eslint: ^8.33.0
@@ -74,6 +76,8 @@ devDependencies:
   '@unocss/transformer-compile-class': 0.49.4
   '@unocss/transformer-variant-group': 0.49.4
   '@unocss/webpack': 0.49.4_webpack@5.75.0
+  babel: 6.23.0
+  babel-loader: 9.1.2_webpack@5.75.0
   eslint-config-prettier: 8.6.0_eslint@8.33.0
   husky: 8.0.3
   prettier: 2.8.3
@@ -5065,6 +5069,18 @@ packages:
       webpack: 5.75.0_webpack-cli@5.0.1
     dev: true
 
+  /babel-loader/9.1.2_webpack@5.75.0:
+    resolution: {integrity: sha512-mN14niXW43tddohGl8HPu5yfQq70iUThvFL/4QzESA7GcZoC0eVOhvWdQ8+3UlSjaDE9MVtsW9mxDY07W7VpVA==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      '@babel/core': ^7.12.0
+      webpack: '>=5'
+    dependencies:
+      find-cache-dir: 3.3.2
+      schema-utils: 4.0.0
+      webpack: 5.75.0
+    dev: true
+
   /babel-plugin-apply-mdx-type-prop/1.6.22_@babel+core@7.12.9:
     resolution: {integrity: sha512-VefL+8o+F/DfK24lPZMtJctrCVOfgbqLAGZSkxwhazQv4VxPg3Za/i40fu22KR2m8eEda+IfSOlPLUSIiLcnCQ==}
     peerDependencies:
@@ -5137,6 +5153,12 @@ packages:
 
   /babel-plugin-syntax-jsx/6.18.0:
     resolution: {integrity: sha512-qrPaCSo9c8RHNRHIotaufGbuOBN8rtdC4QrrFFc43vyWCCz7Kl7GL1PGaXtMGQZUXrkCjNEgxDfmAuAabr/rlw==}
+    dev: true
+
+  /babel/6.23.0:
+    resolution: {integrity: sha512-ZDcCaI8Vlct8PJ3DvmyqUz+5X2Ylz3ZuuItBe/74yXosk2dwyVo/aN7MCJ8HJzhnnJ+6yP4o+lDgG9MBe91DLA==}
+    deprecated: In 6.x, the babel package has been deprecated in favor of babel-cli. Check https://opencollective.com/babel to support the Babel maintainers
+    hasBin: true
     dev: true
 
   /bail/1.0.5:

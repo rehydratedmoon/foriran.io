@@ -5,7 +5,12 @@ const UnoCSS = require("@unocss/webpack").default;
 
 // const { withContentlayer } = require("next-contentlayer");
 
-const withPWA = require("next-pwa");
+// const withPWA = require("next-pwa");
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+});
 
 const nextConfig = withPWA(
   withMDX({
@@ -25,18 +30,6 @@ const nextConfig = withPWA(
       return config;
     },
     pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
-    pwa: {
-      dest: "public",
-      register: true,
-      skipWaiting: true,
-      fallbacks: {
-        image: "/static/images/fallback.png",
-        // document: '/other-offline',  // if you want to fallback to a custom    page other than /_offline
-        // font: '/static/font/fallback.woff2',
-        // audio: ...,
-        // video: ...,
-      },
-    },
   })
 );
 
