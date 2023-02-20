@@ -22,22 +22,22 @@ import Head from "next/head";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
 
-function MyApp({ Component, pageProps }: AppProps<{  dehydratedState: DehydratedState }>) {
-  console.log("🚀 ~ pageProps", pageProps)
+function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
+  console.log("🚀 ~ pageProps", pageProps);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
-    const [queryClient] = useState(
-      () =>
-        new QueryClient({
-          defaultOptions: {
-            queries: {
-              retry: 0,
-              refetchOnMount: false,
-              refetchOnWindowFocus: false,
-            },
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: 0,
+            refetchOnMount: false,
+            refetchOnWindowFocus: false,
           },
-        })
-    );
+        },
+      })
+  );
   // useMDXComponents()
   return (
     <QueryClientProvider client={queryClient}>
