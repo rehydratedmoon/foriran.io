@@ -8,6 +8,10 @@ body {
   font-family: "Estedad", "IRANSans", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+h1 , h2, h3 , h4 ,h5 , h6 {
+  font-family: "Doran", "IRANSans", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
 :root {
   color-scheme: dark light;

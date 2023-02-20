@@ -5,9 +5,10 @@ import "uno.css";
 import "@/styles/globals.css";
 // import '@/public/fonts/iransans/css/iransans.css';
 import "@/public/fonts/estedad/css/estedad.css";
+import "@/public/fonts/doran/doran.css";
 
 import type { AppProps } from "next/app";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider, Hydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Lnk from "@/components/Lnk";
@@ -21,35 +22,61 @@ import Head from "next/head";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{  dehydratedState: DehydratedState }>) {
+  console.log("🚀 ~ pageProps", pageProps)
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
+    const [queryClient] = useState(
+      () =>
+        new QueryClient({
+          defaultOptions: {
+            queries: {
+              retry: 0,
+              refetchOnMount: false,
+              refetchOnWindowFocus: false,
+            },
+          },
+        })
+    );
   // useMDXComponents()
   return (
-    <ThemeProvider attribute="class">
-      <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
-        {/* <Header /> */}
-        <Head>
-          <meta property="og:title" content="" />
-          <meta property="og:description" content="About my website in one sentence" />
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width" />
-          <meta property="og:site_name" content="my-site0name" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
-        <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
-          <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-          <main className="p-4 sm:pie-8  pb-14 h-full">
-            {/* <BreadCrumb /> */}
-            <div className="h-full  ">
-              <Component {...pageProps} />
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <ThemeProvider attribute="class">
+          <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
+            {/* <Header /> */}
+            <Head>
+              {process.env.NEXT_PUBLIC_ENV !== "production" && (
+                <>
+                  <meta name="googlebot" content="noindex" />
+                  <meta name="robots" content="noindex" />
+                  <meta name="robots" content="nofollow" />
+                </>
+              )}
+              <link rel="manifest" href="/manifest.json" />
+              <meta property="og:title" content="" />
+              <meta property="og:description" content="About my website in one sentence" />
+              <meta charSet="UTF-8" />
+              <meta name="viewport" content="width=device-width" />
+              <meta property="og:site_name" content="For Iran" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            </Head>
+            <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
+              <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+              <main className="p-4 sm:pie-8  pb-14 h-full">
+                {/* <BreadCrumb /> */}
+                <div className="h-full  ">
+                  <Component {...pageProps} />
+                </div>
+              </main>
+              <Footer />
             </div>
-          </main>
-          <Footer />
-        </div>
-        <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      </div>
-    </ThemeProvider>
+            <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+          </div>
+        </ThemeProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 }
 

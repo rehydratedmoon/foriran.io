@@ -40,7 +40,8 @@
   font-style: normal;
   font-weight: 200;
   src: url("../fonts/ttf/Estedad-Thin.ttf");
-  src: url("../fonts/woff2/Estedad-Thin.woff2") format("woff2"), url("../fonts/ttf/Estedad-Thin.ttf") format("truetype");
+  src: url("../fonts/woff2/Estedad-Thin.woff2") format("woff2"), 
+  url("../fonts/ttf/Estedad-Thin.ttf") format("truetype");
 }
 @font-face {
   font-display: swap;
