@@ -1,4 +1,7 @@
+import usePWAUpdatePrompt from "@/hooks/usePWAUpadatePrompt";
+
 const Page = () => {
+  usePWAUpdatePrompt();
   return (
     <div className="space-y-8">
       <div>
