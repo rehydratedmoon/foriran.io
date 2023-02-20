@@ -11,8 +11,6 @@ declare global {
     workbox: any;
   }
 
-  // type B = keyof Strapi.Schemas;
-
   type StrapiResponse<T> = {
     data: DataItem<T>[];
     meta: any;
