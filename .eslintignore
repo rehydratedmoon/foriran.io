@@ -1,9 +1,3 @@
-/.next
-/.contentlayer
-
-pnpm-lock.yaml
-yarn.lock
-
 
 # PWA files
 **/public/sw.js

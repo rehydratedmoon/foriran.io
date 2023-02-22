@@ -20,7 +20,7 @@ const Nav = ({ className }: ClassName) => {
       </Lnk>
       <div className="flex flex-col gap-6 mb-auto">
         <Lnk href={`/safety`} className="in-sub-path:underline bf-i-ph-first-aid-kit">
-          ایمنی فیزیکی
+          ایمنی
         </Lnk>
         <Lnk href={`/fight`} className="in-sub-path:underline bf-i-ph-lightning ">
           نبرد
