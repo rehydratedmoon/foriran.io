@@ -7,14 +7,16 @@ const Nav = ({ className }: ClassName) => {
     <nav className={className}>
       <Lnk
         href="/"
-        className="no-underline leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
+        className="no-underline diba  leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
         title="Home"
       >
-        {/* <span className="fw-700 c-gray11 ">برای </span>
-
-        <span className="fw-700 c-gray11 "> ایـــران</span> */}
         <img src="/logo.svg" alt="برای ایران" className="w-12 h-12" />
-        <img src="/logotype.svg" alt="برای ایران" className="w-20 h-15" />
+        <div>
+          <span className="fw-700 c-gray11 ">برای </span>
+          <br />
+          <span className="fw-700 c-gray11 "> ایـــران</span>
+        </div>
+        {/* <img src="/logotype.svg" alt="برای ایران" className="w-20 h-15" /> */}
       </Lnk>
       <div className="flex flex-col gap-6 mb-auto">
         <Lnk href={`/safety`} className="in-sub-path:underline bf-i-ph-first-aid-kit">
@@ -23,8 +25,8 @@ const Nav = ({ className }: ClassName) => {
         <Lnk href={`/fight`} className="in-sub-path:underline bf-i-ph-lightning ">
           نبرد
         </Lnk>
-        <Lnk href={`/political-terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
-          واژه‌های سیاسی
+        <Lnk href={`/terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
+          واژه‌ه‌نامه سیاسی
         </Lnk>
       </div>
       <div className="mt-auto flex flex-col gap-6">
