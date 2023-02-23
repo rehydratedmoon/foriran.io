@@ -1,6 +1,39 @@
 import type { Rule, UserShortcuts } from "@unocss/core";
 
 export const rules: Rule[] = [
+  // font size utility classes without affecting line height
+  ["fs-2xs", { "font-size": "0.6rem" }],
+  ["fs-xs", { "font-size": "0.75rem" }],
+  ["fs-sm", { "font-size": "0.875rem" }],
+  ["fs-md", { "font-size": "1rem" }],
+  ["fs-base", { "font-size": "1rem" }],
+  ["fs-lg", { "font-size": "1.125rem" }],
+  ["fs-xl", { "font-size": "1.25rem" }],
+  ["fs-2xl", { "font-size": "1.5rem" }],
+  ["fs-3xl", { "font-size": "1.875rem" }],
+  ["fs-4xl", { "font-size": "2.25rem" }],
+  ["fs-5xl", { "font-size": "3rem" }],
+  ["fs-6xl", { "font-size": "3.75rem" }],
+  ["fs-7xl", { "font-size": "4.5rem" }],
+  ["fs-8xl", { "font-size": "6rem" }],
+  ["fs-9xl", { "font-size": "8rem" }],
+  // line height utility classes
+  ["lh-2xs", { "line-height": "calc( var(--light-height) * 0.7)" }],
+  ["lh-xs", { "line-height": "calc( var(--light-height) * 0.8)" }],
+  ["lh-sm", { "line-height": "calc( var(--light-height) * 0.9)" }],
+  ["lh-md", { "line-height": "var(--light-height)" }],
+  ["lh-base", { "line-height": "var(--light-height)" }],
+  ["lh-lg", { "line-height": "calc( var(--light-height) * 1.1)" }],
+  ["lh-xl", { "line-height": "calc( var(--light-height) * 1.2)" }],
+  ["lh-2xl", { "line-height": "calc( var(--light-height) * 1.3)" }],
+  ["lh-3xl", { "line-height": "calc( var(--light-height) * 1.4)" }],
+  ["lh-4xl", { "line-height": "calc( var(--light-height) * 1.5)" }],
+  ["lh-5xl", { "line-height": "calc( var(--light-height) * 1.6)" }],
+  ["lh-6xl", { "line-height": "calc( var(--light-height) * 1.7)" }],
+  ["lh-7xl", { "line-height": "calc( var(--light-height) * 1.8)" }],
+  ["lh-8xl", { "line-height": "calc( var(--light-height) * 1.9)" }],
+  ["lh-9xl", { "line-height": "calc( var(--light-height) * 2)" }],
+  // letter spacing utility classes
   ["ls-tightest", { "letter-spacing": "-0.025em" }],
   ["ls-tighter", { "letter-spacing": "-0.0125em" }],
   ["ls-tight", { "letter-spacing": "-0.00625em" }],
@@ -10,7 +43,7 @@ export const rules: Rule[] = [
   ["ls-widest", { "letter-spacing": "0.025em" }],
   ["rel", { position: "relative" }],
   ["abs", { position: "absolute" }],
-  ["text-2xs", { "font-size": "0.6rem", "line-height": "0.9rem" }],
+  ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
   ["max-w-article", { "max-width": "60ch" }],
   ["max-w-page", { "max-width": "100rem" }],
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
@@ -109,7 +142,7 @@ export const shortcuts: UserShortcuts = [
     H4: "fw-900 ls-widest c-gray12",
     text: "fw-400 text-base",
     "text-note": "c-gray11 text-sm",
-    "text-tiny-note": "c-gray11 text-xs",
+    "text-tiny-note": "c-gray11 fs-xs",
     "card-ghost": "rd-xl p-4 b b-gray6",
     "card-solid": "rd-xl p-4 b b-transparent bg-gray9 ",
     "table-header-cell":
@@ -131,3 +164,35 @@ export const shortcuts: UserShortcuts = [
   [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
 ];
+
+
+export const fontSize = {
+  xs: ["0.75rem", "1.5rem"],
+  // xs: ["0.75rem", "1rem"], // tailwinds default
+  sm: ["0.875", "1.75rem"],
+  // sm: ["0.875", "1.25rem"], // tailwinds default
+  md: ["1rem", "2rem"],
+  // md: ["1rem", "1.5rem"], // tailwinds default
+  base: ["1rem", "2rem"],
+  // base: ["1rem", "1.5rem"], // tailwinds default
+  lg: ["1.125rem", "2.5rem"],
+  // lg: ["1.125rem", "1.75rem"], // tailwinds default
+  xl: ["1.25rem", "2.5rem"],
+  // xl: ["1.25rem", "1.75rem"], // tailwinds default
+  "2xl": ["1.25rem", "3rem"],
+  // "2xl": ["1.25rem", "2rem"], // tailwinds default
+  "3xl": ["1.25rem", "3.5rem"],
+  // "3xl": ["1.25rem", "2.25rem"], // tailwinds default
+  "4xl": ["1.25rem", "4rem"],
+  // "4xl": ["1.25rem", "2.5rem"], // tailwinds default
+  "5xl": ["1.25rem", "1.5rem"],
+  // "5xl": ["1.25rem", "1rem"], // tailwinds default
+  "6xl": ["1.25rem", "1.5rem"],
+  // "6xl": ["1.25rem", "1rem"], // tailwinds default
+  "7xl": ["1.25rem", "1.5rem"],
+  // "7xl": ["1.25rem", "1rem"], // tailwinds default
+  "8xl": ["1.25rem", "1.5rem"],
+  // "8xl": ["1.25rem", "1rem"], // tailwinds default
+  "9xl": ["1.25rem", "1.5rem"],
+  // "9xl": ["1.25rem", "1rem"], // tailwinds default
+};

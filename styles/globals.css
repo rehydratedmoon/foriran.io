@@ -24,6 +24,13 @@ body {
   font-family: "Estedad", "IRANSans", "vazirmatn", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+:root {
+  /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
+  --light-height: 2; 
+  line-height: var(--light-height)
+}
+
 h1,
 h2,
 h3,
@@ -126,30 +133,15 @@ h6 {
 
 /* End of Side menu styles */
 
-label,
-input {
-  display: block;
-}
 
-p a,
-.in-text-link {
-  text-decoration-line: underline;
-  text-underline-offset: 0.15em;
-  text-decoration-thickness: 2px;
-}
 
-p + p {
-  margin-top: 1 rem;
-}
 
-a {
-  text-underline-offset: 0.15em;
-  text-decoration-thickness: 2px;
-}
 
-.moz-appearance-textfield {
+
+
+/* .moz-appearance-textfield {
   -moz-appearance: textfield;
-}
+} */
 
 @media screen and (max-width: 640px) {
   .desktop-only {
@@ -162,7 +154,9 @@ a {
   }
 }
 
-h1 {
+
+/* typography  */
+h1:not(.unstyled) {
   font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.2;
@@ -173,7 +167,7 @@ h1 {
   background-color: var(--rdx-colors-yellow-3);
 }
 
-h2 {
+h2:not(.unstyled) {
   font-size: 1.5rem;
   /* letter-spacing: -0.01em; */
   font-weight: 900;
@@ -184,7 +178,7 @@ h2 {
   background-color: var(--rdx-colors-teal-3);
 }
 
-h3 {
+h3:not(.unstyled) {
   /* letter-spacing: 0.00625em; */
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -194,7 +188,7 @@ h3 {
   background-color: var(--rdx-colors-slate-3);
   width: fit-content;
 }
-h4 {
+h4:not(.unstyled) {
   font-weight: 900;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -202,11 +196,13 @@ h4 {
   margin-bottom: 1rem;
 }
 
-p a {
+.in-text-link , p a {
   color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
   color: revert;
   font-weight: 700;
+  text-decoration-line: underline;
 }
+
 
 .gradient-effect {
   background-clip: text;
@@ -215,13 +211,13 @@ p a {
   background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
 }
 
-.gradient-effect {
+/* .gradient-effect {
   background-clip: text;
   color: transparent;
-  /*-webkit-background-clip: text;*/
-  /*-webkit-text-fill-color: transparent !important;*/
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
-}
+} */
 
 ul {
   padding-inline-start: 1.25rem;
