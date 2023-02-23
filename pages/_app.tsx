@@ -43,30 +43,30 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <ThemeProvider attribute="class">
-          <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
-            {/* <Header /> */}
-            <Head>
-              {process.env.NEXT_PUBLIC_ENV !== "production" && (
-                <>
-                  <meta name="googlebot" content="noindex" />
-                  <meta name="robots" content="noindex" />
-                  <meta name="robots" content="nofollow" />
-                </>
-              )}
-              <link rel="manifest" href="/manifest.json" />
-              <meta property="og:title" content="" />
-              <meta property="og:description" content="About my website in one sentence" />
-              <meta charSet="UTF-8" />
-              <meta name="viewport" content="width=device-width" />
-              <meta property="og:site_name" content="For Iran" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-            </Head>
+          {/* <Header /> */}
+          <Head>
+            {process.env.NEXT_PUBLIC_ENV !== "production" && (
+              <>
+                <meta name="googlebot" content="noindex" />
+                <meta name="robots" content="noindex" />
+                <meta name="robots" content="nofollow" />
+              </>
+            )}
+            <link rel="manifest" href="/manifest.json" />
+            <meta property="og:title" content="" />
+            <meta property="og:description" content="About my website in one sentence" />
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta property="og:site_name" content="For Iran" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          </Head>
+          <div className="side-menu-container h-full  mx-auto max-w-page">
             <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
               <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-              <main className="p-4 sm:pie-8  pb-14 h-full">
+              <main className=" h-full">
                 {/* <BreadCrumb /> */}
-                <div className="h-full  ">
+                <div className="h-full p-4  pb-14  ">
                   <Component {...pageProps} />
                 </div>
               </main>

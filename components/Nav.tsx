@@ -7,7 +7,7 @@ const Nav = ({ className }: ClassName) => {
     <nav className={className}>
       <Lnk
         href="/"
-        className="no-underline diba  leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
+        className="no-underline font-family-onvan fw-400 leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
         title="Home"
       >
         <img src="/logo.svg" alt="برای ایران" className="w-12 h-12" />

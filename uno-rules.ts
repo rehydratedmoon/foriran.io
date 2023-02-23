@@ -179,20 +179,20 @@ export const fontSize: Record<string, string | [string, string]> = {
   // lg: ["1.125rem", "1.75rem"], // tailwinds default
   xl: ["1.25rem", "2.5rem"],
   // xl: ["1.25rem", "1.75rem"], // tailwinds default
-  "2xl": ["1.25rem", "3rem"],
+  "2xl": ["1.5rem", "3rem"],
   // "2xl": ["1.25rem", "2rem"], // tailwinds default
-  "3xl": ["1.25rem", "3.5rem"],
+  "3xl": ["1.875rem", "3.5rem"],
   // "3xl": ["1.25rem", "2.25rem"], // tailwinds default
-  "4xl": ["1.25rem", "4rem"],
+  "4xl": ["2.25rem", "4rem"],
   // "4xl": ["1.25rem", "2.5rem"], // tailwinds default
-  "5xl": ["1.25rem", "1.5rem"],
-  // "5xl": ["1.25rem", "1rem"], // tailwinds default
-  "6xl": ["1.25rem", "1.5rem"],
-  // "6xl": ["1.25rem", "1rem"], // tailwinds default
-  "7xl": ["1.25rem", "1.5rem"],
-  // "7xl": ["1.25rem", "1rem"], // tailwinds default
-  "8xl": ["1.25rem", "1.5rem"],
-  // "8xl": ["1.25rem", "1rem"], // tailwinds default
-  "9xl": ["1.25rem", "1.5rem"],
-  // "9xl": ["1.25rem", "1rem"], // tailwinds default
+  "5xl": ["3rem", "1.5"],
+  // "5xl": ["1.25rem", "1"], // tailwinds default
+  "6xl": ["3.75rem", "1.5"],
+  // "6xl": ["1.25rem", "1"], // tailwinds default
+  "7xl": ["4.5rem", "1.5"],
+  // "7xl": ["1.25rem", "1"], // tailwinds default
+  "8xl": ["6rem", "1.5"],
+  // "8xl": ["1.25rem", "1"], // tailwinds default
+  "9xl": ["8rem", "1.5"],
+  // "9xl": ["1.25rem", "1"], // tailwinds default
 };

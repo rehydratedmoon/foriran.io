@@ -105,7 +105,7 @@ h6 {
     position: sticky;
     inset-block-start: 0;
     max-height: 100vh;
-    overflow: hidden auto;
+    overflow-y: auto;
   }
 }
 
@@ -115,7 +115,7 @@ h6 {
     inset-block: 0;
     inset-inline-start: 0;
     max-height: 100vh;
-    overflow: hidden auto;
+    overflow-y: auto;
     overscroll-behavior: contain;
 
     visibility: hidden; /* not keyboard accessible when closed */
@@ -154,44 +154,43 @@ h6 {
   }
 }
 
-
 /* typography  */
 h1:not(.unstyled) {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 3rem;
   /* letter-spacing: -0.015em; */
   width: fit-content;
 
-  background-color: var(--rdx-colors-yellow-3);
+  /* background-color: var(--rdx-colors-yellow-3); */
 }
 
 h2:not(.unstyled) {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   /* letter-spacing: -0.01em; */
   font-weight: 400;
   line-height: 1.5;
   margin-top: 2rem;
   margin-bottom: 1rem;
   width: fit-content;
-  background-color: var(--rdx-colors-teal-3);
+  /* background-color: var(--rdx-colors-teal-3); */
 }
 
 h3:not(.unstyled) {
   /* letter-spacing: 0.00625em; */
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 3.5rem;
   font-weight: 400;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  background-color: var(--rdx-colors-slate-3);
+  /* background-color: var(--rdx-colors-slate-3); */
   width: fit-content;
 }
 h4:not(.unstyled) {
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
