@@ -12,11 +12,11 @@ import transformerCompileClass from "@unocss/transformer-compile-class";
 export default defineConfig<Theme>({
   rules,
   shortcuts,
-  safelist: ["bg-sky3", "bg-mint3", "bg-yellow3", "bg-teal3", "bg-slate3"],
+  safelist: ["bg-sky3", "bg-mint3", "bg-yellow3", "bg-teal3", "bg-slate3", "c-red11" , "c-red12", "c-tomato10" , "c-tomato11"],
   transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-" })],
   theme: {
     fontSize,
-    ...lightTheme,
+    colors: lightTheme.colors
   },
   presets: [
     presetUno({

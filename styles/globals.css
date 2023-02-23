@@ -158,8 +158,8 @@ h6 {
 /* typography  */
 h1:not(.unstyled) {
   font-size: 2.5rem;
-  font-weight: 900;
-  line-height: 1.2;
+  font-weight: 400;
+  line-height: 1.5;
   margin-bottom: 3rem;
   /* letter-spacing: -0.015em; */
   width: fit-content;
@@ -170,8 +170,8 @@ h1:not(.unstyled) {
 h2:not(.unstyled) {
   font-size: 1.5rem;
   /* letter-spacing: -0.01em; */
-  font-weight: 900;
-  line-height: 1.25;
+  font-weight: 400;
+  line-height: 1.5;
   margin-top: 2rem;
   margin-bottom: 1rem;
   width: fit-content;
@@ -181,15 +181,15 @@ h2:not(.unstyled) {
 h3:not(.unstyled) {
   /* letter-spacing: 0.00625em; */
   font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 500;
+  line-height: 1.5rem;
+  font-weight: 400;
   margin-top: 2rem;
   margin-bottom: 1rem;
   background-color: var(--rdx-colors-slate-3);
   width: fit-content;
 }
 h4:not(.unstyled) {
-  font-weight: 900;
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 2rem;

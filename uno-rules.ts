@@ -166,7 +166,7 @@ export const shortcuts: UserShortcuts = [
 ];
 
 
-export const fontSize = {
+export const fontSize: Record<string, string | [string, string]> = {
   xs: ["0.75rem", "1.5rem"],
   // xs: ["0.75rem", "1rem"], // tailwinds default
   sm: ["0.875", "1.75rem"],

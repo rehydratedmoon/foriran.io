@@ -18,7 +18,7 @@ const Nav = ({ className }: ClassName) => {
         </div>
         {/* <img src="/logotype.svg" alt="برای ایران" className="w-20 h-15" /> */}
       </Lnk>
-      <div className="flex flex-col gap-6 mb-auto">
+      <div className="sm:mt-10 flex flex-col gap-6 mb-auto">
         <Lnk href={`/safety`} className="in-sub-path:underline bf-i-ph-first-aid-kit">
           ایمنی
         </Lnk>
