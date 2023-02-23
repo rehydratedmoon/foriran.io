@@ -61,12 +61,12 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
           </Head>
-          <div className="side-menu-container h-full  mx-auto max-w-page">
-            <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
+          <div className="side-menu-container  mx-auto max-w-page">
+            <div className="main grid  sm:mis-60" style={{ gridTemplateRows: "auto 1fr auto" }}>
               <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-              <main className=" h-full">
+              <main className=" ">
                 {/* <BreadCrumb /> */}
-                <div className="h-full p-4  pb-14  ">
+                <div className="p-4  pb-14  ">
                   <Component {...pageProps} />
                 </div>
               </main>
@@ -81,18 +81,6 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
 }
 
 export default MyApp;
-
-// export function useMDXComponents(components:  any) {
-//   // return components
-//   // Allows customizing built-in components, e.g. to add styling.
-//   return {
-//     h1: ({ children }: Children) => <h1 className='H1'>{children}</h1>,
-//     h2: ({ children }: Children) => <h2 className='H2'>{children}</h2>,
-//     h3: ({ children }: Children) => <h3 className='H3'>{children}</h3>,
-//     h4: ({ children }: Children) => <h1 className='H4'>{children}</h1>,
-//     ...components,
-//   }
-// }
 
 type Props = {
   isSideMenuOpen: boolean;
@@ -114,7 +102,7 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="no-underline leading-none fw-900 text-lg ls-tight c-orange10 sm:display-none ls-tightest  "
+            className="font-family-onvan leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none ls-tightest  "
             aria-hidden="true"
           >
             <span className="fw-700 c-gray11 ">برای </span>
@@ -131,7 +119,7 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
+      <div className={`aside top-0 bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
         <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>
