@@ -18,7 +18,6 @@ h6 {
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
 .font-family-onvan {
   font-family: "onvan", "Estedad", "IRANSans", "vazirmatn", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -199,7 +198,6 @@ p a {
   background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
 }
 
-
 .gradient-effect {
   background-clip: text;
   color: transparent;
@@ -239,4 +237,3 @@ ol {
 .inline-block {
   display: inline-block;
 }
-	
