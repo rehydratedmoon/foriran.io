@@ -18,6 +18,12 @@ h6 {
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
+.font-family-onvan {
+  font-family: "onvan", "Estedad", "IRANSans", "vazirmatn", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 :root {
   color-scheme: dark light;
 }
@@ -193,6 +199,44 @@ p a {
   background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
 }
 
-.diba {
-  font-family: "onvan", "Siah Black No.2";
+
+.gradient-effect {
+  background-clip: text;
+  color: transparent;
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent !important;*/
+  background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
 }
+
+ul {
+  padding-inline-start: 1.25rem;
+  list-style-type: disc;
+}
+
+ol {
+  padding-inline-start: 1.25rem;
+  list-style-type: decimal;
+  list-style-type: -moz-persian;
+  list-style-type: persian;
+}
+
+.space-y-1em > * + * {
+  margin-top: 1em;
+}
+
+.space-y-1\.2em > * + * {
+  margin-top: 1.2em;
+}
+
+.space-y-1\.5em > * + * {
+  margin-top: 1.5em;
+}
+
+.space-y-2em > * + * {
+  margin-top: 2em;
+}
+
+.inline-block {
+  display: inline-block;
+}
+	
