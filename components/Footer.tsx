@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="  px-4 c-gray9 ">
       <div className="b-t-1 b-gray7 py-4  flex flex-wrap ac gap-4">
         <p className="text-center  text-sm mie-auto w-full sm:w-auto">
-          <span aria-hidden="true" className="c-gray10 font-family-onvan fw-400">
+          <span aria-hidden="true" className="c-gray10 font-family-heading fw-400">
             برای ایـــران
           </span>
           <span className="sr-only">برای ایران</span>

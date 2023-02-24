@@ -8,10 +8,10 @@ const Page = () => {
       <section className="">
         <h1 className="sr-only">برای ایران</h1>
         <div>
-          <p className="p-1 font-family-onvan fw-400 text-5xl sm:text-7xl !leading-1.2em gradient-effect ">
+          <p className="p-1 font-family-heading fw-400 text-5xl sm:text-7xl !leading-1.2em gradient-effect ">
             محتوا + دسترسی ← آگاهی
           </p>
-          <p className="p-1 font-family-onvan fw-400 text-5xl sm:text-4xl !leading-1.2em gradient-effect">
+          <p className="p-1 font-family-heading fw-400 text-5xl sm:text-4xl !leading-1.2em gradient-effect">
             آگاهی + کنش‌گری + نبرد ← ایرانی آزاد
           </p>
         </div>
