@@ -10,7 +10,7 @@ const Footer = () => {
         </p>
         <div className="flex gap-4 jc text-xs w-full sm:w-auto">
           <Link href={`/who-we-are`}>درباره ما</Link>
-          <Link href="/terms-of-use">قوانین کاربری</Link>
+          {/* <Link href="/terms-of-use">قوانین کاربری</Link> */}
           <Link href="/privacy-policy">سیاست محرمانگی</Link>
         </div>
       </div>

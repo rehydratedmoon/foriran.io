@@ -23,7 +23,6 @@ import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
-  console.log("🚀 ~ pageProps", pageProps);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
   const [queryClient] = useState(
@@ -102,11 +101,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="font-family-onvan leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none ls-tightest  "
+            className="font-family-onvan leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <span className="fw-700 c-gray11 ">برای </span>
-            <span className="fw-700 c-gray11 "> ایـــران</span>
+            <span className="fw-400 c-gray11 ">برای </span>
+            <span className="fw-400 c-gray11 "> ایـــران</span>
           </Lnk>
         </div>
         <div />

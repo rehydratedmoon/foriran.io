@@ -7,14 +7,14 @@ const Nav = ({ className }: ClassName) => {
     <nav className={className}>
       <Lnk
         href="/"
-        className="no-underline font-family-onvan fw-400 leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
+        className="no-underline font-family-onvan  leading-none ls-tighter display-none sm:flex gap-3  ac text-xl"
         title="Home"
       >
         <img src="/logo.svg" alt="برای ایران" className="w-12 h-12" />
-        <div>
-          <span className="fw-700 c-gray11 ">برای </span>
+        <div className="lh-4">
+          <span className="fw-400 c-gray11  ">بـرای </span>
           <br />
-          <span className="fw-700 c-gray11 "> ایـــران</span>
+          <span className="fw-400 c-gray11 "> ایـــران</span>
         </div>
         {/* <img src="/logotype.svg" alt="برای ایران" className="w-20 h-15" /> */}
       </Lnk>

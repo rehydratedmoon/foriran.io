@@ -154,12 +154,12 @@ export const shortcuts: UserShortcuts = [
   [
     /^bf-i-(.*)$/,
     ([, iconName]) =>
-      `before:opacity-50 before:mie-2 empty:before:mie-0 before:vertical-middle before:scale-120 before:content-none before:inline-block before:i-${iconName}`,
+      `before:opacity-50 before:mie-4 empty:before:mie-0 before:vertical-middle before:scale-120 before:content-none before:inline-block before:i-${iconName}`,
   ],
   [
     /^af-i-(.*)$/,
     ([, iconName]) =>
-      `after:opacity-50 after:mis-2 empty:after:mis-0 after:vertical-middle after:scale-120  after:content-none after:inline-block after:i-${iconName}`,
+      `after:opacity-50 after:mis-4 empty:after:mis-0 after:vertical-middle after:scale-120  after:content-none after:inline-block after:i-${iconName}`,
   ],
   [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
