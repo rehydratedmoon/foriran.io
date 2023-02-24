@@ -3,9 +3,8 @@ import "@unocss/reset/tailwind.css";
 import "@/styles/reset.css";
 import "uno.css";
 import "@/styles/globals.css";
-// import '@/public/fonts/iransans/css/iransans.css';
 import "@/public/fonts/estedad/css/estedad.css";
-import "@/public/fonts/doran/doran.css";
+import "@/public/fonts/onvan/css/onvan.css";
 
 import type { AppProps } from "next/app";
 import { QueryClientProvider, Hydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
