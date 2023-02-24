@@ -27,8 +27,8 @@ body {
 
 :root {
   /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
-  --light-height: 2; 
-  line-height: var(--light-height)
+  --light-height: 2;
+  line-height: var(--light-height);
 }
 
 h1,
@@ -135,12 +135,6 @@ h6 {
 
 /* End of Side menu styles */
 
-
-
-
-
-
-
 /* .moz-appearance-textfield {
   -moz-appearance: textfield;
 } */
@@ -197,13 +191,13 @@ h4:not(.unstyled) {
   margin-bottom: 1rem;
 }
 
-.in-text-link , p a {
+.in-text-link,
+p a {
   color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
   color: revert;
   font-weight: 700;
   text-decoration-line: underline;
 }
-
 
 .gradient-effect {
   background-clip: text;
