@@ -108,34 +108,34 @@ export const shortcuts: UserShortcuts = [
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
     "btn-disabled": "!c-gray9 !bg-gray5 !b-gray5",
-    "btn-text": "fw-500 px-4 py-1 rd-lg b-transparent",
+    "btn-text": "fw-500 px-6 py-2 rd-lg b-transparent",
     "btn-prm":
-      "flex jc ac gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
-    btn: "flex jc ac gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
+      "flex jc ac gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
+    btn: "flex jc ac gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
     "btn-ghost-prm":
-      "flex ac jc gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      "flex ac jc gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-ghost":
-      "flex ac jc gap-1 b-1 uppercase  fw-500 px-4 py-1 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      "flex ac jc gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-link-prm":
-      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-4 py-1 rd-lg  c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus:(b-orange2 bg-orange2) disabled:(btn-disabled)",
+      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus:(b-orange2 bg-orange2) disabled:(btn-disabled)",
     "btn-link":
-      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-4 py-1 rd-lg  c-gray11 active:(b-gray3 bg-gray3) hover:(b-gray2  bg-gray2) focus:(b-gray2 bg-gray2) disabled:(btn-disabled)",
+      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-gray11 active:(b-gray3 bg-gray3) hover:(b-gray2  bg-gray2) focus:(b-gray2 bg-gray2) disabled:(btn-disabled)",
     "snack-info":
-      "b b-blue7 bg-blue3 rd-lg p-4 c-blue11 flex  before:(inline-block content-none flex-shrink-0 i-ph-info vertical-text-top mie-[0.5em])",
+      "text-sm b-1 b-blue7 b-r-4 bg-blue3 c-blue11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-info vertical-text-top abs top-5 right-4)",
     "snack-warning":
-      "b b-yellow7 bg-yellow3  c-yellow11 rd-lg p-4 flex before:(inline-block content-none flex-shrink-0 i-ph-warning vertical-text-top mie-[0.5em])",
+      "text-sm b-1 b-yellow7 b-r-4 bg-yellow3 c-yellow11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-warning vertical-text-top abs top-5 right-4)",
     "snack-success":
-      "b b-green7 bg-green3 c-green11 rd-lg p-4 flex  before:(inline-block content-none flex-shrink-0 i-ph-check-circle vertical-text-top mie-[0.5em])",
+      "text-sm b-1 b-green7 b-r-4 bg-green3 c-green11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-check-circle vertical-text-top abs top-5 right-4)",
     "snack-error":
-      "b b-red7 bg-red3 c-red11 rd-lg p-4 flex before:(inline-block content-none flex-shrink-0 i-ph-x-circle vertical-text-top mie-[0.5em])",
+      "text-sm b-1 b-red7 b-r-4 bg-red3 c-red11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-x-circle vertical-text-top abs top-5 right-4)",
     "snack-danger":
-      "b b-red7 bg-red3  c-red11 rd-lg p-4 flex  before:(inline-block content-none flex-shrink-0 i-ph-warning-octagon vertical-text-top mie-[0.5em])",
-    "info-line": "bf-i-ph-info flex ac gap-1 text-sm c-blue10 ",
-    "success-line": "bf-i-ph-check-circle flex ac gap-1 text-sm c-green10",
-    "warning-line": "bf-i-ph-warning flex ac gap-1 text-sm c-yellow10",
-    "error-line": "bf-i-ph-x-circle flex ac gap-1 text-sm c-red10",
-    "danger-line": "bf-i-ph-warning-octagon flex ac gap-1 text-sm c-red10",
-    snack: "b b-gray7 bg-gray3 c-gray11 rd-lg p-4",
+      "text-sm b-1 b-red7 b-r-4 bg-red3 c-red11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-warning-octagon vertical-text-top abs top-5 right-4)",
+    "info-line": "bf-i-ph-info before:c-blue11 before:opacity-100 text-sm c-blue10 ",
+    "success-line": "bf-i-ph-check-circle before:c-green11 before:opacity-100 text-sm c-green10",
+    "warning-line": "bf-i-ph-warning before:c-yellow11 before:opacity-100 text-sm c-yellow10",
+    "error-line": "bf-i-ph-x-circle before:c-red11 before:opacity-100 text-sm c-red10",
+    "danger-line": "bf-i-ph-warning-octagon before:c-red11 before:opacity-100 text-sm c-red10",
+    snack: "b b-gray7 bg-gray3 c-gray11 rd-lg p-4 text-sm",
     H1: "text-4xl fw-900 ls-tightest c-gray12",
     H2: "text-3xl fw-900 ls-tight c-gray12",
     H3: "text-xl fw-900 ls-wide c-gray12 ",
@@ -168,7 +168,7 @@ export const shortcuts: UserShortcuts = [
 export const fontSize: Record<string, string | [string, string]> = {
   xs: ["0.75rem", "1.5rem"],
   // xs: ["0.75rem", "1rem"], // tailwinds default
-  sm: ["0.875", "1.75rem"],
+  sm: ["0.875rem", "1.75rem"],
   // sm: ["0.875", "1.25rem"], // tailwinds default
   md: ["1rem", "2rem"],
   // md: ["1rem", "1.5rem"], // tailwinds default

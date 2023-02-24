@@ -1,5 +1,6 @@
 import usePWAUpdatePrompt from "@/hooks/usePWAUpadatePrompt";
 import Icon from "@/components/Icon";
+import InstallPWAButton from "@/components/InstallPWAButton";
 
 const Page = () => {
   usePWAUpdatePrompt();
@@ -34,14 +35,13 @@ const Page = () => {
         </ol>
         <h2>دسترسی آفلاین (بدون اینترنت)</h2>
         <p>با نصب برنامک (Application) می‌توانید بدون اینترنت به تمام محتوا دسترسی داشته باشید.</p>
-
+        <InstallPWAButton />
         <ol>
           <li>برای دسترسی بدون اینترنت می‌توانید برنامک (Application) را نصب کنید.</li>
           <li>در پنجره باز شده گزینه بله را بزنید.</li>
           <li>پس از نصب اپلیکیشن، می‌توانید بدون اینترنت همه محتوا وبسایت را در اپلیکیشن ببینید.</li>
           <li>برای دریافت آخرین محتواها، زمانی که به اینترنت دسترسی دارید وارد برنامک شوید</li>
         </ol>
-
         <p className="text-tiny-note">
           این برنامک یک
           <a href="https://en.wikipedia.org/wiki/Progressive_web_app">Progressive Web Application </a>

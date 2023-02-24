@@ -195,7 +195,6 @@ h4:not(.unstyled) {
 p a {
   color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
   color: revert;
-  font-weight: 700;
   text-decoration-line: underline;
 }
 
