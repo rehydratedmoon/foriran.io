@@ -101,7 +101,7 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="font-family-onvan leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none lh-5  "
+            className="font-family-heading leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
             <span className="fw-400 c-gray11 ">برای </span>
