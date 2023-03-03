@@ -12,9 +12,9 @@ const Nav = ({ className }: ClassName) => {
       >
         <img src="/logo.svg" alt="برای ایران" className="w-12 h-12" />
         <div className="lh-4">
-          <span className="fw-400 c-gray11  ">بـرای </span>
+          <span className="fw-400 c-gray12  ">بـرای </span>
           <br />
-          <span className="fw-400 c-gray11 "> ایـــران</span>
+          <span className="fw-400 c-gray12  "> ایـــران</span>
         </div>
         {/* <img src="/logotype.svg" alt="برای ایران" className="w-20 h-15" /> */}
       </Lnk>
