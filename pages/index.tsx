@@ -28,7 +28,7 @@ const Page = () => {
           <li>همه موضوعات در منوی کناری هستند.</li>
           <li>
             در موبایل باید روی
-            <Icon name="i-ph-list" className='!vertical-middle mx-2' />
+            <Icon name="i-ph-list" className="!vertical-middle mx-2" />
             کلیک کنید تا منو را ببینید.
           </li>
           <li>روی هر کدام کلیک کنید تا به برگه مورد نظر بروید.</li>

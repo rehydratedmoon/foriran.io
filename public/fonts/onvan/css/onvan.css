@@ -5,8 +5,7 @@
   font-style: normal;
   font-weight: 900;
   src: url("../fonts/ttf/onvan.ttf");
-  src: url("../fonts/woff2/onvan.woff2") format("woff2"),
-    url("../fonts/ttf/onvan.ttf") format("truetype");
+  src: url("../fonts/woff2/onvan.woff2") format("woff2"), url("../fonts/ttf/onvan.ttf") format("truetype");
 }
 @font-face {
   font-display: swap;
@@ -22,8 +21,7 @@
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/ttf/onvan.ttf");
-  src: url("../fonts/woff2/onvan.woff2") format("woff2"),
-    url("../fonts/ttf/onvan.ttf") format("truetype");
+  src: url("../fonts/woff2/onvan.woff2") format("woff2"), url("../fonts/ttf/onvan.ttf") format("truetype");
 }
 @font-face {
   font-display: swap;
@@ -31,8 +29,7 @@
   font-style: normal;
   font-weight: 300;
   src: url("../fonts/ttf/onvan.ttf");
-  src: url("../fonts/woff2/onvan.woff2") format("woff2"),
-    url("../fonts/ttf/onvan.ttf") format("truetype");
+  src: url("../fonts/woff2/onvan.woff2") format("woff2"), url("../fonts/ttf/onvan.ttf") format("truetype");
 }
 @font-face {
   font-display: swap;
@@ -48,6 +45,5 @@
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/ttf/onvan.ttf");
-  src: url("../fonts/woff2/onvan.woff2") format("woff2"),
-    url("../fonts/ttf/onvan.ttf") format("truetype");
+  src: url("../fonts/woff2/onvan.woff2") format("woff2"), url("../fonts/ttf/onvan.ttf") format("truetype");
 }
