@@ -3,11 +3,11 @@ import "@unocss/reset/tailwind.css";
 import "@/styles/reset.css";
 import "uno.css";
 import "@/styles/globals.css";
-// import '@/public/fonts/iransans/css/iransans.css';
 import "@/public/fonts/estedad/css/estedad.css";
+import "@/public/fonts/onvan/css/onvan.css";
 
 import type { AppProps } from "next/app";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider, Hydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Lnk from "@/components/Lnk";
@@ -21,51 +21,64 @@ import Head from "next/head";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            retry: 0,
+            refetchOnMount: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      })
+  );
   // useMDXComponents()
   return (
-    <ThemeProvider attribute="class">
-      <div className="side-menu-container h-full  overflow-x-hidden  mx-auto max-w-page">
-        {/* <Header /> */}
-        <Head>
-          <meta property="og:title" content="" />
-          <meta property="og:description" content="About my website in one sentence" />
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width" />
-          <meta property="og:site_name" content="my-site0name" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
-        <div className="main grid h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
-          <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-          <main className="p-4 sm:pie-8  pb-14 h-full">
-            {/* <BreadCrumb /> */}
-            <div className="h-full  ">
-              <Component {...pageProps} />
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <ThemeProvider attribute="class">
+          {/* <Header /> */}
+          <Head>
+            {process.env.NEXT_PUBLIC_ENV !== "production" && (
+              <>
+                <meta name="googlebot" content="noindex" />
+                <meta name="robots" content="noindex" />
+                <meta name="robots" content="nofollow" />
+              </>
+            )}
+            <link rel="manifest" href="/manifest.json" />
+            <meta property="og:title" content="" />
+            <meta property="og:description" content="About my website in one sentence" />
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width" />
+            <meta property="og:site_name" content="For Iran" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          </Head>
+          <div className="side-menu-container  mx-auto max-w-page">
+            <div className="main grid  sm:mis-60" style={{ gridTemplateRows: "auto 1fr auto" }}>
+              <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+              <main className=" ">
+                {/* <BreadCrumb /> */}
+                <div className="p-4  pb-14  ">
+                  <Component {...pageProps} />
+                </div>
+              </main>
+              <Footer />
             </div>
-          </main>
-          <Footer />
-        </div>
-        <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      </div>
-    </ThemeProvider>
+            <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+          </div>
+        </ThemeProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 }
 
 export default MyApp;
-
-// export function useMDXComponents(components:  any) {
-//   // return components
-//   // Allows customizing built-in components, e.g. to add styling.
-//   return {
-//     h1: ({ children }: Children) => <h1 className='H1'>{children}</h1>,
-//     h2: ({ children }: Children) => <h2 className='H2'>{children}</h2>,
-//     h3: ({ children }: Children) => <h3 className='H3'>{children}</h3>,
-//     h4: ({ children }: Children) => <h1 className='H4'>{children}</h1>,
-//     ...components,
-//   }
-// }
 
 type Props = {
   isSideMenuOpen: boolean;
@@ -73,11 +86,11 @@ type Props = {
 };
 const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
-    <header className="p-4 sm:p-0 bg-gray1  bg-blue4  sticky top-0 z-10 ">
+    <header className="px-4 py-2 sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
       <div className=" grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
         <div className="flex justify-start">
           <button
-            className="mobile-only bf-i-ph-list before:mie-0"
+            className="sm:display-none bf-i-ph-list before:mie-0 py-2"
             aria-label="Open Menu"
             onClick={() => setIsSideMenuOpen((state) => !state)}
           >
@@ -87,11 +100,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="no-underline leading-none fw-900 text-lg ls-tight c-orange10 sm:display-none ls-tightest  "
+            className="py-2  leading-none text-lg ls-tight flex gap-1 c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <span className="fw-700 c-gray11 ">برای </span>
-            <span className="fw-700 c-gray11 "> ایـــران</span>
+            <img src="/logo.svg" alt="برای ایران" className="w-5 h-5 inline-block" />
+            <span className="fw-400 c-gray11 font-family-heading ">برای ایـــران </span>
           </Lnk>
         </div>
         <div />
@@ -104,7 +117,7 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
+      <div className={`aside top-0 bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
         <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>

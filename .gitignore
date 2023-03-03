@@ -46,6 +46,11 @@ todo
 /_local
 
 
+
+# typescript
+*.tsbuildinfo
+
+
 # PWA files
 **/public/sw.js
 **/public/workbox-*.js
