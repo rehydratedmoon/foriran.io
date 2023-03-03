@@ -16,7 +16,7 @@ import Nav from "@/components/Nav";
 
 import Head from "next/head";
 import ThemeToggler from "@/components/ThemeToggler";
-import Icon from '@/components/Icon';
+import Icon from "@/components/Icon";
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
@@ -87,12 +87,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
       <div className="py-2 grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
         <div className="flex justify-start">
           <button
-            className="sm:display-none py-2 opacity-90"
-            aria-label="Open Menu"
+            className="sm:display-none py-2 opacity-90 flex ac"
+            aria-label="باز کردن منو"
             onClick={() => setIsSideMenuOpen((state) => !state)}
           >
-            <Icon name="i-ph-list" />
-            <span className="sr-only">باز کردن منو</span>
+            <Icon name="i-ph-list" alt="باز کردن منو" />
           </button>
         </div>
         <div className="flex ac jc">
@@ -106,7 +105,7 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
           </Lnk>
         </div>
         <div className="flex ac justify-end ">
-          <ThemeToggler hasText={false} className="opacity-90" />
+          <ThemeToggler hasText={false} className="opacity-90 flex ac" />
         </div>
       </div>
     </header>

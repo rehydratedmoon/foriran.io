@@ -6,6 +6,7 @@ const InstallPWAButton = () => {
 
   useEffect(() => {
     const handler: EventListenerOrEventListenerObject = (e) => {
+      console.log("herere??? 🌟");
       e.preventDefault();
       console.log("we are being triggered :D");
       setSupportsPWA(true);
@@ -44,6 +45,7 @@ const InstallPWAButton = () => {
       onClick={(e) => {
         e.preventDefault();
         if (!promptInstall) return;
+        console.log("🚀 ~ promptInstall:", promptInstall)
         promptInstall.prompt();
       }}
     >
