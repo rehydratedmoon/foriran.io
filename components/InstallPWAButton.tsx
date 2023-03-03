@@ -19,7 +19,7 @@ const InstallPWAButton = () => {
   if (!supportsPWA) {
     return (
       <>
-        <button className="btn-prm bf-i-ph-download-simple" disabled>
+        <button className="btn-prm bf-i-ph-download-simple-bold" disabled>
           نصب اپلیکیشن
         </button>
         <div className="snack-warning">
@@ -37,7 +37,7 @@ const InstallPWAButton = () => {
   }
   return (
     <button
-      className="btn-prm bf-i-ph-download-simple"
+      className="btn-prm bf-i-ph-download-simple-bold"
       id="setup_button"
       aria-label="Install app"
       title="Install app"

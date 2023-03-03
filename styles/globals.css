@@ -25,7 +25,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-:root {
+body {
   /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
   --light-height: 2;
   line-height: var(--light-height);

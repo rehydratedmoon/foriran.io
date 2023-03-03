@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
             <meta name="viewport" content="width=device-width" />
             <meta property="og:site_name" content="For Iran" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
           </Head>
           <div className="side-menu-container  mx-auto max-w-page">
             <div className="main grid  sm:mis-60" style={{ gridTemplateRows: "auto 1fr auto" }}>

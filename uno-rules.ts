@@ -107,30 +107,28 @@ export const shortcuts: UserShortcuts = [
     ac: "items-center",
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
-    "btn-disabled": "!c-gray9 !bg-gray5 !b-gray5",
+    "btn-disabled": "!c-gray10 !bg-gray5 !b-gray5",
+    "btn-common": "b-1 text-xl fw-700  px-6 py-2 rd-lg",
     "btn-prm":
-      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
-    btn: " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
+      "btn-common  b-orange10 bg-orange9 c-white  hover:(bg-orange10 b-orange9) focus-visible:(bg-orange10 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
+    btn: " btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray9) focus-visible:(bg-gray10 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
     "btn-ghost-prm":
-      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-ghost":
-      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-link-prm":
-      " b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus:(b-orange2 bg-orange2) disabled:(btn-disabled)",
+      "btn-common b-transparent c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)",
     "btn-text":
-      "b-1  fw-500 px-4 py-1 rd-lg b-transparent bg-transparent c-gray12  hover:(bg-gray2 b-gray2) focus:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
+      "btn-common b-transparent bg-transparent c-gray12 hover:(bg-gray2 b-gray2) focus-visible:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
     "btn-danger":
-      "b-1 fw-500 px-4 py-1 rd-lg b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)",
-    "snack-info":
-      "text-sm b-1 b-blue7 b-r-4 bg-blue3 c-blue11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-info vertical-text-top abs top-5 right-4)",
-    "snack-warning":
-      "text-sm b-1 b-yellow7 b-r-4 bg-yellow3 c-yellow11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-warning vertical-text-top abs top-5 right-4)",
-    "snack-success":
-      "text-sm b-1 b-green7 b-r-4 bg-green3 c-green11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-check-circle vertical-text-top abs top-5 right-4)",
-    "snack-error":
-      "text-sm b-1 b-red7 b-r-4 bg-red3 c-red11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-x-circle vertical-text-top abs top-5 right-4)",
-    "snack-danger":
-      "text-sm b-1 b-red7 b-r-4 bg-red3 c-red11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-warning-octagon vertical-text-top abs top-5 right-4)",
+      "btn-common b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus-visible:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)",
+    "snack-common":
+      "text-sm b-1.5  b-r-6  rd-xl p-4 pis-12 rel isolate before:text-base before:inline-block before:content-none before:vertical-text-top before:absolute before:top-5 before:right-4",
+    "snack-info": "snack-common b-blue7 bg-blue3 c-blue11 before:i-ph-info",
+    "snack-warning": "snack-common b-yellow7 bg-yellow3 c-yellow11 before:i-ph-warning",
+    "snack-success": "snack-common b-green7 bg-green3 c-green11 before:i-ph-check-circle",
+    "snack-error": "snack-common b-red7 bg-red3 c-red11 before:i-ph-x-circle",
+    "snack-danger": "snack-common b-red7  bg-red3 c-red11 before:i-ph-warning-octagon ",
     "info-line": "bf-i-ph-info before:c-blue11 before:opacity-100 text-sm c-blue10 ",
     "success-line": "bf-i-ph-check-circle before:c-green11 before:opacity-100 text-sm c-green10",
     "warning-line": "bf-i-ph-warning before:c-yellow11 before:opacity-100 text-sm c-yellow10",

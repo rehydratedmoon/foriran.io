@@ -1,11 +1,15 @@
 import usePWAUpdatePrompt from "@/hooks/usePWAUpadatePrompt";
 import Icon from "@/components/Icon";
 import InstallPWAButton from "@/components/InstallPWAButton";
+import Head from "next/head";
 
 const Page = () => {
   usePWAUpdatePrompt();
   return (
     <div className="space-y-8">
+      <Head>
+        <title>برای ایران</title>
+      </Head>
       <section className="">
         <h1 className="sr-only">برای ایران</h1>
         <div>
@@ -44,7 +48,9 @@ const Page = () => {
         </ol>
         <p className="text-tiny-note">
           این برنامک یک
-          <a href="https://en.wikipedia.org/wiki/Progressive_web_app">Progressive Web Application </a>
+          {` `}
+          <a href="https://en.wikipedia.org/wiki/Progressive_web_app">Progressive Web Application</a>
+          {` `}
           یا PWA است. یعنی یک نسخه از کل وبسایت دانلود می‌شود به کمک قابلیت‌های PWA مرورگر‌های امروزی بر روی گوشی یا
           لپتاپ مانند یک اپلیکیشن کار می‌کند.{" "}
         </p>
@@ -62,8 +68,9 @@ const Page = () => {
         <p>اما از طرفی، پر از موج هستند و محتواهای مهم براحتی گم یا فراموش می‌شوند.</p>
         <p>
           <a href="/about-us" target="_blank" className="">
-            ما گروهی از مهاجران ایرانی،
+            ما گروهی از مهاجران ایرانی
           </a>
+          {` `}
           این وبگاه را راه‌انداختیم تا در کنار شبکه‌های اجتماعی، داده‌ها و محتواهای مهم انقلاب را دسترسی‌پذیر و قابل
           جستجو کنیم.
         </p>
@@ -78,9 +85,9 @@ const Page = () => {
         <p>اگر علاقه‌مند هستید در جمع‌آوری، خلاصه‌سازی و مدیریت ‌محتوا کمک کنید به ما پیام دهید</p>
         <a
           href="mailto:info@foriran.com"
-          className="btn-prm inline-block bf-i-ph-envelope-simple before:( opacity-100 )"
+          className="btn-prm inline-block bf-i-ph-envelope-simple-bold before:( opacity-100 )"
         >
-          ایمیل ما
+          <span className="">ایمیل ما</span>
         </a>
       </section>
     </div>
