@@ -30,9 +30,7 @@ const Nav = ({ className }: ClassName) => {
         </Lnk>
       </div>
       <div className="mt-auto flex flex-col gap-6">
-        <div>
-          <ThemeToggler className="" />
-        </div>
+        <ThemeToggler className="flex ac gap-4" />
       </div>
     </nav>
   );

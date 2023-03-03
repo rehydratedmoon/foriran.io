@@ -18,7 +18,7 @@ const ThemeToggler = ({ hasText = true, ...props }: { hasText?: boolean } & HTML
 
   return (
     <button onClick={(e) => toggleTheme()} {...props} title={textMap[hasMountedInBrowser ? theme : "system"]}>
-      <Icon name={iconMap[hasMountedInBrowser ? theme : "system"]} />
+      <Icon name={iconMap[hasMountedInBrowser ? theme : "system"]} className={hasText ? 'opacity-50' : ''} />
       {hasText && <span>{textMap[hasMountedInBrowser ? theme : "system"]}</span>}
     </button>
   );
