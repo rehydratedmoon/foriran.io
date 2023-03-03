@@ -86,11 +86,11 @@ type Props = {
 };
 const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
-    <header className="p-4 sm:p-0 bg-gray1  bg-blue4  sticky top-0 z-10 ">
+    <header className="px-4 py-2 sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
       <div className=" grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
         <div className="flex justify-start">
           <button
-            className="mobile-only bf-i-ph-list before:mie-0"
+            className="sm:display-none bf-i-ph-list before:mie-0 py-2"
             aria-label="Open Menu"
             onClick={() => setIsSideMenuOpen((state) => !state)}
           >
@@ -100,11 +100,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="font-family-heading leading-none fw-400 text-lg ls-tight c-orange10 sm:display-none lh-5  "
+            className="py-2  leading-none text-lg ls-tight flex gap-1 c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <span className="fw-400 c-gray11 ">برای </span>
-            <span className="fw-400 c-gray11 "> ایـــران</span>
+            <img src="/logo.svg" alt="برای ایران" className="w-5 h-5 inline-block" />
+            <span className="fw-400 c-gray11 font-family-heading ">برای ایـــران </span>
           </Lnk>
         </div>
         <div />

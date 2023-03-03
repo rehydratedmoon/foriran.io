@@ -108,18 +108,19 @@ export const shortcuts: UserShortcuts = [
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
     "btn-disabled": "!c-gray9 !bg-gray5 !b-gray5",
-    "btn-text": "fw-500 px-6 py-2 rd-lg b-transparent",
     "btn-prm":
-      "flex jc ac gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
-    btn: "flex jc ac gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
+      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-orange10 bg-orange10 c-white  hover:(bg-orange9 b-orange9) focus:(bg-orange9 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
+    btn: " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray10 bg-gray10 c-white  hover:(bg-gray9 b-gray9) focus:(bg-gray9 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
     "btn-ghost-prm":
-      "flex ac jc gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-ghost":
-      "flex ac jc gap-1 b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+      " b-1 uppercase  fw-500 px-6 py-2 rd-lg b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-link-prm":
-      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus:(b-orange2 bg-orange2) disabled:(btn-disabled)",
-    "btn-link":
-      "flex ac jc gap-1 b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-gray11 active:(b-gray3 bg-gray3) hover:(b-gray2  bg-gray2) focus:(b-gray2 bg-gray2) disabled:(btn-disabled)",
+      " b-1 b-transparent uppercase  fw-500 px-6 py-2 rd-lg  c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus:(b-orange2 bg-orange2) disabled:(btn-disabled)",
+    "btn-text":
+      "b-1  fw-500 px-4 py-1 rd-lg b-transparent bg-transparent c-gray12  hover:(bg-gray2 b-gray2) focus:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
+    "btn-danger":
+      "b-1 fw-500 px-4 py-1 rd-lg b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)",
     "snack-info":
       "text-sm b-1 b-blue7 b-r-4 bg-blue3 c-blue11 rd-lg p-4 pis-12 rel isolate before:(inline-block content-none  i-ph-info vertical-text-top abs top-5 right-4)",
     "snack-warning":
