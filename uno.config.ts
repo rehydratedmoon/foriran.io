@@ -22,6 +22,7 @@ export default defineConfig<Theme>({
     "c-red12",
     "c-tomato10",
     "c-tomato11",
+    "bg-grayA-9",
   ],
   transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-" })],
   theme: {
