@@ -8,17 +8,13 @@ import "@/public/fonts/onvan/css/onvan.css";
 
 import type { AppProps } from "next/app";
 import { QueryClientProvider, Hydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 import Lnk from "@/components/Lnk";
-import Icon from "@/components/Icon";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-// import { useMDXComponents } from '@next/mdx'
 
 import Head from "next/head";
-import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
@@ -86,8 +82,8 @@ type Props = {
 };
 const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
-    <header className="px-4 py-2 sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
-      <div className=" grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
+    <header className="px-4  sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
+      <div className="py-2 grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
         <div className="flex justify-start">
           <button
             className="sm:display-none bf-i-ph-list before:mie-0 py-2"
@@ -107,7 +103,9 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
             <span className="fw-400 c-gray11 font-family-heading ">برای ایـــران </span>
           </Lnk>
         </div>
-        <div />
+        <div className="flex ac justify-end ">
+          <ThemeToggler hasText={false} />
+        </div>
       </div>
     </header>
   );

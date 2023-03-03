@@ -2,7 +2,17 @@ import type {} from "next-themes";
 import { HTMLAttributes } from "react";
 import useColorScheme from "@/hooks/useColorScheme";
 
-const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
+const textMap = {
+  light: "تم روشن",
+  dark: "تم تاریک",
+  system: "تم سیستم",
+};
+const iconMap = {
+  light: "bf-i-ph-circle-half",
+  dark: "bf-i-ph-moon",
+  system: "bf-i-ph-circle-half",
+};
+const ThemeToggler = ({ hasText = true, ...props }: { hasText?: boolean } & HTMLAttributes<HTMLButtonElement>) => {
   const { theme, toggleTheme, hasMountedInBrowser } = useColorScheme();
 
   if (!hasMountedInBrowser)
@@ -13,10 +23,8 @@ const ThemeToggler = ({ ...props }: HTMLAttributes<HTMLButtonElement>) => {
     );
 
   return (
-    <button onClick={(e) => toggleTheme()} className="bg-red3" {...props}>
-      {theme === "system" && <span className="bf-i-ph-circle-half ">تم سیستم</span>}
-      {theme === "dark" && <span className="bf-i-ph-moon ">تم تاریک</span>}
-      {theme === "light" && <span className="bf-i-ph-sun ">تم روشن</span>}
+    <button onClick={(e) => toggleTheme()} className="" {...props} title={textMap[theme]}>
+      <span className={iconMap[theme]}>{hasText && textMap[theme]}</span>
     </button>
   );
 };
