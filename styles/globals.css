@@ -67,20 +67,8 @@ h6 {
   }
 }
 
-.side-menu-container {
-  /* display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: min-content 1fr;
-  grid-template-areas: "aside main"; */
-}
-/* 
-.aside {
-  grid-area: aside;
-}
 
-.main {
-  grid-area: main;
-} */
+
 
 @media (max-width: 640px) {
   .aside {
