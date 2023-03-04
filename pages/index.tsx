@@ -3,6 +3,10 @@ import Icon from "@/components/Icon";
 import InstallPWAButton from "@/components/InstallPWAButton";
 import Head from "next/head";
 
+// import localFont from "@next/font/local";
+
+// const myFont = localFont({ src: "../public/fonts/estedad/fonts/woff2/Estedad-Bold.woff2" });
+
 const Page = () => {
   usePWAUpdatePrompt();
   return (
@@ -10,6 +14,7 @@ const Page = () => {
       <Head>
         <title>برای ایران</title>
       </Head>
+      {/* <p className={myFont.className}>تستستستسس بسب سب سب س </p> */}
       <section className="">
         <h1 className="sr-only">برای ایران</h1>
         <div>
