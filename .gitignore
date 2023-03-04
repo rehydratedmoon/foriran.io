@@ -60,6 +60,4 @@ todo
 **/public/worker-*.js.map
 
 
-/public/fallback-development.js
-
 /.idea
