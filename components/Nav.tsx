@@ -1,5 +1,4 @@
 import Lnk from "@/components/Lnk";
-import Draft from "@/components/Draft";
 import ThemeToggler from "@/components/ThemeToggler";
 
 const Nav = ({ className }: ClassName) => {
@@ -28,15 +27,15 @@ const Nav = ({ className }: ClassName) => {
         </div> */}
       </Lnk>
       <div className="sm:mt-10 flex flex-col gap-6 mb-auto">
-        <Lnk href={`/safety`} className="in-sub-path:underline bf-i-ph-first-aid-kit">
+        <NavLink href="/safety" icon=" bf-i-ph-first-aid-kit">
           ایمنی
-        </Lnk>
-        <Lnk href={`/fight`} className="in-sub-path:underline bf-i-ph-lightning ">
+        </NavLink>
+        <NavLink href="/fight" icon=" bf-i-ph-lightning ">
           نبرد
-        </Lnk>
-        <Lnk href={`/terms`} className="in-sub-path:underline bf-i-ph-book-bookmark ">
+        </NavLink>
+        <NavLink href="/terms" icon=" bf-i-ph-book-bookmark ">
           واژه‌ه‌نامه سیاسی
-        </Lnk>
+        </NavLink>
       </div>
       <div className="mt-auto flex flex-col gap-6">
         <ThemeToggler className="flex ac gap-4" />
@@ -52,11 +51,17 @@ export default Nav;
 //  <Lnk href={`/revolution-phases`} className="in-sub-path:underline bf-i-ph-arrows-out">
 //           فاز‌های انقلاب
 //         </Lnk>
+type NavLinkProps = {
+  children?: React.ReactNode;
+  icon: string;
+  href: string;
+  className?: string;
+};
 
-// const NavLink = ({ children, icon, href }) => {
-//   return (
-//     <Lnk href={href} className={`in-sub-path:underline ${icon}`}>
-//       {children}
-//     </Lnk>
-//   );
-// };
+const NavLink = ({ children, icon, href, className }: NavLinkProps) => {
+  return (
+    <Lnk href={href} className={`in-sub-path:underline ${icon} ls-tighter  ${className}`}>
+      {children}
+    </Lnk>
+  );
+};

@@ -58,8 +58,14 @@ h6,
 /* Side Menu Styles */
 
 :root {
-  --sidebar-width: 15rem;
+  --sidebar-width: 12.5rem;
   --side-menu-transition-time: 0.6s;
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --sidebar-width: 15rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
