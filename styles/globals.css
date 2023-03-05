@@ -18,6 +18,10 @@
   max-width: min(100%, 60rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   direction: rtl;

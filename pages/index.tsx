@@ -27,8 +27,9 @@ const Page = () => {
         <h1 className="gradient-effect font-family-heading !text-5xl !sm:text-6xl !leading-1.2em">
           <strong className="sr-only"> برای ایران </strong>
           <span className="p-1">دسترسی بهتر</span>
-          <br />
+          <br/>
           <span className="p-1">به اطلاعات مهم</span>
+          <strong className="sr-only"> انقلاب ایران </strong>
         </h1>
       </section>
       <section className="space-y-8">
@@ -38,7 +39,7 @@ const Page = () => {
             <p>همه مطالب موجود در منوی کناری دسته‌بندی شده‌اند.</p>
             <p className="c-gray11">
               (در موبایل باید روی
-              <Icon name="i-ph-list" className="!vertical-middle mx-2" />
+              <Icon name="i-ph-list" className="!vertical-middle mx-2"/>
               کلیک کنید تا منو را ببینید.)
             </p>
           </li>
@@ -49,7 +50,7 @@ const Page = () => {
           <p>با نصب اپلیکیشن (Application) می‌توانید بدون اینترنت به تمام محتوا دسترسی داشته باشید.</p>
           <p>هر زمان دوباره اینترنت داشتید، برنامه را باز کنید تا محتوای بروز را دریافت کنید.</p>
         </div>
-        <InstallPWAButton />
+        <InstallPWAButton/>
         <p className="text-tiny-note">
           این برنامک یک
           {` `}

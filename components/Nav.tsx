@@ -16,6 +16,10 @@ const Nav = ({ className }: ClassName) => {
           <span className="fw-400 c-gray12  "> ایـــران</span>
         </div>
       </Lnk> */}
+      {/* <a href="#main-content" className="px-4 py-1 rd-xl bg-violet2 abs -translate-y-100 focus:translate-y-0 ">
+        Skip to the main content
+      </a> */}
+
       <Lnk href="/" className="no-underline  display-none sm:flex gap-4 ac text-xl" title="Home">
         <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5" />
         <span className="fw-700 c-violet12 font-family-heading -translate-y-0.5  leading-none ls-tighter ">
