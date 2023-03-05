@@ -17,7 +17,7 @@ import Nav from "@/components/Nav";
 import Head from "next/head";
 import ThemeToggler from "@/components/ThemeToggler";
 import Icon from "@/components/Icon";
-import PWAProvider from '@/components/PWAProvider';
+import PWAProvider from "@/components/PWAProvider";
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
@@ -39,40 +39,39 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <PWAProvider>
-
-        <ThemeProvider attribute="class">
-          {/* <Header /> */}
-          <Head>
-            {process.env.NEXT_PUBLIC_ENV !== "production" && (
-              <>
-                <meta name="googlebot" content="noindex" />
-                <meta name="robots" content="noindex" />
-                <meta name="robots" content="nofollow" />
-              </>
-            )}
-            <link rel="manifest" href="/manifest.json" />
-            <meta property="og:title" content="" />
-            <meta property="og:description" content="About my website in one sentence" />
-            <meta charSet="UTF-8" />
-            <meta name="viewport" content="width=device-width" />
-            <meta property="og:site_name" content="For Iran" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-          </Head>
-          <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
-            <div className="grid sm:mis-60 h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
-              <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-              <main className=" ">
-                {/* <BreadCrumb /> */}
-                <div className="p-4  pb-14  ">
-                  <Component {...pageProps} />
-                </div>
-              </main>
-              <Footer />
+          <ThemeProvider attribute="class">
+            {/* <Header /> */}
+            <Head>
+              {process.env.NEXT_PUBLIC_ENV !== "production" && (
+                <>
+                  <meta name="googlebot" content="noindex" />
+                  <meta name="robots" content="noindex" />
+                  <meta name="robots" content="nofollow" />
+                </>
+              )}
+              <link rel="manifest" href="/manifest.json" />
+              <meta property="og:title" content="" />
+              <meta property="og:description" content="About my website in one sentence" />
+              <meta charSet="UTF-8" />
+              <meta name="viewport" content="width=device-width" />
+              <meta property="og:site_name" content="For Iran" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
+            <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
+              <div className="grid sm:mis-60 h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
+                <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+                <main className=" ">
+                  {/* <BreadCrumb /> */}
+                  <div className="p-4  pb-14  ">
+                    <Component {...pageProps} />
+                  </div>
+                </main>
+                <Footer />
+              </div>
+              <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
             </div>
-            <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-          </div>
-        </ThemeProvider>
+          </ThemeProvider>
         </PWAProvider>
       </Hydrate>
     </QueryClientProvider>
@@ -80,9 +79,6 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
 }
 
 export default MyApp;
-
-
-
 
 type Props = {
   isSideMenuOpen: boolean;
@@ -123,7 +119,7 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`aside top-0 bg-gray1 p-4  rw-aside z-30 w-aside  ${isSideMenuOpen && "drawer-open"} `}>
+      <div className={`sidebar top-0 bg-gray1 p-4  rw-sidebar z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
         <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>
