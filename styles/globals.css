@@ -194,7 +194,7 @@ p a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent !important;
-  background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
+  background-image: linear-gradient(90deg, var(--rdx-colors-orange-11) 0%, var(--rdx-colors-violet-9) 100%);
 }
 
 /* .gradient-effect {
