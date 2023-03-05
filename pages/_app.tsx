@@ -100,7 +100,7 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
             className="py-2  leading-none text-lg ls-tight flex gap-2 ac c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block  translate-y-0.5 " />
+            <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block " />
             <span className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">برای ایــران </span>
           </Lnk>
         </div>

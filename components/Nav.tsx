@@ -22,7 +22,7 @@ const Nav = ({ className }: ClassName) => {
 
       <Lnk href="/" className="no-underline  display-none sm:flex gap-4 ac text-xl" title="صفحه خانه">
         <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5" />
-        <span className="fw-700 c-violet12 font-family-heading -translate-y-0.5  leading-none ls-tighter ">
+        <span className="fw-700 c-violet12 font-family-heading -translate-y-0.3  leading-none ls-tighter ">
           برای ایــران{" "}
         </span>
         {/* <div className="lh-4">
