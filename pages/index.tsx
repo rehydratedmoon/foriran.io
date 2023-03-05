@@ -24,13 +24,17 @@ const Page = () => {
         {/*    آگاهی + کنش‌گری + نبرد ← ایرانی آزاد*/}
         {/*  </p>*/}
         {/*</div>*/}
-        <h1 className="gradient-effect font-family-heading !text-5xl !sm:text-6xl !leading-1.2em">
-          <strong className="sr-only"> برای ایران </strong>
-          <span className="p-1">دسترسی بهتر</span>
-          <br/>
-          <span className="p-1">به اطلاعات مهم</span>
-          <strong className="sr-only"> انقلاب ایران </strong>
+        <h1 className="unstyled gradient-effect font-family-heading text-5xl sm:text-7xl ">
+          <span className="block  px-1 leading-1.4em">دسترسی بهتر</span>
+          <span className="block -mt-6 px-1 leading-1.4em">به اطلاعات مهم</span>
         </h1>
+
+        <p className="mt-6 c-gray11">
+          <strong className="c-gray12 fw-400"> برای ایران </strong>
+          تلاشی است برای گردآوری، دسترسی‌پذیر و جستجو پذیر کردن
+          <br />
+          داده‌ها و محتوای مهم انقلاب ایران
+        </p>
       </section>
       <section className="space-y-8">
         <h2>از اینجا شروع کنید</h2>
@@ -39,7 +43,7 @@ const Page = () => {
             <p>همه مطالب موجود در منوی کناری دسته‌بندی شده‌اند.</p>
             <p className="c-gray11">
               (در موبایل باید روی
-              <Icon name="i-ph-list" className="!vertical-middle mx-2"/>
+              <Icon name="i-ph-list" className="!vertical-middle mx-2" />
               کلیک کنید تا منو را ببینید.)
             </p>
           </li>
@@ -50,7 +54,7 @@ const Page = () => {
           <p>با نصب اپلیکیشن (Application) می‌توانید بدون اینترنت به تمام محتوا دسترسی داشته باشید.</p>
           <p>هر زمان دوباره اینترنت داشتید، برنامه را باز کنید تا محتوای بروز را دریافت کنید.</p>
         </div>
-        <InstallPWAButton/>
+        <InstallPWAButton />
         <p className="text-tiny-note">
           این برنامک یک
           {` `}
