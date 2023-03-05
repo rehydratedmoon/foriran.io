@@ -13,7 +13,7 @@
   font-display: optional;
 }
 
-@font-face {
+/* @font-face {
   font-family: "OnvanFallback";
   font-weight: 700;
   src: local("Arial");
@@ -22,4 +22,4 @@
   descent-override: 104%;
   line-gap-override: 0%;
   size-adjust: 100%;
-}
+} */

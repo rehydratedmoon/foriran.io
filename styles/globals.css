@@ -26,7 +26,7 @@ body {
 html,
 body,
 .font-family-content {
-  font-family: "Estedad", "iransans", "vazirmatn", "Roboto", "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: "Estedad", "iransans", "vazirmatn", "Roboto", 'Arial', "sans-serif", -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -43,7 +43,7 @@ h4,
 h5,
 h6,
 .font-family-heading {
-  font-family: onvan, "OnvanFallback", "Estedad", "IRANSans", "vazirmatn", "Roboto", "sans-serif", -apple-system,
+  font-family: onvan, "Estedad", "IRANSans", "vazirmatn", "Roboto", "sans-serif", -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
