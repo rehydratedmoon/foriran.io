@@ -17,6 +17,7 @@ import Nav from "@/components/Nav";
 import Head from "next/head";
 import ThemeToggler from "@/components/ThemeToggler";
 import Icon from "@/components/Icon";
+import PWAProvider from '@/components/PWAProvider';
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
@@ -37,6 +38,8 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
+        <PWAProvider>
+
         <ThemeProvider attribute="class">
           {/* <Header /> */}
           <Head>
@@ -70,12 +73,16 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
             <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
           </div>
         </ThemeProvider>
+        </PWAProvider>
       </Hydrate>
     </QueryClientProvider>
   );
 }
 
 export default MyApp;
+
+
+
 
 type Props = {
   isSideMenuOpen: boolean;

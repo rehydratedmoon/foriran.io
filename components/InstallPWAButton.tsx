@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { usePWA } from "./PWAProvider";
 
 const InstallPWAButton = () => {
-  const [supportsPWA, setSupportsPWA] = useState(false);
-  const [promptInstall, setPromptInstall] = useState<any>(null);
-
+  const { supportsPWA, promptEvent, setPromptEvent } = usePWA();
+  const [isTooEarly, setIsTooEarly] = useState(true);
   useEffect(() => {
-    const handler: EventListenerOrEventListenerObject = (e) => {
-      console.log("herere??? 🌟");
-      e.preventDefault();
-      console.log("we are being triggered :D");
-      setSupportsPWA(true);
-      setPromptInstall(e);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-
-    return () => window.removeEventListener("transitionend", handler);
+    setTimeout(() => {
+      setIsTooEarly(false);
+    }, 2000);
   }, []);
 
-  if (!supportsPWA) {
-    return (
-      <>
-        <button className="btn-prm bf-i-ph-download-simple-bold" disabled>
-          نصب اپلیکیشن
-        </button>
+  return (
+    <div className="space-y-6">
+      <button
+        className="btn-prm bf-i-ph-download-simple-bold"
+        id="setup_button"
+        aria-label="Install app"
+        title="Install app"
+        disabled={!supportsPWA}
+        onClick={async (e) => {
+          e.preventDefault();
+          if (!promptEvent) return;
+          const result = await promptEvent.userChoice;
+          console.log("🚀 ~ result:", result);
+          setPromptEvent(null);
+        }}
+      >
+        نصب اپلیکیشن
+      </button>
+      {!supportsPWA && !isTooEarly && (
         <div className="snack-warning">
           <p>مرورگر‌ شما از نصب PWA پیشتیبانی نمی‌کند.</p>
           <p>
@@ -33,24 +39,8 @@ const InstallPWAButton = () => {
             ببینید.
           </p>
         </div>
-      </>
-    );
-  }
-  return (
-    <button
-      className="btn-prm bf-i-ph-download-simple-bold"
-      id="setup_button"
-      aria-label="Install app"
-      title="Install app"
-      onClick={(e) => {
-        e.preventDefault();
-        if (!promptInstall) return;
-        console.log("🚀 ~ promptInstall:", promptInstall)
-        promptInstall.prompt();
-      }}
-    >
-      نصب اپلیکیشن
-    </button>
+      )}
+    </div>
   );
 };
 
