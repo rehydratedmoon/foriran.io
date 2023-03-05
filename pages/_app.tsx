@@ -59,13 +59,10 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
               <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
-              <div className="grid sm:mis-60 h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
+              <div className="grid sm:mis-60 min-h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
                 <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-                <main className=" ">
-                  {/* <BreadCrumb /> */}
-                  <div className="p-4  pb-14  ">
-                    <Component {...pageProps} />
-                  </div>
+                <main className="p-4  pb-14  h-full">
+                  <Component {...pageProps} />
                 </main>
                 <Footer />
               </div>
@@ -100,11 +97,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
         <div className="flex ac jc">
           <Lnk
             href="/"
-            className="py-2  leading-none text-lg ls-tight flex gap-1.5 ac c-orange10 sm:display-none lh-5  "
+            className="py-2  leading-none text-lg ls-tight flex gap-2 ac c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <img src="/logo.svg" alt="برای ایران" className="w-5 h-5 inline-block" />
-            <span className="fw-400 c-gray12 font-family-heading -translate-y-0.5 opacity-90 ">برای ایـــران </span>
+            <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block  translate-y-0.5 " />
+            <span className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">برای ایــران </span>
           </Lnk>
         </div>
         <div className="flex ac justify-end ">
