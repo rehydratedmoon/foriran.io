@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { usePWA } from "./PWAProvider";
+import React, {useEffect, useState} from "react";
+import {usePWA} from "./PWAProvider";
 
 const InstallPWAButton = () => {
-  const { supportsPWA, promptEvent, setPromptEvent } = usePWA();
+  const {supportsPWA, promptEvent, setPromptEvent} = usePWA();
   const [isTooEarly, setIsTooEarly] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -32,7 +32,10 @@ const InstallPWAButton = () => {
         <div className="snack-warning">
           <p>مرورگر‌ شما از نصب PWA پیشتیبانی نمی‌کند.</p>
           <p>
-            فهرست مرورگرهایی که این امکان را دارند را می‌توانید
+            می‌توانید از مرورگر کروم برای اندروید و ویندوز، و مرورگر سافاری برای iOS استفاده کنید.
+          </p>
+          <p>
+            فهرست مرورگرهای دارای امکانات PWA را
             {` `}
             <a href="https://caniuse.com/web-app-manifest"> از اینجا</a>
             {` `}

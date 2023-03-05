@@ -202,11 +202,12 @@ p a {
   -webkit-text-fill-color: transparent !important;
   background-image: linear-gradient(
     90deg,
-    var(--rdx-colors-violet-9) 0%,
-    var(--rdx-colors-purple-9) 20%,
-    var(--rdx-colors-plum-9) 40%,
-    var(--rdx-colors-pink-9) 60%,
-    var(--rdx-colors-crimson-9) 80%,
+    var(--rdx-colors-indigo-9) 4%,
+    var(--rdx-colors-violet-9) 20%,
+    var(--rdx-colors-purple-9) 36%,
+    var(--rdx-colors-plum-9) 52%,
+    var(--rdx-colors-pink-9) 68%,
+    var(--rdx-colors-crimson-9) 84%,
     var(--rdx-colors-orange-9) 100%
   );
 }

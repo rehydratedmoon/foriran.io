@@ -30,9 +30,9 @@ const Page = () => {
         </h1>
 
         <p className="mt-6 c-gray11">
-          <strong className="c-gray12 fw-400"> برای ایران </strong>
+          <strong className="fw-400"> «برای ایران» </strong>
           تلاشی است برای گردآوری، دسترسی‌پذیر و جستجو پذیر کردن
-          <br />
+          <br/>
           داده‌ها و محتوای مهم انقلاب ایران
         </p>
       </section>
@@ -43,7 +43,7 @@ const Page = () => {
             <p>همه مطالب موجود در منوی کناری دسته‌بندی شده‌اند.</p>
             <p className="c-gray11">
               (در موبایل باید روی
-              <Icon name="i-ph-list" className="!vertical-middle mx-2" />
+              <Icon name="i-ph-list" className="!vertical-middle mx-2"/>
               کلیک کنید تا منو را ببینید.)
             </p>
           </li>
@@ -54,7 +54,7 @@ const Page = () => {
           <p>با نصب اپلیکیشن (Application) می‌توانید بدون اینترنت به تمام محتوا دسترسی داشته باشید.</p>
           <p>هر زمان دوباره اینترنت داشتید، برنامه را باز کنید تا محتوای بروز را دریافت کنید.</p>
         </div>
-        <InstallPWAButton />
+        <InstallPWAButton/>
         <p className="text-tiny-note">
           این برنامک یک
           {` `}
@@ -85,10 +85,10 @@ const Page = () => {
           </p>
         </div>
       </section>
-      <section className="space-y-1em">
+      {/* <section className="space-y-1em">
         <h2>همرسانی</h2>
         <p>برای ایران را به دیگران معرفی کنید.</p>
-      </section>
+      </section> */}
       <section className="space-y-1em">
         <h2>همکاری</h2>
         <p>ما تیم کوچکی هستیم و برای رشد این کار به کمک شما نیاز داریم.</p>

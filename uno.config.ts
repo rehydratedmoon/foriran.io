@@ -27,6 +27,7 @@ export default defineConfig<Theme>({
     "c-plum9",
     "c-violet9",
     "c-purple9",
+    "c-indigo9",
     "c-tomato11",
     "bg-grayA-9",
   ],
