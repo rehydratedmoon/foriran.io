@@ -82,9 +82,9 @@ h6,
 .w-sidebar {
   width: var(--sidebar-width);
 }
-.min-w-sidebar {
+/* .min-w-sidebar {
   min-width: calc(var(--sidebar-width) * 0.8);
-}
+} */
 
 @media (min-width: 641px) {
   .sidebar {

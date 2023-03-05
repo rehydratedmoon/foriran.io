@@ -119,7 +119,7 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-      <div className={`sidebar top-0 bg-gray1 p-4  rw-sidebar z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
+      <div className={`sidebar top-0 bg-gray1 p-4  z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
         <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>
