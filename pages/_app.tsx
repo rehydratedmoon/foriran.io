@@ -59,6 +59,7 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
               <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
+              <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
               <div className="grid sm:mis-60 min-h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
                 <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
                 <main className="p-4  pb-14  h-full">
@@ -66,7 +67,6 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
                 </main>
                 <Footer />
               </div>
-              <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
             </div>
           </ThemeProvider>
         </PWAProvider>
