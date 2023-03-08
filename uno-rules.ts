@@ -46,6 +46,8 @@ export const rules: Rule[] = [
   ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
   ["max-w-article", { "max-width": "60ch" }],
   ["max-w-page", { "max-width": "100rem" }],
+  ["grd", { "background-image": "var(--gradient)" }],
+  ["grd-sm", { "background-image": "var(--gradient-sm)" }],
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
@@ -107,17 +109,19 @@ export const shortcuts: UserShortcuts = [
     ac: "items-center",
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
-    "btn-disabled": "!c-gray10 !bg-gray5 !b-gray5 !pointer-not-allowed",
-    "btn-common": "b-1 text-xl fw-700  px-6 py-2 rd-lg cursor-pointer",
+    "btn-disabled": "!c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed",
+    "btn-common": "b-1 text-xl fw-700 px-6 py-2 rd-xl cursor-pointer",
     "btn-prm":
-      "btn-common  b-orange10 bg-orange9 c-white  hover:(bg-orange10 b-orange9) focus-visible:(bg-orange10 b-orange9) active:(bg-orange11 b-orange9) disabled:(btn-disabled)",
-    btn: " btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray9) focus-visible:(bg-gray10 b-gray9) active:(bg-gray11 b-gray9) disabled:(btn-disabled)",
+      "btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)",
+    "btn-prm-grd":
+      "btn-common b-transparent bg-gradient-to-l from-violet9 to-purple9  bg-prm9 c-white  hover:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) focus-visible:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) active:(bg-prm11 bg-gradient-to-l from-violet11 to-purple11) disabled:(btn-disabled)",
+    btn: " btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray10) focus-visible:(bg-gray10 b-gray10) active:(bg-gray11 b-gray11) disabled:(btn-disabled)",
     "btn-ghost-prm":
       "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-ghost":
       "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
     "btn-link-prm":
-      "btn-common b-transparent c-orange11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)",
+      "btn-common b-transparent c-prm11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)",
     "btn-text":
       "btn-common b-transparent bg-transparent c-gray12 hover:(bg-gray2 b-gray2) focus-visible:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
     "btn-danger":

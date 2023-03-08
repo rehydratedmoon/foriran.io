@@ -25,12 +25,12 @@ const darkColorsConfig = Object.fromEntries(
 export const lightTheme = {
   colors: {
     ...lightColorsConfig,
-    prm: { ...mapSingleColor("orange") },
+    prm: {...mapSingleColor("violet")},
   },
 };
 export const darkTheme = {
   colors: {
     ...darkColorsConfig,
-    prm: { ...mapSingleColor("orangeDark") },
+    prm: {...mapSingleColor("violetDark")},
   },
 };

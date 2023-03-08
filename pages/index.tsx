@@ -25,14 +25,14 @@ const Page = () => {
         {/*  </p>*/}
         {/*</div>*/}
         <h1 className="unstyled gradient-effect font-family-heading fs-5xl  ">
-          <span className="block leading-1em px-1 pt-10">دسترسی بهتر</span>
+          <span className="block leading-1em px-1 ">دسترسی بهتر</span>
           <span className="block leading-1em px-1 pb-20">به اطلاعات مهم</span>
         </h1>
 
         <p className="mt-6 c-gray11">
           <strong className="fw-400"> «برای ایران» </strong>
           تلاشی است برای گردآوری، دسترسی‌پذیر و جستجو پذیر کردن
-          <br/>
+          <br />
           داده‌ها و محتوای مهم انقلاب ایران
         </p>
       </section>
@@ -43,7 +43,7 @@ const Page = () => {
             <p>همه مطالب موجود در منوی کناری دسته‌بندی شده‌اند.</p>
             <p className="c-gray11">
               (در موبایل باید روی
-              <Icon name="i-ph-list" className="!vertical-middle mx-2"/>
+              <Icon name="i-ph-list" className="!vertical-middle mx-2" />
               کلیک کنید تا منو را ببینید.)
             </p>
           </li>
@@ -54,7 +54,7 @@ const Page = () => {
           <p>با نصب اپلیکیشن (Application) می‌توانید بدون اینترنت به تمام محتوا دسترسی داشته باشید.</p>
           <p>هر زمان دوباره اینترنت داشتید، برنامه را باز کنید تا محتوای بروز را دریافت کنید.</p>
         </div>
-        <InstallPWAButton/>
+        <InstallPWAButton />
         <p className="text-tiny-note">
           این برنامک یک
           {` `}
@@ -95,7 +95,14 @@ const Page = () => {
         <p>اگر علاقه‌مند هستید در جمع‌آوری، خلاصه‌سازی و مدیریت ‌محتوا کمک کنید به ما پیام دهید</p>
         <a
           href="mailto:info@foriran.com"
-          className="btn-prm inline-block bf-i-ph-envelope-simple-bold before:( opacity-100 )"
+          className="btn-prm  inline-block bf-i-ph-envelope-simple before:( opacity-100 )"
+        >
+          <span className="">ایمیل ما</span>
+        </a>
+ 
+        <a
+          href="mailto:info@foriran.com"
+          className="btn-prm-grd  inline-block bf-i-ph-envelope-simple before:( opacity-100 )"
         >
           <span className="">ایمیل ما</span>
         </a>
