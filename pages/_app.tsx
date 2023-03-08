@@ -126,8 +126,8 @@ const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
 const MobileSideMenuOverlay = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   return (
     <div
-      className={`drawer-overlay mobile-only fixed z-20 inset-0 bg-grayA-9 
-              transition-opacity duration-600 ease-in-out
+      className={`sm:display-none fixed z-20 inset-0 bg-grayA-9 
+              transition-opacity duration-400 ease-in-out
              ${isSideMenuOpen ? "opacity-100 select-none" : "opacity-0 pointer-events-none"}`}
       title="Close Menu"
       aria-label="Close Menu"

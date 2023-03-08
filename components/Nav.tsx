@@ -30,7 +30,7 @@ const Nav = ({className}: ClassName) => {
           <span className="fw-400 c-violet12 font-family-heading leading-none ls-tighter "> ایــران</span>
         </div> */}
       </Lnk>
-      <div className="sm:mt-10 flex flex-col gap-6 mb-auto">
+      <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
         <NavLink href="/safety" icon=" bf-i-ph-first-aid-kit">
           ایمنی
         </NavLink>
