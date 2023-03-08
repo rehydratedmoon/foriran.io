@@ -95,13 +95,6 @@ const Page = () => {
         <p>اگر علاقه‌مند هستید در جمع‌آوری، خلاصه‌سازی و مدیریت ‌محتوا کمک کنید به ما پیام دهید</p>
         <a
           href="mailto:info@foriran.com"
-          className="btn-prm  inline-block bf-i-ph-envelope-simple before:( opacity-100 )"
-        >
-          <span className="">ایمیل ما</span>
-        </a>
- 
-        <a
-          href="mailto:info@foriran.com"
           className="btn-prm-grd  inline-block bf-i-ph-envelope-simple before:( opacity-100 )"
         >
           <span className="">ایمیل ما</span>
