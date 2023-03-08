@@ -24,9 +24,9 @@ const Page = () => {
         {/*    آگاهی + کنش‌گری + نبرد ← ایرانی آزاد*/}
         {/*  </p>*/}
         {/*</div>*/}
-        <h1 className="unstyled gradient-effect font-family-heading text-5xl sm:text-7xl ">
-          <span className="block  px-1 leading-1.4em">دسترسی بهتر</span>
-          <span className="block -mt-2 px-1 leading-1.4em">به اطلاعات مهم</span>
+        <h1 className="unstyled gradient-effect font-family-heading fs-5xl  ">
+          <span className="block leading-1em px-1 pt-10">دسترسی بهتر</span>
+          <span className="block leading-1em px-1 pb-20">به اطلاعات مهم</span>
         </h1>
 
         <p className="mt-6 c-gray11">

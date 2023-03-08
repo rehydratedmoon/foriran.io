@@ -1,7 +1,7 @@
 import Lnk from "@/components/Lnk";
 import ThemeToggler from "@/components/ThemeToggler";
 
-const Nav = ({ className }: ClassName) => {
+const Nav = ({className}: ClassName) => {
   return (
     <nav className={className}>
       {/* <Lnk
@@ -21,7 +21,7 @@ const Nav = ({ className }: ClassName) => {
       </a> */}
 
       <Lnk href="/" className="no-underline  display-none sm:flex gap-4 ac text-xl" title="صفحه خانه">
-        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5" />
+        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5"/>
         <span className="fw-700 c-violet12 font-family-heading -translate-y-0.3  leading-none ls-tighter ">
           برای ایــران{" "}
         </span>
@@ -38,11 +38,11 @@ const Nav = ({ className }: ClassName) => {
           نبرد
         </NavLink>
         <NavLink href="/terms" icon=" bf-i-ph-book-bookmark ">
-          واژه‌ه‌نامه سیاسی
+          واژه‌ه‌نامه
         </NavLink>
       </div>
       <div className="mt-auto flex flex-col gap-6">
-        <ThemeToggler className="flex ac gap-4" />
+        <ThemeToggler className="flex ac gap-4"/>
       </div>
     </nav>
   );
@@ -62,7 +62,7 @@ type NavLinkProps = {
   className?: string;
 };
 
-const NavLink = ({ children, icon, href, className }: NavLinkProps) => {
+const NavLink = ({children, icon, href, className}: NavLinkProps) => {
   return (
     <Lnk href={href} className={`in-sub-path:underline ${icon} ls-tighter  ${className}`}>
       {children}
