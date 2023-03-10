@@ -3,6 +3,7 @@ import "@unocss/reset/tailwind.css";
 import "@/styles/reset.css";
 import "uno.css";
 import "@/styles/globals.css";
+import "@/styles/article.css";
 import "@/public/fonts/estedad/css/estedad.css";
 import "@/public/fonts/onvan/css/onvan.css";
 
@@ -62,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
               <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
               <div className="grid sm:mis-60 min-h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
                 <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-                <main className="p-4  pb-14  h-full">
+                <main id="main-content" className="p-4  pb-14  h-full">
                   <Component {...pageProps} />
                 </main>
                 <Footer />
@@ -77,11 +78,11 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
 
 export default MyApp;
 
-type Props = {
+ type SideMenuProps = {
   isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
+const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
   return (
     <header className="px-4  sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
       <div className="py-2 grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
@@ -112,22 +113,22 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   );
 };
 
-const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
+const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
   return (
     <>
       <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
       <div className={`sidebar top-0 bg-gray1 p-4  z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
-        <Nav className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
+        <Nav {...{ isSideMenuOpen, setIsSideMenuOpen }} className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
       </div>
     </>
   );
 };
 
-const MobileSideMenuOverlay = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
+const MobileSideMenuOverlay = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
   return (
     <div
       className={`sm:display-none fixed z-20 inset-0 bg-grayA-9 
-              transition-opacity duration-400 ease-in-out
+              transition-opacity duration-400 ease-in-out rel
              ${isSideMenuOpen ? "opacity-100 select-none" : "opacity-0 pointer-events-none"}`}
       title="Close Menu"
       aria-label="Close Menu"

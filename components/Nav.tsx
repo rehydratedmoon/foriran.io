@@ -1,7 +1,15 @@
 import Lnk from "@/components/Lnk";
 import ThemeToggler from "@/components/ThemeToggler";
+import { useRouter } from "next/router";
+type SideMenuProps = {
+  isSideMenuOpen: boolean;
+  setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideMenuProps) => {
+  const router = useRouter();
 
-const Nav = ({className}: ClassName) => {
+  const closeMenu = () => setIsSideMenuOpen(false);
+  const navLinkProps = { onClick: closeMenu };
   return (
     <nav className={className}>
       {/* <Lnk
@@ -16,12 +24,9 @@ const Nav = ({className}: ClassName) => {
           <span className="fw-400 c-gray12  "> ایـــران</span>
         </div>
       </Lnk> */}
-      {/* <a href="#main-content" className="px-4 py-1 rd-xl bg-violet2 abs -translate-y-100 focus:translate-y-0 ">
-        Skip to the main content
-      </a> */}
 
       <Lnk href="/" className="no-underline  display-none sm:flex gap-4 ac text-xl" title="صفحه خانه">
-        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5"/>
+        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5" />
         <span className="fw-700 c-violet12 font-family-heading -translate-y-0.3  leading-none ls-tighter ">
           برای ایــران{" "}
         </span>
@@ -30,19 +35,25 @@ const Nav = ({className}: ClassName) => {
           <span className="fw-400 c-violet12 font-family-heading leading-none ls-tighter "> ایــران</span>
         </div> */}
       </Lnk>
+      <a
+        href={router.asPath + "#main-content"}
+        className="px-4 py-1  bg-violet2 abs  c-violet11  italic text-xs af-i-ph-arrow-left-thin -translate-y-100 focus:translate-y-10"
+      >
+        برو به بخش اصلی صفحه
+      </a>
       <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
-        <NavLink href="/safety" icon=" bf-i-ph-first-aid-kit">
+        <NavLink href="/safety" icon=" bf-i-ph-first-aid-kit" {...navLinkProps}>
           ایمنی
         </NavLink>
-        <NavLink href="/fight" icon=" bf-i-ph-lightning ">
+        <NavLink href="/fight" icon=" bf-i-ph-lightning " {...navLinkProps}>
           نبرد
         </NavLink>
-        <NavLink href="/terms" icon=" bf-i-ph-book-bookmark ">
+        <NavLink href="/terms" icon=" bf-i-ph-book-bookmark " {...navLinkProps}>
           واژه‌ه‌نامه
         </NavLink>
       </div>
       <div className="mt-auto flex flex-col gap-6">
-        <ThemeToggler className="flex ac gap-4"/>
+        <ThemeToggler className="flex ac gap-4" />
       </div>
     </nav>
   );
@@ -60,11 +71,12 @@ type NavLinkProps = {
   icon: string;
   href: string;
   className?: string;
+  [key: string]: any;
 };
 
-const NavLink = ({children, icon, href, className}: NavLinkProps) => {
+const NavLink = ({ children, icon, href, className, ...props }: NavLinkProps) => {
   return (
-    <Lnk href={href} className={`in-sub-path:underline ${icon} ls-tighter  ${className}`}>
+    <Lnk href={href} className={`in-sub-path:underline ${icon} ls-tighter  ${className}`} {...props}>
       {children}
     </Lnk>
   );
