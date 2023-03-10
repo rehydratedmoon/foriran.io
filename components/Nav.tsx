@@ -44,7 +44,7 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
       <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
         <NavLink
           href="/safety"
-          className=" bf-i-ph-first-aid-kit  data-[in-path]:bf-i-ph-first-aid-kit-fill "
+          className=" bf-i-ph-shield-plus  data-[in-path]:bf-i-ph-shield-plus-fill "
           {...navLinkProps}
         >
           ایمنی

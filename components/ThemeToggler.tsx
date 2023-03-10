@@ -15,7 +15,6 @@ const iconMap = {
 const ThemeToggler = ({ hasText = true, ...props }: { hasText?: boolean } & HTMLAttributes<HTMLButtonElement>) => {
   const { theme, resolvedTheme, toggleTheme, hasMountedInBrowser } = useColorScheme();
 
-  console.log("🚀 ~ resolvedTheme:", resolvedTheme);
   return (
     <button onClick={(e) => toggleTheme()} {...props} title={textMap[hasMountedInBrowser ? theme : "system"]}>
       <Icon name={iconMap[resolvedTheme]} className={`${hasText ? "opacity-50" : ""} `} />

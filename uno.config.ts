@@ -10,6 +10,7 @@ import { darkTheme, lightTheme } from "./uno-radix-colors";
 import transformerCompileClass from "@unocss/transformer-compile-class";
 
 export default defineConfig<Theme>({
+  include: [/\.(tsx|mdx)($|\?)/],
   rules,
   shortcuts,
   safelist: [
@@ -29,6 +30,7 @@ export default defineConfig<Theme>({
     "c-purple9",
     "c-indigo9",
     "c-tomato11",
+    "c-crimson11",
     "bg-grayA-9",
   ],
   transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: "clx-" })],
