@@ -109,7 +109,7 @@ export const shortcuts: UserShortcuts = [
     ac: "items-center",
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
-    "btn-disabled": "!c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed",
+    "btn-disabled": "!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed",
     "btn-common": "b-1 text-xl fw-700 px-6 py-2 rd-xl cursor-pointer",
     "btn-prm":
       "btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)",

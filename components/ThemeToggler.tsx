@@ -9,16 +9,16 @@ const textMap = {
   system: "تم سیستم",
 };
 const iconMap = {
-  light: "i-ph-circle-half",
+  light: "i-ph-sun",
   dark: "i-ph-moon",
-  system: "i-ph-circle-half",
 };
 const ThemeToggler = ({ hasText = true, ...props }: { hasText?: boolean } & HTMLAttributes<HTMLButtonElement>) => {
   const { theme, resolvedTheme, toggleTheme, hasMountedInBrowser } = useColorScheme();
 
+  console.log("🚀 ~ resolvedTheme:", resolvedTheme)
   return (
     <button onClick={(e) => toggleTheme()} {...props} title={textMap[hasMountedInBrowser ? theme : "system"]}>
-      <Icon name={iconMap[resolvedTheme ?? "light"]} className={hasText ? "opacity-50" : ""} />
+      <Icon name={iconMap[resolvedTheme]} className={hasText ? "opacity-50" : ""} />
       {hasText && <span>{textMap[hasMountedInBrowser ? theme : "system"]}</span>}
     </button>
   );

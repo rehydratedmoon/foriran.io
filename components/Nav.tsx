@@ -42,13 +42,21 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
         برو به بخش اصلی صفحه
       </a>
       <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
-        <NavLink href="/safety" icon=" bf-i-ph-first-aid-kit" {...navLinkProps}>
+        <NavLink
+          href="/safety"
+          className=" bf-i-ph-first-aid-kit  data-[in-path]:bf-i-ph-first-aid-kit-fill "
+          {...navLinkProps}
+        >
           ایمنی
         </NavLink>
-        <NavLink href="/fight" icon=" bf-i-ph-lightning " {...navLinkProps}>
+        <NavLink href="/fight" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
           نبرد
         </NavLink>
-        <NavLink href="/terms" icon=" bf-i-ph-book-bookmark " {...navLinkProps}>
+        <NavLink
+          href="/terms"
+          className=" bf-i-ph-book-bookmark data-[in-path]:bf-i-ph-book-bookmark-fill "
+          {...navLinkProps}
+        >
           واژه‌ه‌نامه
         </NavLink>
       </div>
@@ -68,7 +76,6 @@ export default Nav;
 //         </Lnk>
 type NavLinkProps = {
   children?: React.ReactNode;
-  icon: string;
   href: string;
   className?: string;
   [key: string]: any;
@@ -76,7 +83,11 @@ type NavLinkProps = {
 
 const NavLink = ({ children, icon, href, className, ...props }: NavLinkProps) => {
   return (
-    <Lnk href={href} className={`in-sub-path:underline ${icon} ls-tighter  ${className}`} {...props}>
+    <Lnk
+      href={href}
+      className={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100   ls-tighter  ${className}`}
+      {...props}
+    >
       {children}
     </Lnk>
   );

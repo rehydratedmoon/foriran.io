@@ -19,7 +19,7 @@ const useColorScheme = () => {
   let th: Theme = "system";
   if (theme === "dark") th = "dark";
   if (theme === "light") th = "light";
-  let rth: Theme = "system";
+  let rth: Theme = "light";
   if (resolvedTheme === "dark") rth = "dark";
   if (resolvedTheme === "light") rth = "light";
 
