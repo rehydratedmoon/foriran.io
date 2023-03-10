@@ -1,12 +1,11 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export type Theme = "light" | "dark" | "system";
+type Theme = "light" | "dark" | "system";
+const useColorScheme = () => {
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-const useColorScheme = (): { theme: Theme } & AnyProps => {
-  const { theme, setTheme } = useTheme();
-
-  const [hasMountedInBrowser, setHasMountedInBrowser] = useState(false);
+  const [hasMountedInBrowser, setHasMountedInBrowser] = useState<boolean>(false);
   useEffect(() => {
     setHasMountedInBrowser(true);
   }, []);
@@ -17,9 +16,14 @@ const useColorScheme = (): { theme: Theme } & AnyProps => {
     if (theme === "dark") setTheme("system");
   };
 
-  if (theme === "dark") return { theme: "dark", toggleTheme, setTheme, hasMountedInBrowser };
-  if (theme === "light") return { theme: "light", toggleTheme, setTheme, hasMountedInBrowser };
-  return { theme: "system", toggleTheme, setTheme, hasMountedInBrowser };
+  let th: Theme = "system";
+  if (theme === "dark") th = "dark";
+  if (theme === "light") th = "light";
+  let rth: Theme = "system";
+  if (resolvedTheme === "dark") rth = "dark";
+  if (resolvedTheme === "light") rth = "light";
+
+  return { theme: th, resolvedTheme: rth, toggleTheme, setTheme, hasMountedInBrowser };
 };
 
 export default useColorScheme;

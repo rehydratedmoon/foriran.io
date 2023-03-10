@@ -14,11 +14,11 @@ const iconMap = {
   system: "i-ph-circle-half",
 };
 const ThemeToggler = ({ hasText = true, ...props }: { hasText?: boolean } & HTMLAttributes<HTMLButtonElement>) => {
-  const { theme, toggleTheme, hasMountedInBrowser } = useColorScheme();
+  const { theme, resolvedTheme, toggleTheme, hasMountedInBrowser } = useColorScheme();
 
   return (
     <button onClick={(e) => toggleTheme()} {...props} title={textMap[hasMountedInBrowser ? theme : "system"]}>
-      <Icon name={iconMap[hasMountedInBrowser ? theme : "system"]} className={hasText ? 'opacity-50' : ''} />
+      <Icon name={iconMap[resolvedTheme ?? "light"]} className={hasText ? "opacity-50" : ""} />
       {hasText && <span>{textMap[hasMountedInBrowser ? theme : "system"]}</span>}
     </button>
   );
