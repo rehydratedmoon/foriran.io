@@ -19,6 +19,7 @@ import Head from "next/head";
 import ThemeToggler from "@/components/ThemeToggler";
 import Icon from "@/components/Icon";
 import PWAProvider from "@/components/PWAProvider";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
@@ -64,7 +65,9 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
               <div className="grid sm:mis-60 min-h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
                 <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
                 <main id="main-content" className="p-4  pb-14  h-full">
-                  <Component {...pageProps} />
+                  <PageLayout>
+                    <Component {...pageProps} />
+                  </PageLayout>
                 </main>
                 <Footer />
               </div>
@@ -78,7 +81,20 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
 
 export default MyApp;
 
- type SideMenuProps = {
+const PageLayout = ({ children }: Children) => {
+  const router = useRouter();
+
+  if (router.asPath.startsWith("/posts/")) {
+    return (
+      <article className="article__wrapper">
+          <>{children}</>
+      </article>
+    );
+  }
+  return <>{children}</>;
+};
+
+type SideMenuProps = {
   isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };

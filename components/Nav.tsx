@@ -43,17 +43,17 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
       </a>
       <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
         <NavLink
-          href="/safety"
+          href="/posts/safety"
           className=" bf-i-ph-shield-plus  data-[in-path]:bf-i-ph-shield-plus-fill "
           {...navLinkProps}
         >
           ایمنی
         </NavLink>
-        <NavLink href="/fight" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
+        <NavLink href="/posts/fight" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
           نبرد
         </NavLink>
         <NavLink
-          href="/terms"
+          href="/posts/terms"
           className=" bf-i-ph-book-bookmark data-[in-path]:bf-i-ph-book-bookmark-fill "
           {...navLinkProps}
         >
