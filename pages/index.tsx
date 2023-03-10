@@ -24,12 +24,12 @@ const Page = () => {
         {/*    آگاهی + کنش‌گری + نبرد ← ایرانی آزاد*/}
         {/*  </p>*/}
         {/*</div>*/}
-        <h1 className="unstyled gradient-effect font-family-heading fs-5xl  ">
+        <h1 className="unstyled gradient-effect font-family-heading fs-5xl sm:fs-7xl ">
           <span className="block leading-1em px-1 ">دسترسی بهتر</span>
-          <span className="block leading-1em px-1 pb-20">به اطلاعات مهم</span>
+          <span className="block leading-1em px-1 pb-5 sm:pb-10">به اطلاعات مهم</span>
         </h1>
 
-        <p className="mt-6 c-gray11">
+        <p className=" c-gray11">
           <strong className="fw-400"> «برای ایران» </strong>
           تلاشی است برای گردآوری، دسترسی‌پذیر و جستجو پذیر کردن
           <br />

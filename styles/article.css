@@ -1,6 +1,15 @@
-
 figcaption {
   text-align: center;
   color: var(--rdx-colors-gray-11);
   font-style: italic;
+}
+
+.article h1:not([class]) {
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 641px) {
+  .article h1:not([class]) {
+    font-size: 4.5rem;
+  }
 }
