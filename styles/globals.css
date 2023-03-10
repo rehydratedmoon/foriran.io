@@ -121,7 +121,7 @@ h6,
     transform: translateX(110vw);
     will-change: transform;
     transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
-      visibility 0s linear var(--side-menu-transition-time);
+      visibility var(--side-menu-transition-time)  linear;
   }
   .sidebar.drawer-open {
     visibility: visible;
