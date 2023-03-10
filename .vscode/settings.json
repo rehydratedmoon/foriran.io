@@ -19,5 +19,8 @@
     "titleBar.inactiveBackground": "#6166a099",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#6166a0"
+  "peacock.color": "#6166a0",
+  "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.framework.startCommand": "pnpm dev",
+  "frontMatter.preview.host": "http://localhost:3000/posts/safety"
 }
