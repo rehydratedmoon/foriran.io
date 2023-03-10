@@ -85,7 +85,7 @@ const NavLink = ({ children, icon, href, className, ...props }: NavLinkProps) =>
   return (
     <Lnk
       href={href}
-      className={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100   ls-tighter  ${className}`}
+      className={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100 fw-500  ls-tighter  ${className}`}
       {...props}
     >
       {children}

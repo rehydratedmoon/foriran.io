@@ -147,14 +147,23 @@ h6,
 }
 
 /* typography  */
-h1:not(.unstyled) {
+h1:not([class]) {
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 3rem;
   /* letter-spacing: -0.015em; */
-  width: fit-content;
-  color: var(--rdx-colors-violet-12);
+  /* width: fit-content; */
+  color: var(--rdx-colors-prm-11);
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--rdx-colors-gray-6);
+  margin-bottom: 3em;
+}
+
+@media screen and (min-width: 641px) {
+  .article h1:not([class]) {
+    font-size: 4.5rem;
+  }
 }
 
 h2:not(.unstyled) {
@@ -196,11 +205,23 @@ p a {
   text-decoration-line: underline;
 }
 
+figure img {
+  width: 100%;
+  max-width: 100%;
+}
+figcaption {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+  color: var(--rdx-colors-gray-11);
+  font-style: italic;
+}
+
 .gradient-effect {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent !important;
-  background-image: var(--gradient) ;
+  background-image: var(--gradient);
 }
 
 :root {
@@ -219,14 +240,14 @@ p a {
     90deg,
     var(--rdx-colors-violet-9) 0%,
     var(--rdx-colors-purple-9) 50%,
-    var(--rdx-colors-plum-9) 100%,
+    var(--rdx-colors-plum-9) 100%
   );
 }
 
-.gradient { 
+.gradient {
   background-image: var(--gradient);
 }
-.gradient-sm { 
+.gradient-sm {
   background-image: var(--gradient-sm);
 }
 
