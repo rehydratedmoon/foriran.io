@@ -3,7 +3,7 @@ import "@unocss/reset/tailwind.css";
 import "@/styles/reset.css";
 import "uno.css";
 import "@/styles/globals.css";
-import "@/styles/article.css";
+import "@/styles/article.scss";
 import "@/public/fonts/estedad/css/estedad.css";
 import "@/public/fonts/onvan/css/onvan.css";
 

@@ -1,8 +1,3 @@
-const nextMDX = require("@next/mdx");
-// const  remarkGfm =  require( "remark-gfm");
-// const  remarkParse =  require( "remark-parse");
-// const  remarkRehype =  require( "remark-rehype");
-// const  rehypeStringify =  require( "rehype-stringify");
 const rehypeAddClasses = require("rehype-add-classes");
 
 const withMDX = require("@next/mdx")({
@@ -20,6 +15,9 @@ const withMDX = require("@next/mdx")({
           figure: "w-full max-w-full",
           figcaption: "mt-4 mb-8 text-center c-gray11 italic",
           p: "mt-1em",
+          video: "max-w-full w-full",
+          img: "max-w-full w-full",
+          iframe: "max-w-full w-full",
         },
       ],
     ],
@@ -53,6 +51,7 @@ const nextConfig = {
     );
     return config;
   },
+
   pageExtensions: ["tsx", "md", "rtl.md", "rtl.mdx", "js", "jsx", "mdx"],
 };
 

@@ -40,6 +40,8 @@ specifiers:
   react-markdown: ^8.0.5
   rehype-add-classes: ^1.0.0
   remark-frontmatter: ^4.0.1
+  sass: ^1.58.3
+  scss: ^0.2.4
   typescript: ^4.9.5
   unocss-preset-theme: ^0.3.1
   webpack: ^5.75.0
@@ -54,7 +56,7 @@ dependencies:
   contentlayer: 0.3.0
   eslint: 8.33.0
   eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
-  next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+  next: 13.2.4_wiv434v7erz4aedd5whhdwmpv4
   next-contentlayer: 0.3.0_ld2jel3hspngo3u5lti2kgl2sq
   next-pwa: 5.6.0_next@13.2.4+webpack@5.75.0
   next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
@@ -86,6 +88,8 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.33.0
   husky: 8.0.3
   prettier: 2.8.3
+  sass: 1.58.3
+  scss: 0.2.4
   typescript: 4.9.5
   unocss-preset-theme: 0.3.1
   webpack: 5.75.0
@@ -8694,6 +8698,9 @@ packages:
     resolution: {integrity: sha512-eY+Y0qcsB4TZKwgQzLaE/lqYMlKhv5J9dyd2RhhtGhNo2njPXDqU9XPfcNfa3MIDsdtZt5KlkIsirlo4dHsWdQ==}
     dev: true
 
+  /immutable/4.3.0:
+    resolution: {integrity: sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==}
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -10870,7 +10877,7 @@ packages:
     dependencies:
       '@contentlayer/core': 0.3.0
       '@contentlayer/utils': 0.3.0
-      next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+      next: 13.2.4_wiv434v7erz4aedd5whhdwmpv4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
@@ -10887,7 +10894,7 @@ packages:
       babel-loader: 8.3.0_webpack@5.75.0
       clean-webpack-plugin: 4.0.0_webpack@5.75.0
       globby: 11.1.0
-      next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+      next: 13.2.4_wiv434v7erz4aedd5whhdwmpv4
       terser-webpack-plugin: 5.3.6_webpack@5.75.0
       workbox-webpack-plugin: 6.5.4_webpack@5.75.0
       workbox-window: 6.5.4
@@ -10908,12 +10915,12 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+      next: 13.2.4_wiv434v7erz4aedd5whhdwmpv4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /next/13.2.4_biqbaboplfbrettd7655fr4n2y:
+  /next/13.2.4_wiv434v7erz4aedd5whhdwmpv4:
     resolution: {integrity: sha512-g1I30317cThkEpvzfXujf0O4wtaQHtDCLhlivwlTJ885Ld+eOgcz7r3TGQzeU+cSRoNHtD8tsJgzxVdYojFssw==}
     engines: {node: '>=14.6.0'}
     hasBin: true
@@ -10940,6 +10947,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      sass: 1.58.3
       styled-jsx: 5.1.1_react@18.2.0
     optionalDependencies:
       '@next/swc-android-arm-eabi': 13.2.4
@@ -11255,6 +11263,11 @@ packages:
       node-fetch-native: 1.0.1
       ufo: 1.0.1
       undici: 5.16.0
+    dev: true
+
+  /ometa/0.2.2:
+    resolution: {integrity: sha512-LZuoK/yjU3FvrxPjUXUlZ1bavCfBPqauA7fsNdwi+AVhRdyk2IzgP3JRnevvjzQ6fKHdUw8YISshf53FmpHrng==}
+    engines: {node: '>= 0.2.0'}
     dev: true
 
   /on-finished/2.4.1:
@@ -12877,6 +12890,15 @@ packages:
       postcss: 8.4.21
     dev: true
 
+  /sass/1.58.3:
+    resolution: {integrity: sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.0
+      source-map-js: 1.0.2
+
   /scheduler/0.20.2:
     resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
     dependencies:
@@ -12915,6 +12937,13 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1
       ajv-keywords: 5.1.0_ajv@8.12.0
+    dev: true
+
+  /scss/0.2.4:
+    resolution: {integrity: sha512-4u8V87F+Q/upVhUmhPnB4C1R11xojkRkWjExL2v0CX2EXTg18VrKd+9JWoeyCp2VEMdSpJsyAvVU+rVjogh51A==}
+    engines: {node: '>= 0.2.0'}
+    dependencies:
+      ometa: 0.2.2
     dev: true
 
   /section-matter/1.0.0:
