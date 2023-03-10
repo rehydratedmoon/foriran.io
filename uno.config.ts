@@ -49,6 +49,9 @@ export default defineConfig<Theme>({
   theme: {
     fontSize,
     colors: lightTheme.colors,
+    breakpoints: {
+      sm: "40rem",
+    },
   },
   presets: [
     presetUno({

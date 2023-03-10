@@ -79,7 +79,7 @@ h6,
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
   .sidebar {
     grid-area: main;
   }
@@ -97,7 +97,7 @@ h6,
   min-width: calc(var(--sidebar-width) * 0.8);
 } */
 
-@media (min-width: 641px) {
+@media (min-width: 40.01rem) {
   .sidebar {
     position: fixed;
     top: 0;
@@ -108,7 +108,7 @@ h6,
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
   .sidebar {
     position: fixed;
     inset-block: 0;
@@ -136,12 +136,12 @@ h6,
   -moz-appearance: textfield;
 } */
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 40rem) {
   .desktop-only {
     display: none;
   }
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 40.01rem) {
   .mobile-only {
     display: none;
   }
