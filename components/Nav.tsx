@@ -49,15 +49,18 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
         >
           ایمنی
         </NavLink>
-        <NavLink href="/posts/fight" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
+        {/* <NavLink href="/posts/fight" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
           نبرد
-        </NavLink>
+        </NavLink> */}
         <NavLink
           href="/posts/terms"
           className=" bf-i-ph-book-bookmark data-[in-path]:bf-i-ph-book-bookmark-fill "
           {...navLinkProps}
         >
           واژه‌ه‌نامه
+        </NavLink>
+        <NavLink href="/posts/oppression-methods" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
+          تکنیک‌های سرکوب
         </NavLink>
       </div>
       <div className="mt-auto flex flex-col gap-6">
