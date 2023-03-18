@@ -12,28 +12,13 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
   const navLinkProps = { onClick: closeMenu };
   return (
     <nav className={className}>
-      {/* <Lnk
-        href="/"
-        className="no-underline font-family-heading  leading-none ls-tighter display-none sm:flex gap-2.4 ac text-xl"
-        title="Home"
-      >
-        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 translate-y-0.5 translate-x-1" />
-        <div className="lh-4">
-          <span className="fw-400 c-gray12  ">بـرای </span>
-          <br />
-          <span className="fw-400 c-gray12  "> ایـــران</span>
-        </div>
-      </Lnk> */}
 
       <Lnk href="/" className="no-underline  display-none sm:flex gap-4 ac text-xl" title="صفحه خانه">
-        <img src="/logo.svg" alt="برای ایران" className="w-6 h-6  translate-x-0.5" />
-        <span className="fw-700 c-violet12 font-family-heading -translate-y-0.3  leading-none ls-tighter ">
+        {/* <img src="/images/derafsh.svg" alt="برای ایران" className="w-8 h-8 translate-x-0.5 dark:filter-invert" /> */}
+        <span aria-hidden="true" className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">
           برای ایــران{" "}
         </span>
-        {/* <div className="lh-4">
-          <span className="fw-400 c-violet12 font-family-heading leading-none ls-tighter  ">برای </span>
-          <span className="fw-400 c-violet12 font-family-heading leading-none ls-tighter "> ایــران</span>
-        </div> */}
+        <span className="sr-only">برای ایران</span>
       </Lnk>
       <a
         href={router.asPath + "#main-content"}
@@ -44,7 +29,7 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
       <div className="mt-15 sm:mt-10  flex flex-col gap-6 mb-auto">
         <NavLink
           href="/posts/safety"
-          className=" bf-i-ph-shield-plus  data-[in-path]:bf-i-ph-shield-plus-fill "
+          className=" bf-i-ph-shield-plus-thin  data-[in-path]:bf-i-ph-shield-plus-fill "
           {...navLinkProps}
         >
           ایمنی
@@ -54,12 +39,16 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
         </NavLink> */}
         <NavLink
           href="/posts/terms"
-          className=" bf-i-ph-book-bookmark data-[in-path]:bf-i-ph-book-bookmark-fill "
+          className=" bf-i-ph-book-bookmark-thin data-[in-path]:bf-i-ph-book-bookmark-fill "
           {...navLinkProps}
         >
           واژه‌ه‌نامه
         </NavLink>
-        <NavLink href="/posts/oppression-methods" className=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
+        <NavLink
+          href="/posts/oppression-methods"
+          className=" bf-i-ph-lightning-thin data-[in-path]:bf-i-ph-lightning-fill"
+          {...navLinkProps}
+        >
           تکنیک‌های سرکوب
         </NavLink>
       </div>

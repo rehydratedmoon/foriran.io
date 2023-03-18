@@ -87,7 +87,7 @@ const PageLayout = ({ children }: Children) => {
   if (router.asPath.startsWith("/posts/")) {
     return (
       <article className="article__wrapper">
-          <>{children}</>
+        <>{children}</>
       </article>
     );
   }
@@ -117,8 +117,11 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
             className="py-2  leading-none text-lg ls-tight flex gap-2 ac c-orange10 sm:display-none lh-5  "
             aria-hidden="true"
           >
-            <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block " />
-            <span className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">برای ایــران </span>
+            {/* <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block " /> */}
+            <span aria-hidden="true" className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">
+              برای ایــران{" "}
+            </span>
+            <span className="sr-only">برای ایران</span>
           </Lnk>
         </div>
         <div className="flex ac justify-end ">

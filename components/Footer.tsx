@@ -16,7 +16,7 @@ const Footer = () => {
           >
             {/* <img src="/logo.svg" alt="برای ایران" className="w-4 h-4 inline-block  translate-y-0.5  " /> */}
             <span aria-hidden="true" className="fw-700 text-sm c-gray10 font-family-heading   leading-none ls-tighter ">
-              برای ایــران
+              <span aria-hidden="true">برای ایــران</span>
               <span className="sr-only">برای ایران</span>
             </span>
           </Link>
