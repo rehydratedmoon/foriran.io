@@ -1,99 +1,119 @@
-import type { Rule, UserShortcuts } from "@unocss/core";
+import type {Rule, UserShortcuts} from "@unocss/core";
+
+const btnRules = {
+  "btn-disabled": "!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed",
+  "btn-common": "b-1 text-xl fw-700 px-6 py-2 rd-xl cursor-pointer",
+  "btn-prm":
+    "btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)",
+  "btn-prm-grd":
+    "btn-common b-transparent bg-gradient-to-l from-blue9 to-indigo9 c-white  hover:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) focus-visible:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) active:(bg-prm11 bg-gradient-to-l from-violet11 to-purple11) disabled:(btn-disabled)",
+  btn: " btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray10) focus-visible:(bg-gray10 b-gray10) active:(bg-gray11 b-gray11) disabled:(btn-disabled)",
+  "btn-ghost-prm":
+    "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+  "btn-ghost":
+    "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
+  "btn-link-prm":
+    "btn-common b-transparent c-prm11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)",
+  "btn-text":
+    "btn-common b-transparent bg-transparent c-gray12 hover:(bg-gray2 b-gray2) focus-visible:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
+  "btn-danger":
+    "btn-common b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus-visible:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)",
+}
 
 export const rules: Rule[] = [
   // font size utility classes without affecting line height
-  ["fs-2xs", { "font-size": "0.6rem" }],
-  ["fs-xs", { "font-size": "0.75rem" }],
-  ["fs-sm", { "font-size": "0.875rem" }],
-  ["fs-md", { "font-size": "1rem" }],
-  ["fs-base", { "font-size": "1rem" }],
-  ["fs-lg", { "font-size": "1.125rem" }],
-  ["fs-xl", { "font-size": "1.25rem" }],
-  ["fs-2xl", { "font-size": "1.5rem" }],
-  ["fs-3xl", { "font-size": "1.875rem" }],
-  ["fs-4xl", { "font-size": "2.25rem" }],
-  ["fs-5xl", { "font-size": "3rem" }],
-  ["fs-6xl", { "font-size": "3.75rem" }],
-  ["fs-7xl", { "font-size": "4.5rem" }],
-  ["fs-8xl", { "font-size": "6rem" }],
-  ["fs-9xl", { "font-size": "8rem" }],
+  ["fs-2xs", {"font-size": "0.6rem"}],
+  ["fs-xs", {"font-size": "0.75rem"}],
+  ["fs-sm", {"font-size": "0.875rem"}],
+  ["fs-md", {"font-size": "1rem"}],
+  ["fs-base", {"font-size": "1rem"}],
+  ["fs-lg", {"font-size": "1.125rem"}],
+  ["fs-xl", {"font-size": "1.25rem"}],
+  ["fs-2xl", {"font-size": "1.5rem"}],
+  ["fs-3xl", {"font-size": "1.875rem"}],
+  ["fs-4xl", {"font-size": "2.25rem"}],
+  ["fs-5xl", {"font-size": "3rem"}],
+  ["fs-6xl", {"font-size": "3.75rem"}],
+  ["fs-7xl", {"font-size": "4.5rem"}],
+  ["fs-8xl", {"font-size": "6rem"}],
+  ["fs-9xl", {"font-size": "8rem"}],
   // line height utility classes
-  ["lh-2xs", { "line-height": "calc( var(--light-height) * 0.7)" }],
-  ["lh-xs", { "line-height": "calc( var(--light-height) * 0.8)" }],
-  ["lh-sm", { "line-height": "calc( var(--light-height) * 0.9)" }],
-  ["lh-md", { "line-height": "var(--light-height)" }],
-  ["lh-base", { "line-height": "var(--light-height)" }],
-  ["lh-lg", { "line-height": "calc( var(--light-height) * 1.1)" }],
-  ["lh-xl", { "line-height": "calc( var(--light-height) * 1.2)" }],
-  ["lh-2xl", { "line-height": "calc( var(--light-height) * 1.3)" }],
-  ["lh-3xl", { "line-height": "calc( var(--light-height) * 1.4)" }],
-  ["lh-4xl", { "line-height": "calc( var(--light-height) * 1.5)" }],
-  ["lh-5xl", { "line-height": "calc( var(--light-height) * 1.6)" }],
-  ["lh-6xl", { "line-height": "calc( var(--light-height) * 1.7)" }],
-  ["lh-7xl", { "line-height": "calc( var(--light-height) * 1.8)" }],
-  ["lh-8xl", { "line-height": "calc( var(--light-height) * 1.9)" }],
-  ["lh-9xl", { "line-height": "calc( var(--light-height) * 2)" }],
+  ["lh-2xs", {"line-height": "calc( var(--light-height) * 0.7)"}],
+  ["lh-xs", {"line-height": "calc( var(--light-height) * 0.8)"}],
+  ["lh-sm", {"line-height": "calc( var(--light-height) * 0.9)"}],
+  ["lh-md", {"line-height": "var(--light-height)"}],
+  ["lh-base", {"line-height": "var(--light-height)"}],
+  ["lh-lg", {"line-height": "calc( var(--light-height) * 1.1)"}],
+  ["lh-xl", {"line-height": "calc( var(--light-height) * 1.2)"}],
+  ["lh-2xl", {"line-height": "calc( var(--light-height) * 1.3)"}],
+  ["lh-3xl", {"line-height": "calc( var(--light-height) * 1.4)"}],
+  ["lh-4xl", {"line-height": "calc( var(--light-height) * 1.5)"}],
+  ["lh-5xl", {"line-height": "calc( var(--light-height) * 1.6)"}],
+  ["lh-6xl", {"line-height": "calc( var(--light-height) * 1.7)"}],
+  ["lh-7xl", {"line-height": "calc( var(--light-height) * 1.8)"}],
+  ["lh-8xl", {"line-height": "calc( var(--light-height) * 1.9)"}],
+  ["lh-9xl", {"line-height": "calc( var(--light-height) * 2)"}],
   // letter spacing utility classes
-  ["ls-tightest", { "letter-spacing": "-0.025em" }],
-  ["ls-tighter", { "letter-spacing": "-0.0125em" }],
-  ["ls-tight", { "letter-spacing": "-0.00625em" }],
-  ["ls-normal", { "letter-spacing": "0" }],
-  ["ls-wide", { "letter-spacing": "0.00625em" }],
-  ["ls-wider", { "letter-spacing": "0.0125em" }],
-  ["ls-widest", { "letter-spacing": "0.025em" }],
-  ["rel", { position: "relative" }],
-  ["abs", { position: "absolute" }],
-  ["text-2xs", { "font-size": "0.6rem", "line-height": "1.25rem" }],
-  ["max-w-article", { "max-width": "60ch" }],
-  ["max-w-page", { "max-width": "100rem" }],
-  ["grd", { "background-image": "var(--gradient)" }],
-  ["grd-sm", { "background-image": "var(--gradient-sm)" }],
-  [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
+  ["ls-tightest", {"letter-spacing": "-0.025em"}],
+  ["ls-tighter", {"letter-spacing": "-0.0125em"}],
+  ["ls-tight", {"letter-spacing": "-0.00625em"}],
+  ["ls-normal", {"letter-spacing": "0"}],
+  ["ls-wide", {"letter-spacing": "0.00625em"}],
+  ["ls-wider", {"letter-spacing": "0.0125em"}],
+  ["ls-widest", {"letter-spacing": "0.025em"}],
+  ["rel", {position: "relative"}],
+  ["abs", {position: "absolute"}],
+  ["text-2xs", {"font-size": "0.6rem", "line-height": "1.25rem"}],
+  ["max-w-article", {"max-width": "60ch"}],
+  ["max-w-page", {"max-width": "100rem"}],
+  ["grd", {"background-image": "var(--gradient)"}],
+  ["grd-sm", {"background-image": "var(--gradient-sm)"}],
+  [/^content-(.*)$/, ([, cnt]) => ({content: `"${cnt}"`})],
   [
     /^grid-min-col-(.*)$/,
-    ([, minColWidth]) => ({ "grid-template-columns": `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),
+    ([, minColWidth]) => ({"grid-template-columns": `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))`}),
   ],
-  [/^g-auto-rows-\[(.*)\]$/, ([, val]) => ({ "grid-auto-rows": val })],
-  [/^g-auto-flow-\[(.*)\]$/, ([, val]) => ({ "grid-auto-flow": val })],
-  [/^g-auto-cols-\[(.*)\]$/, ([, val]) => ({ "grid-auto-columns": val })],
-  [/^g-area-\[(.*)\]$/, ([, val]) => ({ "grid-area": val })],
-  [/^g-row-\[(.*)\]$/, ([, val]) => ({ "grid-row": val })],
-  [/^g-col-\[(.*)\]$/, ([, val]) => ({ "grid-column": val })],
+  [/^g-auto-rows-\[(.*)\]$/, ([, val]) => ({"grid-auto-rows": val})],
+  [/^g-auto-flow-\[(.*)\]$/, ([, val]) => ({"grid-auto-flow": val})],
+  [/^g-auto-cols-\[(.*)\]$/, ([, val]) => ({"grid-auto-columns": val})],
+  [/^g-area-\[(.*)\]$/, ([, val]) => ({"grid-area": val})],
+  [/^g-row-\[(.*)\]$/, ([, val]) => ({"grid-row": val})],
+  [/^g-col-\[(.*)\]$/, ([, val]) => ({"grid-column": val})],
   // [/^g-areas-\[(.*)\]$/, ([, val]) => ({ "grid-template-areas": val })],
   [
     /^g-cols-\[(.*)\]$/,
     ([, val]) => {
       const cols = val
-        .trim()
-        .split("|")
-        .map((col) => col.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
-        .map((v) => `${v.trim()}`)
-        .join(" ");
-      return { "grid-template-columns": cols };
+      .trim()
+      .split("|")
+      .map((col) => col.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+      .map((v) => `${v.trim()}`)
+      .join(" ");
+      return {"grid-template-columns": cols};
     },
   ],
   [
     /^g-rows-\[(.*)\]$/,
     ([, val]) => {
       const rows = val
-        .trim()
-        .split("|")
-        .map((row) => row.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
-        .map((v) => `${v.trim()}`)
-        .join(" ");
-      return { "grid-template-rows": rows };
+      .trim()
+      .split("|")
+      .map((row) => row.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+      .map((v) => `${v.trim()}`)
+      .join(" ");
+      return {"grid-template-rows": rows};
     },
   ],
   [
     /^g-areas-\[(.*)\]$/,
     ([, val]) => {
       const areas = val
-        .trim()
-        .split("|")
-        .map((area) => area.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
-        .map((v) => `'${v.trim()}'`)
-        .join(" ");
-      return { "grid-template-areas": areas };
+      .trim()
+      .split("|")
+      .map((area) => area.replaceAll(``, "").replaceAll(`'`, "").replaceAll("_", " ").trim())
+      .map((v) => `'${v.trim()}'`)
+      .join(" ");
+      return {"grid-template-areas": areas};
     },
   ],
 ];
@@ -109,23 +129,7 @@ export const shortcuts: UserShortcuts = [
     ac: "items-center",
     "tab-link": "b rd-lg text-center  px-4 py-2 hover:(b-orange7 c-orange11) data-[in-path]:(b-orange7 c-orange11)",
     "tab-radix": "b b-orange6 c-orange11 rd-2xl hover:(b-orange7 c-orange12)  data-[state=active]:(bg-orange3)",
-    "btn-disabled": "!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed",
-    "btn-common": "b-1 text-xl fw-700 px-6 py-2 rd-xl cursor-pointer",
-    "btn-prm":
-      "btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)",
-    "btn-prm-grd":
-      "btn-common b-transparent bg-gradient-to-l from-violet9 to-purple9  bg-prm9 c-white  hover:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) focus-visible:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) active:(bg-prm11 bg-gradient-to-l from-violet11 to-purple11) disabled:(btn-disabled)",
-    btn: " btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray10) focus-visible:(bg-gray10 b-gray10) active:(bg-gray11 b-gray11) disabled:(btn-disabled)",
-    "btn-ghost-prm":
-      "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
-    "btn-ghost":
-      "btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)",
-    "btn-link-prm":
-      "btn-common b-transparent c-prm11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)",
-    "btn-text":
-      "btn-common b-transparent bg-transparent c-gray12 hover:(bg-gray2 b-gray2) focus-visible:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)",
-    "btn-danger":
-      "btn-common b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus-visible:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)",
+    ...btnRules,
     "snack-common":
       "text-sm b-1.5  b-r-6  rd-xl p-4 pis-12 rel isolate before:text-base before:inline-block before:content-none before:vertical-text-top before:absolute before:top-5 before:right-4",
     "snack-info": "snack-common b-blue7 bg-blue3 c-blue11 before:i-ph-info",
@@ -198,3 +202,4 @@ export const fontSize: Record<string, string | [string, string]> = {
   "9xl": ["8rem", "1.5"],
   // "9xl": ["1.25rem", "1"], // tailwinds default
 };
+

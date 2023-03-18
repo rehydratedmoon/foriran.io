@@ -29,13 +29,27 @@
   }
 
   h2:not(.unstyled) {
-    font-size: 2.25rem;
-    line-height: 4rem;
+    font-size: 1.875rem;
+    line-height: 3.5rem;
     letter-spacing: -0.0125em;
     font-weight: 900;
     line-height: 1.5;
     width: fit-content;
     color: var(--rdx-colors-prm-11);
+
+    display: flex;
+    gap: 1rem;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+  }
+
+  h2:not(.unstyled)::after {
+    content: "";
+    flex: 1;
+    background-color: currentColor;
+    height: 1px;
+    opacity: 50%;
   }
 
   h3:not(.unstyled) {
@@ -45,6 +59,7 @@
     width: fit-content;
     color: var(--rdx-colors-prm-12);
   }
+
   h4:not(.unstyled) {
     font-weight: 400;
     font-size: 1.5rem;
@@ -76,8 +91,7 @@
     width: 100%;
   }
 
-  iframe:not([class])[src^="https://www.youtube"]
-  {
+  iframe:not([class])[src^="https://www.youtube"] {
     aspect-ratio: 16/9;
   }
 }
