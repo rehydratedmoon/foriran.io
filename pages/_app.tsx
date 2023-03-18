@@ -7,11 +7,11 @@ import "@/styles/article.scss";
 import "@/public/fonts/estedad/css/estedad.css";
 import "@/public/fonts/onvan/css/onvan.css";
 
-import type { AppProps } from "next/app";
-import { QueryClientProvider, Hydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import type {AppProps} from "next/app";
+import {QueryClientProvider, Hydrate, DehydratedState, QueryClient} from "@tanstack/react-query";
+import {useState} from "react";
 import Lnk from "@/components/Lnk";
-import { ThemeProvider } from "next-themes";
+import {ThemeProvider} from "next-themes";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 
@@ -19,9 +19,9 @@ import Head from "next/head";
 import ThemeToggler from "@/components/ThemeToggler";
 import Icon from "@/components/Icon";
 import PWAProvider from "@/components/PWAProvider";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
-function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
+function MyApp({Component, pageProps}: AppProps<{ dehydratedState: DehydratedState }>) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
   const [queryClient] = useState(
@@ -46,30 +46,30 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
             <Head>
               {process.env.NEXT_PUBLIC_ENV !== "production" && (
                 <>
-                  <meta name="googlebot" content="noindex" />
-                  <meta name="robots" content="noindex" />
-                  <meta name="robots" content="nofollow" />
+                  <meta name="googlebot" content="noindex"/>
+                  <meta name="robots" content="noindex"/>
+                  <meta name="robots" content="nofollow"/>
                 </>
               )}
-              <link rel="manifest" href="/manifest.json" />
-              <meta property="og:title" content="" />
-              <meta property="og:description" content="About my website in one sentence" />
-              <meta charSet="UTF-8" />
-              <meta name="viewport" content="width=device-width" />
-              <meta property="og:site_name" content="For Iran" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link rel="manifest" href="/manifest.json"/>
+              <meta property="og:title" content=""/>
+              <meta property="og:description" content="About my website in one sentence"/>
+              <meta charSet="UTF-8"/>
+              <meta name="viewport" content="width=device-width"/>
+              <meta property="og:site_name" content="For Iran"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
-              <SideMenu {...{ isSideMenuOpen, setIsSideMenuOpen }} />
-              <div className="grid sm:mis-60 min-h-full" style={{ gridTemplateRows: "auto 1fr auto" }}>
-                <Header {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+              <SideMenu {...{isSideMenuOpen, setIsSideMenuOpen}} />
+              <div className="grid sm:mis-60 min-h-full" style={{gridTemplateRows: "auto 1fr auto"}}>
+                <Header {...{isSideMenuOpen, setIsSideMenuOpen}} />
                 <main id="main-content" className="p-4  pb-14  h-full">
                   <PageLayout>
                     <Component {...pageProps} />
                   </PageLayout>
                 </main>
-                <Footer />
+                <Footer/>
               </div>
             </div>
           </ThemeProvider>
@@ -81,10 +81,10 @@ function MyApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedS
 
 export default MyApp;
 
-const PageLayout = ({ children }: Children) => {
+const PageLayout = ({children}: Children) => {
   const router = useRouter();
 
-  if (router.asPath.startsWith("/posts/")) {
+  if (router.asPath.startsWith("/posts/") || router.asPath === "/about-us") {
     return (
       <article className="article__wrapper">
         <>{children}</>
@@ -98,17 +98,17 @@ type SideMenuProps = {
   isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
+const Header = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
   return (
     <header className="px-4  sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
-      <div className="py-2 grid sm:display-none gap-1" style={{ gridTemplateColumns: "1fr 3fr 1fr" }}>
+      <div className="py-2 grid sm:display-none gap-1" style={{gridTemplateColumns: "1fr 3fr 1fr"}}>
         <div className="flex justify-start">
           <button
             className="sm:display-none py-2 opacity-90 flex ac"
             aria-label="باز کردن منو"
             onClick={() => setIsSideMenuOpen((state) => !state)}
           >
-            <Icon name="i-ph-list" alt="باز کردن منو" />
+            <Icon name="i-ph-list" alt="باز کردن منو"/>
           </button>
         </div>
         <div className="flex ac jc">
@@ -125,25 +125,25 @@ const Header = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
           </Lnk>
         </div>
         <div className="flex ac justify-end ">
-          <ThemeToggler hasText={false} className="opacity-90 flex ac" />
+          <ThemeToggler hasText={false} className="opacity-90 flex ac"/>
         </div>
       </div>
     </header>
   );
 };
 
-const SideMenu = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
+const SideMenu = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
   return (
     <>
-      <MobileSideMenuOverlay {...{ isSideMenuOpen, setIsSideMenuOpen }} />
+      <MobileSideMenuOverlay {...{isSideMenuOpen, setIsSideMenuOpen}} />
       <div className={`sidebar top-0 bg-gray1 p-4  z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
-        <Nav {...{ isSideMenuOpen, setIsSideMenuOpen }} className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 " />
+        <Nav {...{isSideMenuOpen, setIsSideMenuOpen}} className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 "/>
       </div>
     </>
   );
 };
 
-const MobileSideMenuOverlay = ({ isSideMenuOpen, setIsSideMenuOpen }: SideMenuProps) => {
+const MobileSideMenuOverlay = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
   return (
     <div
       className={`sm:display-none fixed z-20 inset-0 bg-grayA-9 

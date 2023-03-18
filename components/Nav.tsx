@@ -1,15 +1,16 @@
 import Lnk from "@/components/Lnk";
 import ThemeToggler from "@/components/ThemeToggler";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
+
 type SideMenuProps = {
   isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideMenuProps) => {
+const Nav = ({className, isSideMenuOpen, setIsSideMenuOpen}: ClassName & SideMenuProps) => {
   const router = useRouter();
 
   const closeMenu = () => setIsSideMenuOpen(false);
-  const navLinkProps = { onClick: closeMenu };
+  const navLinkProps = {onClick: closeMenu};
   return (
     <nav className={className}>
 
@@ -53,7 +54,7 @@ const Nav = ({ className, isSideMenuOpen, setIsSideMenuOpen }: ClassName & SideM
         </NavLink>
       </div>
       <div className="mt-auto flex flex-col gap-6">
-        <ThemeToggler className="flex ac gap-4" />
+        <ThemeToggler className="flex ac gap-4"/>
       </div>
     </nav>
   );
@@ -73,11 +74,11 @@ type NavLinkProps = {
   [key: string]: any;
 };
 
-const NavLink = ({ children, icon, href, className, ...props }: NavLinkProps) => {
+const NavLink = ({children, icon, href, className, ...props}: NavLinkProps) => {
   return (
     <Lnk
       href={href}
-      className={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100 fw-500  ls-tighter  ${className}`}
+      className={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100 ls-tighter  ${className}`}
       {...props}
     >
       {children}
