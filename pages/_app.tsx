@@ -60,11 +60,11 @@ function MyApp({Component, pageProps}: AppProps<{ dehydratedState: DehydratedSta
               <meta name="viewport" content="width=device-width, initial-scale=1"/>
               <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
-            <div data-comment="side menu container" className="mx-auto max-w-page  h-full">
+            <div data-comment="side menu container" class="mx-auto max-w-page  h-full">
               <SideMenu {...{isSideMenuOpen, setIsSideMenuOpen}} />
-              <div className="grid sm:mis-60 min-h-full" style={{gridTemplateRows: "auto 1fr auto"}}>
+              <div class="grid sm:mis-60 min-h-full" style={{gridTemplateRows: "auto 1fr auto"}}>
                 <Header {...{isSideMenuOpen, setIsSideMenuOpen}} />
-                <main id="main-content" className="p-4  pb-14  h-full">
+                <main id="main-content" class="p-4  pb-14  h-full">
                   <PageLayout>
                     <Component {...pageProps} />
                   </PageLayout>
@@ -86,7 +86,7 @@ const PageLayout = ({children}: Children) => {
 
   if (router.asPath.startsWith("/posts/") || router.asPath === "/about-us") {
     return (
-      <article className="article__wrapper">
+      <article class="article__wrapper">
         <>{children}</>
       </article>
     );
@@ -98,62 +98,17 @@ type SideMenuProps = {
   isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const Header = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
-  return (
-    <header className="px-4  sm:px-0 bg-gray1  bg-blue4  sticky top-0 z-10 lt-sm:b-b-1 b-gray6">
-      <div className="py-2 grid sm:display-none gap-1" style={{gridTemplateColumns: "1fr 3fr 1fr"}}>
-        <div className="flex justify-start">
-          <button
-            className="sm:display-none py-2 opacity-90 flex ac"
-            aria-label="باز کردن منو"
-            onClick={() => setIsSideMenuOpen((state) => !state)}
-          >
-            <Icon name="i-ph-list" alt="باز کردن منو"/>
-          </button>
-        </div>
-        <div className="flex ac jc">
-          <Lnk
-            href="/"
-            className="py-2  leading-none text-lg ls-tight flex gap-2 ac c-orange10 sm:display-none lh-5  "
-            aria-hidden="true"
-          >
-            {/* <img src="/logo.svg" alt="برای ایران" className="w-6 h-6 inline-block " /> */}
-            <span aria-hidden="true" className="fw-700 c-violet12 font-family-heading   leading-none ls-tighter ">
-              برای ایــران{" "}
-            </span>
-            <span className="sr-only">برای ایران</span>
-          </Lnk>
-        </div>
-        <div className="flex ac justify-end ">
-          <ThemeToggler hasText={false} className="opacity-90 flex ac"/>
-        </div>
-      </div>
-    </header>
-  );
-};
+c
 
 const SideMenu = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
   return (
     <>
       <MobileSideMenuOverlay {...{isSideMenuOpen, setIsSideMenuOpen}} />
-      <div className={`sidebar top-0 bg-gray1 p-4  z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
-        <Nav {...{isSideMenuOpen, setIsSideMenuOpen}} className="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 "/>
+      <div class={`sidebar top-0 bg-gray1 p-4  z-30 w-sidebar  ${isSideMenuOpen && "drawer-open"} `}>
+        <Nav {...{isSideMenuOpen, setIsSideMenuOpen}} class="sm:b-ie-1 b-gray7 h-full flex flex-col gap-6 "/>
       </div>
     </>
   );
 };
 
-const MobileSideMenuOverlay = ({isSideMenuOpen, setIsSideMenuOpen}: SideMenuProps) => {
-  return (
-    <div
-      className={`sm:display-none fixed z-20 inset-0 bg-grayA-9 
-              transition-opacity duration-400 ease-in-out
-             ${isSideMenuOpen ? "opacity-100 select-none" : "opacity-0 pointer-events-none"}`}
-      title="Close Menu"
-      aria-label="Close Menu"
-      onClick={() => setIsSideMenuOpen(false)}
-    >
-      <span className="sr-only">بستن منو</span>
-    </div>
-  );
-};
+

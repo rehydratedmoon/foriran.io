@@ -3,7 +3,7 @@ import { GetAttributesValues } from "@strapi/strapi";
 declare global {
   type Attrs<T> = React.ComponentPropsWithoutRef<T>;
   export type Children = { children?: React.ReactNode };
-  type ClassName = { className?: string };
+  type class = { class?: string };
   type Stl = { style?: React.CSSProperties };
   type AnyProps = { [key: string]: any };
 
