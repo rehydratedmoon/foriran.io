@@ -16,7 +16,7 @@ export default defineConfig({
   integrations: [
     UnoCSS(),
     solidJs(),
-     preact(),
+    preact(),
     // Enable React for the Algolia search component.
     react(),
 

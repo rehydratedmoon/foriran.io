@@ -13,8 +13,8 @@ import GlobalLayout from '../layouts/GlobalLayout.astro';
         src='/images/banner.svg'
         alt=''
         class='w-full max-w-full max-w-min(100%,30rem) mx-auto px-10 dark:filter-invert dark:opacity-70'
-              width="500"
-          height="260"
+        width='500'
+        height='260'
       />
       <h1 class='unstyled font-family-heading text-12vw sm:text-7xl text-center'>
         <span class='block leading-1em px-1'>دسترسی بهتر</span>
@@ -64,7 +64,9 @@ import GlobalLayout from '../layouts/GlobalLayout.astro';
           <p>همه مطالب موجود در منوی کناری دسته‌بندی شده‌اند.</p>
           <p class=''>
             (در موبایل باید روی
-            <span class='i-ph-list !vertical-middle mx-2'>دکمه منو در بالا سمت راست</span>
+            <span class='i-ph-list !vertical-middle mx-2 inline-block'>
+              <span class='sr-only'> دکمه منو در بالا سمت راست</span>
+            </span>
             کلیک کنید تا منو را ببینید.)
           </p>
         </li>

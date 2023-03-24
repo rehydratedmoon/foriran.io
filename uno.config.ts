@@ -8,8 +8,10 @@ import type { Theme } from "@unocss/preset-uno";
 import presetTheme from "unocss-preset-theme";
 import transformerVariantGroup from "@unocss/transformer-variant-group";
 import { rules, shortcuts, fontSize } from "./uno-rules";
-import { darkTheme, lightTheme } from "./uno-radix-colors";
+import { darkColors, lightColors } from "./uno-radix-colors";
 import transformerCompileClass from "@unocss/transformer-compile-class";
+
+
 
 export default defineConfig<Theme>({
   // include: [/\.(tsx|mdx)($|\?)/],
@@ -50,7 +52,7 @@ export default defineConfig<Theme>({
   transformers: [transformerVariantGroup(), transformerCompileClass({ classPrefix: 'clx-' })],
   theme: {
     fontSize,
-    colors: lightTheme.colors,
+    colors: lightColors.colors,
     breakpoints: {
       sm: '40rem',
     },
@@ -71,7 +73,9 @@ export default defineConfig<Theme>({
       },
       prefix: "--rdx",
       theme: {
-        dark: darkTheme,
+        dark: {
+          colors: darkColors,
+        } 
       },
     }),
   ],

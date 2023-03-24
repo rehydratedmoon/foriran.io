@@ -1,4 +1,4 @@
-import type { Rule, UserShortcuts } from '@unocss/core';
+import type { Rule, UserShortcuts } from 'unocss';
 
 const btnRules = {
   'btn-disabled': '!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed',
