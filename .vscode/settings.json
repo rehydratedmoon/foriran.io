@@ -1,26 +1,22 @@
 {
-  "cSpell.words": ["کردن"],
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#8185b3",
-    "activityBar.background": "#8185b3",
+    "activityBar.activeBackground": "#ceedf8",
+    "activityBar.background": "#ceedf8",
     "activityBar.foreground": "#15202b",
     "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#77484c",
-    "activityBarBadge.foreground": "#e7e7e7",
-    "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#8185b3",
-    "statusBar.background": "#6166a0",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#8185b3",
-    "statusBarItem.remoteBackground": "#6166a0",
-    "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#6166a0",
-    "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#6166a099",
-    "titleBar.inactiveForeground": "#e7e7e799"
+    "activityBarBadge.background": "#eb74cc",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ceedf8",
+    "statusBar.background": "#a1dcf2",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#74cbec",
+    "statusBarItem.remoteBackground": "#a1dcf2",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#a1dcf2",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#a1dcf299",
+    "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#6166a0",
-  "frontMatter.content.autoUpdateDate": true,
-  "frontMatter.framework.startCommand": "pnpm dev",
-  "frontMatter.preview.host": "http://localhost:3000/posts/safety"
+  "peacock.color": "#a1dcf2"
 }

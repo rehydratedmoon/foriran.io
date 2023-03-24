@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('posts');
+console.log('🚀 ~ posts:', posts);
+---
+
+<h1>posts</h1>
+<ul class="grid grid-min-col-10rem gap-8">
+  {
+    posts.map((post) => (
+      <li class='rd-xl b-1 p-6 '>
+        <a href={`/my-blog-url/${post.slug}`}>hello ? {post.data.title}</a>
+        <time datetime={post.data?.publishedAt?.toISOString()}>{post.data?.publishedAt?.toDateString()}</time>
+      </li>
+    ))
+  }
+</ul>

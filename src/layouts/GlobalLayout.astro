@@ -1,0 +1,421 @@
+---
+import Footer from '../components/Footer.astro';
+import MobileHeader from '../components/MobileHeader';
+import Nav from '../components/Nav';
+import MobileSideMenuOverlay from '../components/MobileSideMenuOverlay.astro';
+import '@unocss/reset/sanitize/sanitize.css';
+import '@unocss/reset/tailwind.css';
+// import "../styles/reset.css";
+import 'uno.css';
+// import "../styles/globals.css";
+import '../../public/fonts/estedad/css/estedad.css';
+import '../../public/fonts/onvan/css/onvan.css';
+
+export interface Props {
+  title: string;
+}
+
+const currentPath = Astro.url.pathname;
+// const currentPath = pathname.slice(1);
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang='fa' dir='rtl' class='h-full light'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+
+    <meta charset='utf-8' />
+
+    <!-- <meta name="theme-color" content="#000000" />  -->
+    <meta name='robots' content='max-snippet:20, max-image-preview:large' />
+
+    <!-- PWA APP META TAGS  -->
+
+    <meta name='application-name' content='FOR IRAN' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='#4814c7' />
+    <meta name='apple-mobile-web-app-title' content='FOR IRAN' />
+    <meta name='description' content='a place to easily find important content about Iran Revolution' />
+    <meta name='format-detection' content='telephone=no' />
+    <meta name='mobile-web-app-capable' content='yes' />
+    <meta name='msapplication-config' content='/icons/browserconfig.xml' />
+    <meta name='msapplication-TileColor' content='#4814c7' />
+    <meta name='msapplication-tap-highlight' content='no' />
+    <meta name='theme-color' content='#4814c7' />
+
+    <link rel='apple-touch-icon' href='/icons/touch-icon-iphone.png' />
+    <link rel='apple-touch-icon' sizes='152x152' href='/icons/touch-icon-ipad.png' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/icons/touch-icon-iphone-retina.png' />
+    <link rel='apple-touch-icon' sizes='167x167' href='/icons/touch-icon-ipad-retina.png' />
+
+    <link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png' />
+    <link rel='manifest' href='/manifest.json' />
+    <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#4814c7' />
+    <link rel='shortcut icon' href='/favicon.ico' />
+
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:url' content='https://foriran.io' />
+    <meta name='twitter:title' content='For IRAN' />
+    <meta name='twitter:description' content='a place to easily find important content about Iran Revolution' />
+    <meta name='twitter:image' content='https://foriran.io/icons/android-chrome-192x192.png' />
+    <meta name='twitter:creator' content='For IRAN Team' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content='For IRAN' />
+    <meta property='og:description' content='a place to easily find important content about Iran Revolution' />
+    <meta property='og:site_name' content='For IRAN' />
+    <meta property='og:url' content='https://foriran.io' />
+    <meta property='og:image' content='https://foriran.io/icons/apple-touch-icon.png' />
+
+    {
+      import.meta.env.DEV && (
+        <>
+          <meta name='googlebot' content='noindex' />
+          <meta name='robots' content='noindex' />
+          <meta name='robots' content='nofollow' />
+        </>
+      )
+    }
+    <link rel='manifest' href='/manifest.json' />
+    <meta property='og:title' content='' />
+    <meta property='og:description' content='About my website in one sentence' />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta property='og:site_name' content='For Iran' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+  </head>
+  <body class='h-full bg-gray1 c-gray12 light'>
+    <header></header>
+    <div data-comment='side menu container' class='mx-auto max-w-page h-full'>
+      <MobileSideMenuOverlay />
+      <Nav class='sm:b-ie-1 b-gray7 h-full flex flex-col gap-6' currentPath={currentPath} />
+      <div class='grid sm:mis-60 min-h-full' style='grid-template-rows: auto 1fr auto'>
+        <MobileHeader />
+        <main>
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </div>
+    <style is:global>
+      /* reset */
+
+      /*
+  1. Use a more-intuitive box-sizing model.
+*/
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      /*
+  2. Remove default margin
+*/
+      * {
+        margin: 0;
+      }
+      /*
+  3. Allow percentage-based heights in the application
+*/
+      html,
+      body {
+        height: 100%;
+      }
+      /*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      /*
+  6. Improve media defaults
+*/
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      /*
+  7. Remove built-in form typography styles
+*/
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      /*
+  8. Avoid text overflows
+*/
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+
+      /*  */
+
+      :root {
+        /* LOGICAL CSS VARIABLE HACK */
+        --ON: initial;
+        --OFF: ;
+      }
+
+      .dark {
+        --is-light-theme: var(--ON);
+        --is-dark-theme: var(--OFF);
+      }
+
+      .light {
+        --is-light-theme: var(--OFF);
+        --is-dark-theme: var(--ON);
+      }
+
+      .max-w-page {
+        max-width: min(100%, 60rem);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        direction: rtl;
+      }
+
+      html,
+      body,
+      .font-family-content {
+        --font-family-content: 'Estedad', 'iransans', 'vazirmatn', 'Roboto', 'Arial', 'sans-serif', -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;
+        font-family: var(--font-family-content);
+      }
+
+      body {
+        /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
+        --light-height: 2;
+        line-height: var(--light-height);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .font-family-heading {
+        font-family: onvan, 'Estedad', 'IRANSans', 'vazirmatn', 'Roboto', 'sans-serif', -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;
+      }
+
+      :root {
+        color-scheme: dark light;
+      }
+
+      #__next {
+        height: 100%;
+      }
+
+      /* Side Menu Styles */
+
+      :root {
+        --sidebar-width: 12.5rem;
+        --side-menu-transition-time: 0.6s;
+      }
+
+      @media (min-width: 1025px) {
+        :root {
+          --sidebar-width: 15rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        :root {
+          --side-menu-transition-time: 1ms;
+        }
+      }
+
+      @media (max-width: 40rem) {
+        .sidebar {
+          grid-area: main;
+        }
+      }
+
+      .sidebar {
+        --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+        --side-menu-transition-time: 0.6s;
+      }
+
+      .w-sidebar {
+        width: var(--sidebar-width);
+      }
+      /* .min-w-sidebar {
+  min-width: calc(var(--sidebar-width) * 0.8);
+} */
+
+      @media (min-width: 40.01rem) {
+        .sidebar {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          inset-block-start: 0;
+          max-height: 100vh;
+          overflow-y: auto;
+        }
+      }
+
+      @media (max-width: 40rem) {
+        .sidebar {
+          position: fixed;
+          inset-block: 0;
+          inset-inline-start: 0;
+          max-height: 100vh;
+          overflow-y: auto;
+          overscroll-behavior: contain;
+
+          visibility: hidden; /* not keyboard accessible when closed */
+          transform: translateX(110vw);
+          will-change: transform;
+          transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
+            visibility var(--side-menu-transition-time) linear;
+        }
+        .sidebar.drawer-open {
+          visibility: visible;
+          transform: translateX(0);
+          transition: transform var(--side-menu-transition-time) var(--easeOutExpo);
+        }
+      }
+
+      /* End of Side menu styles */
+
+      /* .moz-appearance-textfield {
+  -moz-appearance: textfield;
+} */
+
+      @media screen and (max-width: 40rem) {
+        .desktop-only {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 40.01rem) {
+        .mobile-only {
+          display: none;
+        }
+      }
+
+      .in-text-link,
+      p a {
+        color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
+        color: revert;
+        text-decoration-line: underline;
+      }
+
+      .gradient-effect {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent !important;
+        background-image: var(--gradient);
+      }
+
+      :root {
+        --gradient: linear-gradient(
+          90deg,
+          var(--rdx-colors-indigo-9) 4%,
+          var(--rdx-colors-violet-9) 20%,
+          var(--rdx-colors-purple-9) 36%,
+          var(--rdx-colors-plum-9) 52%,
+          var(--rdx-colors-pink-9) 68%,
+          var(--rdx-colors-crimson-9) 84%,
+          var(--rdx-colors-orange-9) 100%
+        );
+
+        --gradient-sm: linear-gradient(
+          90deg,
+          var(--rdx-colors-violet-9) 0%,
+          var(--rdx-colors-purple-9) 50%,
+          var(--rdx-colors-plum-9) 100%
+        );
+      }
+
+      .gradient {
+        background-image: var(--gradient);
+      }
+      .gradient-sm {
+        background-image: var(--gradient-sm);
+      }
+
+      /* .gradient-effect {
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
+} */
+
+      ul {
+        padding-inline-start: 1.25rem;
+        list-style-type: disc;
+      }
+
+      ol {
+        padding-inline-start: 1.25rem;
+        list-style-type: decimal;
+        list-style-type: -moz-persian;
+        list-style-type: persian;
+      }
+
+      .space-y-1em > * + * {
+        margin-top: 1em;
+      }
+
+      .space-y-1\.2em > * + * {
+        margin-top: 1.2em;
+      }
+
+      .space-y-1\.5em > * + * {
+        margin-top: 1.5em;
+      }
+
+      .space-y-2em > * + * {
+        margin-top: 2em;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      /* @font-face {
+  font-family: "__myFont_d295aa";
+  src: url(/_next/static/media/bdc06715334f3153.p.woff2) format("woff2");
+  font-display: optional;
+}
+@font-face {
+  font-family: "__myFont_Fallback_d295aa";
+  src: local("Arial");
+  ascent-override: 112.19%;
+  descent-override: 56.1%;
+  line-gap-override: 0%;
+  size-adjust: 104.45%;
+} */
+    </style>
+  </body>
+</html>
