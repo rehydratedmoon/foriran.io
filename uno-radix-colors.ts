@@ -2,7 +2,6 @@ type RadixColors = typeof import("@radix-ui/colors");
 type RadixColorName = keyof RadixColors;
 import * as radixColors from "@radix-ui/colors";
 
-
 const radixLightColors = Object.fromEntries(
   Object.entries(radixColors).filter(([key, value]) => !key.includes("Dark"))
 );
@@ -23,14 +22,13 @@ const darkColorsConfig = Object.fromEntries(
   ])
 );
 
-export const lightColors = {
+export const lightTheme = {
   colors: {
     ...lightColorsConfig,
     prm: {...mapSingleColor("blue")},
- 
   },
 };
-export const darkColors = {
+export const darkTheme = {
   colors: {
     ...darkColorsConfig,
     prm: {...mapSingleColor("blueDark")},

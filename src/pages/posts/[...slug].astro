@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import GlobalLayout from '../../layouts/GlobalLayout.astro';
+import PostLayout from '../../layouts/PostLayout.astro';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -14,15 +14,15 @@ const { post } = Astro.props;
 const { Content, headings } = await post.render();
 ---
 
-<GlobalLayout title={post.data.title + ' | برای ایران'}>
+<PostLayout title={post.data.title + ' | برای ایران'} headings={headings}>
   <article class='article__wrapper'>
     <!-- <h1>{post.data.title}</h1> -->
     {!headings.some((h) => h.depth === 1) && <h1>{post.data.title}</h1>}
     <Content />
   </article>
-</GlobalLayout>
+</PostLayout>
 
-<style lang='scss'>
+<style lang='scss' is:global>
   .article__wrapper > * + * {
     margin-top: 1em;
   }

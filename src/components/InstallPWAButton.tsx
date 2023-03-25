@@ -13,7 +13,7 @@ const InstallPWAButton = () => {
   return (
     <div class="space-y-6">
       <button
-        class="btn-prm-grd fw-500 bf-i-ph-download-simple"
+        class="btn-prm fw-500 bf-i-ph-download-simple"
         id="setup_button"
         aria-label="Install app"
         title="Install app"

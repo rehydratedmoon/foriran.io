@@ -21,7 +21,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='fa' dir='rtl' class='h-full '>
+<html lang='fa' dir='rtl' class='h-full light'>
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width' />
@@ -90,12 +90,11 @@ const { title } = Astro.props;
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
   </head>
-  <body class='h-full bg-gray1 c-gray12 '>
-    <header></header>
+  <body class='h-full bg-gray1 c-gray12 light'>
     <div data-comment='side menu container' class='mx-auto max-w-page h-full'>
       <MobileSideMenuOverlay />
-      <Nav class='sm:b-ie-1 b-gray7 h-full flex flex-col gap-6' currentPath={currentPath} />
-      <div class='grid sm:mis-60 min-h-full' style='grid-template-rows: auto 1fr auto'>
+      <Nav class='sm:b-ie-1 b-gray6 h-full flex flex-col gap-6' currentPath={currentPath} />
+      <div class='main_content grid min-h-full' style='grid-template-rows: auto 1fr auto'>
         <MobileHeader />
         <main>
           <slot />
@@ -188,7 +187,7 @@ const { title } = Astro.props;
       }
 
       .max-w-page {
-        max-width: min(100%, 60rem);
+        max-width: min(100%, 75rem);
       }
 
       html {
@@ -211,8 +210,8 @@ const { title } = Astro.props;
 
       body {
         /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
-        --light-height: 2;
-        line-height: var(--light-height);
+        --line-height: 2;
+        line-height: var(--line-height);
       }
 
       h1,
@@ -238,14 +237,18 @@ const { title } = Astro.props;
       /* Side Menu Styles */
 
       :root {
-        --sidebar-width: 12.5rem;
+        --width-sidebar: 12.5rem;
         --side-menu-transition-time: 0.6s;
       }
 
-      @media (min-width: 1025px) {
+      @media (min-width: 64.01rem) {
         :root {
-          --sidebar-width: 15rem;
+          --width-sidebar: 15rem;
         }
+      }
+
+      .w-sidebar {
+        width: var(--width-sidebar);
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -254,22 +257,13 @@ const { title } = Astro.props;
         }
       }
 
-      @media (max-width: 40rem) {
-        .sidebar {
-          grid-area: main;
-        }
-      }
-
       .sidebar {
         --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
         --side-menu-transition-time: 0.6s;
       }
 
-      .w-sidebar {
-        width: var(--sidebar-width);
-      }
       /* .min-w-sidebar {
-  min-width: calc(var(--sidebar-width) * 0.8);
+  min-width: calc(var(--width-sidebar) * 0.8);
 } */
 
       @media (min-width: 40.01rem) {
@@ -305,22 +299,19 @@ const { title } = Astro.props;
         }
       }
 
+      @media (min-width: 40.01rem) {
+        .main_content {
+          margin-inline-start: var(--width-sidebar);
+        }
+      }
+      /* 
+  
+
       /* End of Side menu styles */
 
       /* .moz-appearance-textfield {
   -moz-appearance: textfield;
 } */
-
-      @media screen and (max-width: 40rem) {
-        .desktop-only {
-          display: none;
-        }
-      }
-      @media screen and (min-width: 40.01rem) {
-        .mobile-only {
-          display: none;
-        }
-      }
 
       .in-text-link,
       p a {
@@ -328,48 +319,6 @@ const { title } = Astro.props;
         color: revert;
         text-decoration-line: underline;
       }
-
-      .gradient-effect {
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent !important;
-        background-image: var(--gradient);
-      }
-
-      :root {
-        --gradient: linear-gradient(
-          90deg,
-          var(--rdx-colors-indigo-9) 4%,
-          var(--rdx-colors-violet-9) 20%,
-          var(--rdx-colors-purple-9) 36%,
-          var(--rdx-colors-plum-9) 52%,
-          var(--rdx-colors-pink-9) 68%,
-          var(--rdx-colors-crimson-9) 84%,
-          var(--rdx-colors-orange-9) 100%
-        );
-
-        --gradient-sm: linear-gradient(
-          90deg,
-          var(--rdx-colors-violet-9) 0%,
-          var(--rdx-colors-purple-9) 50%,
-          var(--rdx-colors-plum-9) 100%
-        );
-      }
-
-      .gradient {
-        background-image: var(--gradient);
-      }
-      .gradient-sm {
-        background-image: var(--gradient-sm);
-      }
-
-      /* .gradient-effect {
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent !important;
-  background-image: linear-gradient(90deg, var(--rdx-colors-red-12) 0%, var(--rdx-colors-tomato-10) 100%);
-} */
 
       ul {
         padding-inline-start: 1.25rem;
@@ -403,19 +352,12 @@ const { title } = Astro.props;
         display: inline-block;
       }
 
-      /* @font-face {
-  font-family: "__myFont_d295aa";
-  src: url(/_next/static/media/bdc06715334f3153.p.woff2) format("woff2");
-  font-display: optional;
-}
-@font-face {
-  font-family: "__myFont_Fallback_d295aa";
-  src: local("Arial");
-  ascent-override: 112.19%;
-  descent-override: 56.1%;
-  line-gap-override: 0%;
-  size-adjust: 104.45%;
-} */
+      .vertical_dashed-line {
+        background-image: linear-gradient(var(--rdx-colors-gray-6) 30%, transparent 0%);
+        background-position: right;
+        background-size: 2px 15px;
+        background-repeat: repeat-y;
+      }
     </style>
   </body>
 </html>

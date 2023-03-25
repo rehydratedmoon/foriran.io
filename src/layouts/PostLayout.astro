@@ -1,15 +1,25 @@
 ---
+import TableOfContents from '../components/TableOfContents';
 import GlobalLayout from './GlobalLayout.astro';
+import type { MarkdownHeading } from 'astro';
 
 export interface Props {
   title: string;
+  headings: MarkdownHeading[];
 }
-const { title } = Astro.props;
+const { title, headings } = Astro.props;
 ---
 
 <GlobalLayout title={title}>
-  <div class='article__wrapper'>
-    <slot />
+  <div class='grid g-cols-1fr md:g-cols-[1fr_var(--width-sidebar)]'>
+    <div class='article__wrapper'>
+      <slot />
+    </div>
+    <aside class='w-sidebar display-none md:block pis-4 py-4'>
+      <div class='sticky top-0 px-4 vertical_dashed-line b-gray6  c-gray11'>
+        <TableOfContents headings={headings} />
+      </div>
+    </aside>
   </div>
 </GlobalLayout>
 
