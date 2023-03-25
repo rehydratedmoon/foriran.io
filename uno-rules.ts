@@ -65,7 +65,7 @@ export const rules: Rule[] = [
   ['abs', { position: 'absolute' }],
   ['text-2xs', { 'font-size': '0.6rem', 'line-height': '1.25rem' }],
   ['max-w-article', { 'max-width': '60ch' }],
-  ['max-w-page', { 'max-width': '100rem' }],
+  // ['max-w-page', { 'max-width': '100rem' }],
   ['grd', { 'background-image': 'var(--gradient)' }],
   ['grd-sm', { 'background-image': 'var(--gradient-sm)' }],
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
