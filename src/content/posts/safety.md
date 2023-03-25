@@ -2,11 +2,10 @@
 title: ایمنی در نبرد
 ---
 
-
 # ایمنی در نبرد
 
-<figure>
-    <img className="w-6/10 mx-auto" src="/images/safety-graph.svg" alt=""/>
+<figure >
+    <img className="!max-w-100 mx-auto" src="/images/safety-graph.svg" alt=""/>
     <figcaption>انواع ایمنی</figcaption>
 </figure>
 
@@ -14,24 +13,31 @@ title: ایمنی در نبرد
 
 ## ایمن‌سازی فیزیکی
 
-<figure>
-    <img src="/images/organs.png" className="bg-black max-w-full w-full"/>
-    <figcaption>
-        ارگان های حیاتی از قبیل قلب شش کلیه و نقاط حساس زنان رو با استفاده از کتاب یا فوم ضخیم و چسب به دور بدن مراقبت
-        کنید.
-    </figcaption>
-</figure>
+ارگان های حیاتی از قبیل قلب شش کلیه و نقاط حساس زنان رو با استفاده از کتاب یا فوم ضخیم و چسب به دور بدن مراقبت
+کنید.
 
-<figure>
-    <img src="/images/organs-2.png" className="bg-black max-w-full w-full"/>
-    <figcaption>ورودی‌های بدن را بپوشانید.</figcaption>
-</figure>
+<div class='flex gap-6 !my-8'>
+    <img src="/images/human-organs/cardiology.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/pulmonology.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/urology.png" className=" max-w-20 w-full"/>
+</div>
+
+
+ورودی‌های بدن را بپوشانید.
+
+
+<div class='flex gap-6 !my-8'>
+    <img src="/images/human-organs/eye.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/nose.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/ear.png" className=" max-w-20 w-full"/>
+</div>
 
 - عینک (در برابر ساچمه و نور)
 
 - هدفون (در برابر بمب صوتی)
 
 - ماسک و آب برای شستشو (در برابر استنشاق)
+
 
 ## ایمنی اطلاعات
 
@@ -57,7 +63,7 @@ title: ایمنی در نبرد
 
 ## ردیابی نشدن
 
-<ul className="list-none grid gap-6 grid-min-col-15rem p-0">
+<ul className="list-none grid gap-6 grid-min-col-15rem p-0 !my-12">
     <li className=" p-6 b-1 b-gray5 rd-xl  before:( block mb-4  text-4xl) bf-i-mdi-video-off-outline">
         در حین تظاهرات از مردم فیلم نگیرید، یا فقط از پاها بگیرید.
     </li>
@@ -123,3 +129,11 @@ title: ایمنی در نبرد
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
 ></iframe>
+
+<div class='mt-20 text-2xs c-gray10'>
+    منبع آیکون‌ها
+<a href="https://www.flaticon.com/free-icons/earlobe" title="earlobe icons">Earlobe icons created by Kalashnyk - Flaticon</a>
+<br />
+<a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by Darius Dan - Flaticon</a>
+
+</div>

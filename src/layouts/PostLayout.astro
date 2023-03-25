@@ -11,21 +11,18 @@ const { title, headings } = Astro.props;
 ---
 
 <GlobalLayout title={title}>
-  <div class='grid g-cols-1fr md:g-cols-[1fr_var(--width-sidebar)]'>
-    <div class='article__wrapper'>
-      <slot />
+  <div class='article__wrapper'>
+    <slot />
+  </div>
+  <div slot='second-side-bar' class='sticky top-0 px-4 b-gray6 c-gray11'>
+    <TableOfContents headings={headings} client:load />
+    <div class='mt-16 c-gray10 text-sm'>
+      <p class='bf-i-ph-calendar-thin !before:mie-2'>
+        بروز شده در:
+        <time></time>
+      </p>
+      <a class='bf-i-ph-pen-thin hover:bf-i-ph-pen-duotone !before:mie-2'>ویرایش</a>
     </div>
-    <aside class='w-sidebar display-none md:block pis-4 py-4'>
-      <div class='sticky top-0 px-4  b-gray6  c-gray11'>
-        <TableOfContents headings={headings} client:load />
-        <div class='mt-16 c-gray10 text-sm'>
-          <p class="bf-i-ph-calendar-thin !before:mie-2">بروز شده در:
-            <time></time>
-          </p>
-          <a class='bf-i-ph-pen-thin hover:bf-i-ph-pen-duotone !before:mie-2'>ویرایش</a>
-        </div>
-      </div>
-    </aside>
   </div>
 </GlobalLayout>
 

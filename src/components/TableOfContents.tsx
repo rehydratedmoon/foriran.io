@@ -77,12 +77,12 @@ const TableOfContents = (props: { headings?: MarkdownHeading[]}) => {
       <h2 id={onThisPageID} class='font-family-content c-gray10 text-sm pt-2'>
         فهرست
       </h2>
-      <ul ref={toc} class=' list-none p-0 vertical_dashed-line'>
+      <ul ref={toc} class=' list-none p-0 b-r-1 b-gray6'>
         {props?.headings && props.headings.length > 0 && props.headings
           .filter(({ depth }) => depth === 2 || depth === 3)
           .map((heading) => (
             <li
-              class={`c-gray10 truncate ${heading.depth === 2 ? ' mt-3 mb-1 py-0  pis-4 ' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-12 text-sm c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray3' : '' }`}
+              class={`c-gray10 truncate my-0 ${heading.depth === 2 ? 'leading-7  py-0 fw-500  pis-4 text-sm' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray3' : '' }`}
             >
               <a href={`#${heading.slug}`} onClick={onLinkClick}>
                 {unescape(heading.text)}
