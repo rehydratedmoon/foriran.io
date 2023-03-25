@@ -21,15 +21,19 @@ title: ایمنی در نبرد
     <img src="/images/human-organs/pulmonology.png" className=" max-w-20 w-full"/>
     <img src="/images/human-organs/urology.png" className=" max-w-20 w-full"/>
 </div>
-
+<div class='mt-20 text-2xs c-gray8'>
+    منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/earlobe" title="earlobe icons">Earlobe icons created by Kalashnyk - Flaticon</a>
+</div>
 
 ورودی‌های بدن را بپوشانید.
-
 
 <div class='flex gap-6 !my-8'>
     <img src="/images/human-organs/eye.png" className=" max-w-20 w-full"/>
     <img src="/images/human-organs/nose.png" className=" max-w-20 w-full"/>
     <img src="/images/human-organs/ear.png" className=" max-w-20 w-full"/>
+</div>
+<div class='mt-20 text-2xs c-gray8'>
+    منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by Darius Dan - Flaticon</a>
 </div>
 
 - عینک (در برابر ساچمه و نور)
@@ -37,7 +41,6 @@ title: ایمنی در نبرد
 - هدفون (در برابر بمب صوتی)
 
 - ماسک و آب برای شستشو (در برابر استنشاق)
-
 
 ## ایمنی اطلاعات
 
@@ -129,11 +132,3 @@ title: ایمنی در نبرد
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
 ></iframe>
-
-<div class='mt-20 text-2xs c-gray10'>
-    منبع آیکون‌ها
-<a href="https://www.flaticon.com/free-icons/earlobe" title="earlobe icons">Earlobe icons created by Kalashnyk - Flaticon</a>
-<br />
-<a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by Darius Dan - Flaticon</a>
-
-</div>
