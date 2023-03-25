@@ -1,0 +1,88 @@
+---
+// const {supportsPWA, promptEvent, setPromptEvent} = usePWA();
+// const [isTooEarly, setIsTooEarly] = useState(true);
+// useEffect(() => {
+//   setTimeout(() => {
+//     setIsTooEarly(false);
+//   }, 2000);
+// }, []);
+---
+
+<pwa-button>
+  <div class='space-y-6'>
+    <button
+      aria-label='Heart'
+      class='btn-prm fw-500 bf-i-ph-download-simple'
+      id='setup_button'
+      aria-label='Install app'
+      title='Install app'
+      disabled
+    >
+      نصب اپلیکیشن
+    </button>
+
+    <div id='unsupported-warning' class='snack-warning'>
+      <p>مرورگر‌ شما از نصب PWA پیشتیبانی نمی‌کند.</p>
+      <p>می‌توانید از مرورگر کروم برای اندروید و ویندوز، و مرورگر سافاری برای iOS استفاده کنید.</p>
+      <p>
+        فهرست مرورگرهای دارای امکانات PWA را
+        {` `}
+        <a href='https://caniuse.com/web-app-manifest'> از اینجا</a>
+        {` `}
+        ببینید.
+      </p>
+    </div>
+  </div>
+</pwa-button>
+
+<script>
+  class PwaButton extends HTMLElement {
+    constructor() {
+      super();
+
+      let promptEvent: any;
+      let supportsPWA: boolean | null = null;
+
+      const pwaButton = this.querySelector('button');
+      const warningMessage = this.querySelector('#unsupported-warning');
+
+      const handler: EventListenerOrEventListenerObject = (e) => {
+        e.preventDefault();
+        promptEvent = e;
+        supportsPWA = true;
+        pwaButton.disabled = false;
+
+        pwaButton?.addEventListener('click', async (e) => {
+          e.preventDefault();
+          if (!promptEvent) return;
+          const result = await promptEvent.userChoice;
+          console.log('🚀 ~ result:', result);
+          promptEvent = null;
+        });
+          console.log("🚀 ~ promptEvent:", promptEvent)
+        warningMessage.style.display = 'none';
+      };
+
+      window.addEventListener('beforeinstallprompt', handler);
+
+      window.removeEventListener('transitionend', handler);
+      console.log('🚀 ~ hii');
+      console.log('🚀 ~ promptEvent:', promptEvent);
+
+      // const installButton = document.querySelector('#setup_button');
+
+      // Define the behaviour for our new type of HTML element.
+      if (supportsPWA !== true) supportsPWA = false;
+      console.log('🚀 ~ promptEvent:', promptEvent);
+      console.log('🚀 ~ supportsPWA:', supportsPWA);
+
+      // Each time the button is clicked, update the count.
+      if (supportsPWA) {
+      } else {
+      }
+    }
+  }
+
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define('pwa-button', PwaButton);
+</script>

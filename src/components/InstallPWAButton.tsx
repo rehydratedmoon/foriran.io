@@ -2,7 +2,21 @@ import React, {useEffect, useState} from "react";
 import {usePWA} from "./PWAProvider";
 
 const InstallPWAButton = () => {
-  const {supportsPWA, promptEvent, setPromptEvent} = usePWA();
+   const [supportsPWA, setSupportsPWA] = useState(false);
+   const [promptEvent, setPromptEvent] = useState<any>(null);
+   useEffect(() => {
+     const handler: EventListenerOrEventListenerObject = (e) => {
+       e.preventDefault();
+       console.log('before install...');
+       setPromptEvent(e);
+       setSupportsPWA(true);
+     };
+     window.addEventListener('beforeinstallprompt', handler);
+
+     return () => window.removeEventListener('transitionend', handler);
+   }, []);
+
+  // const {supportsPWA, promptEvent, setPromptEvent} = usePWA();
   const [isTooEarly, setIsTooEarly] = useState(true);
   useEffect(() => {
     setTimeout(() => {
