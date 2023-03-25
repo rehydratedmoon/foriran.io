@@ -4,8 +4,8 @@ export const SITE = {
 	defaultLanguage: 'fa',
 } as const;
 
-export const SITE_TITLE = 'My personal website.';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'برای ایران';
+export const SITE_DESCRIPTION = 'جایی برای دسترسی سریع به اطلاعات مهم انقلاب ایران';
 
 export const OPEN_GRAPH = {
 	image: {

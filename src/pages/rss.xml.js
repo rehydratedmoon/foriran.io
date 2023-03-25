@@ -6,7 +6,7 @@ import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
 
 export async function get(context) {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('posts');
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
@@ -17,7 +17,7 @@ export async function get(context) {
       pubDate: post.data.pubDate, // required
       description: post.data.description, //optioanl
       customData: post.data.customData, // optioanl
-      link: `/blog/${post.slug}/`,
+      link: `/posts/${post.slug}/`,
       content: sanitizeHtml(parser.render(post.body)),
       ...post.data,
     })),
