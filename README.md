@@ -19,7 +19,7 @@ To contribute with the website please create an issue and state what you are int
 - [ ] RSS
 - [ ] Telegram Instant View
 - [ ] Email Campaign Page
-- ...
+- [ ] ...
 
 ## 🚀 Project Structure
 
