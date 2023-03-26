@@ -10,7 +10,7 @@ To contribute with the content please check [our notion](https://www.notion.so/1
 
 To contribute with the website please create an issue and state what you are interested to work on.
 
-⚠️ For your and others' safety use anonymous github account. 
+⚠️ For your and others' safety use anonymous github account plus anonymous name and emails in your git config. 
 
 ## 🗺️ Roadmap
 
