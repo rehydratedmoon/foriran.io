@@ -68,8 +68,8 @@ export const rules: Rule[] = [
   // ['max-w-page', { 'max-width': '100rem' }],
   ['grd', { 'background-image': 'var(--gradient)' }],
   ['grd-sm', { 'background-image': 'var(--gradient-sm)' }],
-  [/^bg-src-\[(.*)\]$/, ([, src]) => ({ "background-image": `url('${src}')` })],
-  [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
+  [/^bg-src-\[(.*)\]$/, ([, src]) => ({ 'background-image': `url('${src}')` })],
+  [/^content-\[(.*)\]$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
     ([, minColWidth]) => ({ 'grid-template-columns': `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),

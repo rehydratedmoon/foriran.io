@@ -1,6 +1,5 @@
 ---
-import Icon from './Icon.astro';
-import ThemeSwitch from '../components/ThemeSelect.astro';
+import { ThemeSwitch } from 'astro-color-scheme';
 ---
 
 <!-- const Header = () => { --><!-- const $isSideMenuOpen = useStore(isSideMenuOpen); --><!-- return ( -->
@@ -25,8 +24,11 @@ import ThemeSwitch from '../components/ThemeSelect.astro';
       </a>
     </div>
     <div class='flex ac justify-end'>
-      {/* <ThemeToggler hasText={false} class="opacity-90 flex ac"/> */}
-      <ThemeSwitch />
+      <ThemeSwitch strategy='button' defaultTheme='system' >
+        <button class='bf-i-ph-sun dark:bf-i-ph-moon c-gray11 !before:m-0 c-gray11'>
+          <span class='sr-only'>تغییر تم</span>
+        </button>
+      </ThemeSwitch>
     </div>
   </div>
 </header>
