@@ -8,17 +8,20 @@ To contribute with the content please check [our notion](https://www.notion.so/1
 
 To contribute with the website please create an issue and state what you are interested to work on.
 
-## Roadmap
+## 🗺️ Roadmap
 
 - [x] publish website
 - [ ] PWA 
 - [ ] RSS 
 - [ ] Telegram Instant View
 - [ ] Email Campaign Page
-
-
+- ...
 
 ## 🚀 Project Structure
+
+We used Astro for frontend because it's simple and fast. Also you can use components from react/vue/solid/svelte/ ... using adaptors. 
+
+Astro is quite new but you can get started very quickly, if you have worked with any other frontend frameworks. Take a look at [Astro Docs](https://astro.build). 
 
 Inside of your Astro project, you'll see the following folders and files:
 
