@@ -1,16 +1,21 @@
-# Astro Starter Kit: Basics
+# ForIRAN
 
-```
-npm create astro@latest -- --template basics
-```
+A place to gather and organize content about Iran Revolution.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+##  Contributing
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+To contribute with the content please check [our notion](https://www.notion.so/1536c3b436584a57bcd284cffafb4dee).
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+To contribute with the website please create an issue and state what you are interested to work on.
+
+## Roadmap
+
+- [x] publish website
+- [ ] PWA 
+- [ ] RSS 
+- [ ] Telegram Instant View
+- [ ] Email Campaign Page
+
 
 
 ## 🚀 Project Structure
