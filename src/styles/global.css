@@ -9,11 +9,13 @@
 }
 
 .dark {
+  color-scheme: dark;
   --is-light-theme: var(--TRUE);
   --is-dark-theme: var(--FALSE);
 }
 
 .light {
+  color-scheme: light;
   --is-light-theme: var(--FALSE);
   --is-dark-theme: var(--TRUE);
 }
@@ -56,9 +58,6 @@ h6,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-:root {
-  color-scheme: dark light;
-}
 
 #__next {
   height: 100%;
