@@ -35,13 +35,7 @@ import Icon from './Icon.astro';
 <script>
   const menuButton = document.querySelector('#hamburger-button');
   menuButton?.addEventListener('click', (e) => {
-    const sideMenuStatus = document.documentElement.style.getPropertyValue('--is-side-menu-open');
-    if (sideMenuStatus === 'var(--FALSE)') {
-      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--TRUE)');
-      document.documentElement.style.setProperty('--is-side-menu-close', 'var(--FALSE)');
-    } else {
-      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--FALSE)');
-      document.documentElement.style.setProperty('--is-side-menu-close', 'var(--TRUE)');
-    }
+    document.documentElement.style.setProperty('--is-side-menu-close', 'var(--FALSE)');
+    document.documentElement.style.setProperty('--is-side-menu-open', 'var(--TRUE)');
   });
 </script>

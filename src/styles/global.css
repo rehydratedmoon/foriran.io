@@ -5,7 +5,7 @@
   --TRUE: initial;
   --FALSE: ;
   --is-side-menu-open: var(--FALSE);
-  --is-side-menu-close: var(--TRUE)
+  --is-side-menu-close: var(--TRUE);
 }
 
 .dark {
@@ -116,8 +116,8 @@ h6,
     overflow-y: auto;
     overscroll-behavior: contain;
 
-    visibility: var(--is-side-menu-open, hidden) visible; /* not keyboard accessible when closed */
-    transform: var(--is-side-menu-open, translateX(0)) var(--is-side-menu-close , translateX(110vw));
+    visibility: var(--is-side-menu-open, visible) var(--is-side-menu-close, hidden); /* not keyboard accessible when closed */
+    transform: var(--is-side-menu-open, translateX(0)) var(--is-side-menu-close, translateX(110vw));
     will-change: transform;
     transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
       visibility var(--side-menu-transition-time) linear;
@@ -131,9 +131,10 @@ h6,
 }
 
 .side-menu_overlay {
-  opacity: var(--is-side-menu-open, 100) 0;
-  user-select: var(--is-side-menu-open, initial) none;
-  cursor: var(--is-side-menu-open, pointer);
+  opacity: var(--is-side-menu-close, 0) var(--is-side-menu-open, 100);
+  user-select: var(--is-side-menu-close, none) var(--is-side-menu-open, initial);
+  cursor: var(--is-side-menu-close, initial) var(--is-side-menu-open, pointer);
+  pointer-events: var(--is-side-menu-close, none) var(--is-side-menu-open, initial);
 }
 
 @media (min-width: 40.01rem) {

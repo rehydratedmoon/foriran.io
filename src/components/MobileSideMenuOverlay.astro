@@ -12,12 +12,7 @@
 <script>
   const menuButton = document.querySelector('#side-menu-overlay');
   menuButton?.addEventListener('click', (e) => {
-    const sideMenuStatus = document.documentElement.style.getPropertyValue('--is-side-menu-open');
-    if (sideMenuStatus === 'var(--TRUE)') {
-      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--FALSE)');
-      document.documentElement.style.setProperty('--is-side-menu-close', 'var(--TRUE)');
-    } else {
-      // do nothing
-    }
+    document.documentElement.style.setProperty('--is-side-menu-open', 'var(--FALSE)');
+    document.documentElement.style.setProperty('--is-side-menu-close', 'var(--TRUE)');
   });
 </script>
