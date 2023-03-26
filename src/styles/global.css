@@ -1,0 +1,213 @@
+/*  */
+
+:root {
+  /* LOGICAL CSS VARIABLE HACK */
+  --TRUE: initial;
+  --FALSE: ;
+  --is-side-menu-open: var(--FALSE);
+  --is-side-menu-close: var(--TRUE)
+}
+
+.dark {
+  --is-light-theme: var(--TRUE);
+  --is-dark-theme: var(--FALSE);
+}
+
+.light {
+  --is-light-theme: var(--FALSE);
+  --is-dark-theme: var(--TRUE);
+}
+
+.max-w-page {
+  max-width: min(100%, 75rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  direction: rtl;
+}
+
+html,
+body,
+.font-family-content {
+  --font-family-content: 'Estedad', 'iransans', 'vazirmatn', 'Roboto', 'Arial', 'sans-serif', -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-family-content);
+}
+
+body {
+  /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
+  --line-height: 2;
+  line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-family-heading {
+  font-family: onvan, 'Estedad', 'IRANSans', 'vazirmatn', 'Roboto', 'sans-serif', -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+  color-scheme: dark light;
+}
+
+#__next {
+  height: 100%;
+}
+
+/* Side Menu Styles */
+
+:root {
+  --width-sidebar: 12.5rem;
+  --side-menu-transition-time: 0.6s;
+}
+
+@media (min-width: 64.01rem) {
+  :root {
+    --width-sidebar: 15rem;
+  }
+}
+
+.w-sidebar {
+  width: var(--width-sidebar);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --side-menu-transition-time: 1ms;
+  }
+}
+
+.sidebar {
+  --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+  --side-menu-transition-time: 0.6s;
+}
+
+/* .min-w-sidebar {
+  min-width: calc(var(--width-sidebar) * 0.8);
+} */
+
+@media (min-width: 40.01rem) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inset-block-start: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 40rem) {
+  .sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    visibility: var(--is-side-menu-open, hidden) visible; /* not keyboard accessible when closed */
+    transform: var(--is-side-menu-open, translateX(0)) var(--is-side-menu-close , translateX(110vw));
+    will-change: transform;
+    transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
+      visibility var(--side-menu-transition-time) linear;
+  }
+  /* .sidebar.drawer-open { */
+  /* --is-side-menu-open: var(--TRUE); */
+  /* visibility: visible; */
+  /* transform: translateX(0); */
+  /* transition: transform var(--side-menu-transition-time) var(--easeOutExpo); */
+  /* } */
+}
+
+.side-menu_overlay {
+  opacity: var(--is-side-menu-open, 100) 0;
+  user-select: var(--is-side-menu-open, initial) none;
+  cursor: var(--is-side-menu-open, pointer);
+}
+
+@media (min-width: 40.01rem) {
+  .main_content {
+    margin-inline-start: var(--width-sidebar);
+  }
+}
+/* 
+  
+
+      /* End of Side menu styles */
+
+/* .moz-appearance-textfield {
+  -moz-appearance: textfield;
+} */
+
+.in-text-link,
+p a {
+  color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
+  color: revert;
+  text-decoration-line: underline;
+}
+
+ul {
+  padding-inline-start: 1.25rem;
+  list-style-type: disc;
+}
+
+ol {
+  padding-inline-start: 1.25rem;
+  list-style-type: decimal;
+  list-style-type: -moz-persian;
+  list-style-type: persian;
+}
+
+.space-y-1em > * + * {
+  margin-top: 1em;
+}
+
+.space-y-1\.2em > * + * {
+  margin-top: 1.2em;
+}
+
+.space-y-1\.5em > * + * {
+  margin-top: 1.5em;
+}
+
+.space-y-2em > * + * {
+  margin-top: 2em;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.vertical_dashed-line {
+  background-image: linear-gradient(var(--rdx-colors-gray-6) 30%, transparent 0%);
+  background-position: right;
+  background-size: 2px 15px;
+  background-repeat: repeat-y;
+}
+
+/* a flex box that switch from row to stack without wrapping */
+.switcher_stack {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.switcher_stack > * {
+  flex-grow: 1;
+  flex-basis: calc((30rem - 100%) * 999);
+}
+/* 
+      .switcher_stack > :nth-last-child(n + 4),
+      .switcher_stack > :nth-last-child(n + 4) ~ * {
+        flex-basis: 100%;
+      } */

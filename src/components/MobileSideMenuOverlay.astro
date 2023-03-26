@@ -1,16 +1,24 @@
 ---
-import { useStore } from '@nanostores/solid';
-import { isSideMenuOpen } from '../stores/sideMenuStore';
-
-const $isSideMenuOpen = useStore(isSideMenuOpen);
 ---
+
 <div
-  class={`sm:display-none fixed z-20 inset-0 bg-grayA-9 
-              transition-opacity duration-400 ease-in-out
-             ${$isSideMenuOpen() ? 'opacity-100 select-none' : 'opacity-0 pointer-events-none'}`}
+  id='side-menu-overlay'
+  class='side-menu_overlay sm:display-none fixed z-20 inset-0 bg-grayA-9 transition-opacity duration-400 ease-in-out'
   title='Close Menu'
-  aria-label='Close Menu'
-  onClick={() => isSideMenuOpen.set(false)}
 >
   <span class='sr-only'>بستن منو</span>
 </div>
+
+<script>
+  const menuButton = document.querySelector('#side-menu-overlay');
+  menuButton?.addEventListener('click', (e) => {
+    const sideMenuStatus = document.documentElement.style.getPropertyValue('--is-side-menu-open');
+    if (sideMenuStatus === 'var(--TRUE)') {
+      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--FALSE)');
+      document.documentElement.style.setProperty('--is-side-menu-close', 'var(--TRUE)');
+    } else {
+      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--TRUE)');
+      document.documentElement.style.setProperty('--is-side-menu-close', 'var(--FALSE)');
+    }
+  });
+</script>

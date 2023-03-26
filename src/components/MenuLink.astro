@@ -22,7 +22,7 @@ let isInSubPath = isInPath === false && currentPath.startsWith(props.href as str
   const menuLinks = document.querySelectorAll('[data-menu-link]');
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener('click', () => {
-      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--OFF)');
+      document.documentElement.style.setProperty('--is-side-menu-open', 'var(--FALSE)');
     });
   });
 </script>

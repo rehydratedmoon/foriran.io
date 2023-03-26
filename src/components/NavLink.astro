@@ -1,0 +1,13 @@
+---
+interface Props {
+  href: string;
+  class?: string;
+  [key: string]: any;
+}
+
+const { icon, href, ...props } = Astro.props;
+---
+
+<a href={href} class={`data-[in-path]:c-prm11 data-[in-path]:before:opacity-100 ls-tighter  ${props.class}`} {...props}>
+  <slot />
+</a>
