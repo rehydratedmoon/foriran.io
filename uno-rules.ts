@@ -2,7 +2,7 @@ import type { Rule, UserShortcuts } from 'unocss';
 
 const btnRules = {
   'btn-disabled': '!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed',
-  'btn-common': 'b-1 text-xl fw-700 px-6 py-2 rd-xl cursor-pointer',
+  'btn-common': 'b-1 text-lg fw-500 px-6 py-2 rd-xl cursor-pointer',
   'btn-prm':
     'btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)',
   'btn-prm-grd':
@@ -68,6 +68,7 @@ export const rules: Rule[] = [
   // ['max-w-page', { 'max-width': '100rem' }],
   ['grd', { 'background-image': 'var(--gradient)' }],
   ['grd-sm', { 'background-image': 'var(--gradient-sm)' }],
+  [/^bg-src-\[(.*)\]$/, ([, src]) => ({ "background-image": `url('${src}')` })],
   [/^content-(.*)$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,

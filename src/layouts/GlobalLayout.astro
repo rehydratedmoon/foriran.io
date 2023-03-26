@@ -44,7 +44,7 @@ const { title } = Astro.props;
       <div class='main_content grid min-h-full' style='grid-template-rows: auto 1fr auto'>
         <MobileHeader />
         <div class='grid g-cols-1fr md:g-cols-[1fr_var(--width-sidebar)]'>
-          <main>
+          <main class="p-4 sm:p-0  ">
             <slot />
           </main>
           <div>

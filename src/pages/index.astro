@@ -33,7 +33,7 @@ import GlobalLayout from '../layouts/GlobalLayout.astro';
           <img src='/images/focus.svg' alt='' class='-mb-4 w-5/7 dark:filter-invert dark:opacity-70' />
           <p class='fw-700 font-family-heading text-2xl'>متمرکز</p>
           <p class='text-note'>
-            دور از موج‌ها و آشفتگی شبکه‌های اجتماعی، مطالب مهم را یکجا و ساختاریافته ببیند{' '}
+            دور از موج‌ها و آشفتگی شبکه‌های اجتماعی، مطالب مهم را یکجا و ساختار‌مند ببیند{' '}
           </p>
         </li>
         <li class=''>
@@ -43,16 +43,9 @@ import GlobalLayout from '../layouts/GlobalLayout.astro';
             نگران گم کردن مطالب نباشید. هر چیزی را سریع از منو کناری یا جستجو گوگل دوباره پیدا کنید
           </p>
         </li>
-        {
-          /* <li class="">
-            <img src="/images/search.svg" alt="" class="w-3/5" />
-            <p class="fw-700 font-family-heading text-2xl">ایمن و متن‌باز</p>
-            <p class="text-note">
-چیزی برای پنهان کردن وجود ندارد. با هم  برای ایران را می‌سازیم؟            </p>
-          </li> */
-        }
       </ul>
     </section>
+    <section class='space-y-8'></section>
     <section class='space-y-8'>
       <img src='/images/arrow-wavy.svg' alt='' class='w-10 opacity-30 dark:filter-invert' />
       <h2 class='H1 !mt-0'>از اینجا شروع کنید</h2>
@@ -87,17 +80,55 @@ import GlobalLayout from '../layouts/GlobalLayout.astro';
         مانند یک اپلیکیشن کار می‌کند.{' '}
       </p>
     </section> -->
-
-    <section class='space-y-1em'>
+    
+    <section class='space-y-1em '>
       <img src='/images/support.svg' alt='' class='w-10 opacity-30 dark:filter-invert' />
       <h2 class='H1 !mt-0'>همکاری</h2>
-      <p>ما تیم کوچکی هستیم و برای رشد این کار به کمک شما نیاز داریم.</p>
-      <p>اگر علاقه‌مند هستید در جمع‌آوری، خلاصه‌سازی و مدیریت ‌محتوا کمک کنید به ما پیام دهید</p>
-      <a href='mailto:info@foriran.com' class='btn-prm inline-block bf-i-ph-envelope-simple before:( opacity-100 )'>
-        <span class=''>ایمیل ما</span>
-      </a>
+      <p>اگر علاقه‌مند به تولید و مدیریت محتوا هستید به صفحه ما در Notion سر بزنید.</p>
+      <p>برای همکاری در توسعه وب‌سایت، GitHub برای ایران را ببینید.</p>
+      <p>برای هر موضوع دیگر به ما ایمیل بزنید.</p>
+      <div class='!my-8 flex gap-4 flex-col items-start sm:flex-row'>
+        <a
+          href='https://www.notion.so/1536c3b436584a57bcd284cffafb4dee'
+          class='btn-ghost inline-block bf-i-logos-notion-icon before:( opacity-100 )'
+        >
+          <span class=''>Notion</span>
+        </a>
+        <a
+          href='https://github.com/rehydratedmoon/foriran.io'
+          class='btn-ghost inline-block bf-i-logos-github-icon before:( opacity-100 )'
+        >
+          <span class=''> GitHub</span>
+        </a>
+        <a href='mailto:info@foriran.com' class='btn-ghost inline-block bf-i-ph-envelope-simple before:( opacity-100 )'>
+          <span class=''>ایمیل ما</span>
+        </a>
+      </div>
     </section>
   </div>
 </GlobalLayout>
 
 <style></style>
+
+<!-- 
+
+<section class='space-y-8 bg-left bg-op-20 bg-src-[/images/sharing.svg]' style="">
+      <img src='/images/share.svg' alt='' class='w-10 opacity-30 dark:filter-invert scale-x--100' />
+      <h2 class='H1 !mt-0'>همرسانی</h2>
+
+      <p>اگر «برای ایران» را مفید یافتید به دیگران هم معرفی کنید</p>
+      <div class='!my-8 flex gap-4 flex-col items-start sm:flex-row'>
+        <a
+          href='https://www.notion.so/1536c3b436584a57bcd284cffafb4dee'
+          class='btn-ghost inline-block bf-i-ph-twitter-logo before:( opacity-100 )'
+        >
+          <span class=''>همرسانی در توییتر</span>
+        </a>
+        <a
+          href='https://github.com/rehydratedmoon/foriran.io'
+          class='btn-ghost inline-block bf-i-ph-instagram-logo before:( opacity-100 )'
+        >
+          <span class=''> ‌همرسانی در اینستاگرام</span>
+        </a>
+      </div>
+    </section> -->
