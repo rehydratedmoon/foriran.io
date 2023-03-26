@@ -4,11 +4,13 @@
 
 A place to gather and organize content about Iran Revolution.
 
-## Contributing
+## 🤝  Contributing
 
 To contribute with the content please check [our notion](https://www.notion.so/1536c3b436584a57bcd284cffafb4dee).
 
 To contribute with the website please create an issue and state what you are interested to work on.
+
+⚠️ For your and others' safety use anonymous github account. 
 
 ## 🗺️ Roadmap
 
@@ -50,6 +52,8 @@ There's nothing special about `src/components/`, but that's where we like to put
 Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
+
+⚠️ Please use `pnpm` instead of `npm` and `yarn`. Get pnpm [here](https://pnpm.io/)
 
 All commands are run from the root of the project, from a terminal:
 
