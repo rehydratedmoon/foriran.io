@@ -48,4 +48,4 @@ window.addEventListener('load', () => {
       console.log('SW registered: ', swScriptUrl)
     },
   })
-}
+});
