@@ -1,10 +1,10 @@
 ---
-import { ThemeSwitch } from 'astro-color-scheme';
+import ThemeSwitch from '../components/ThemeSwitch.astro';
 ---
 
 <!-- const Header = () => { --><!-- const $isSideMenuOpen = useStore(isSideMenuOpen); --><!-- return ( -->
 <header class='px-4 sm:px-0 bg-gray1 bg-blue4 sticky top-0 z-10 lt-sm:b-b-1 b-gray6'>
-  <div class='py-2 grid sm:display-none gap-1' style='grid-template-columns: 1fr 3fr 1fr;'>
+  <div class='py-2 sm:display-none grid gap-1' style='grid-template-columns: 1fr 3fr 1fr;'>
     <div class='flex justify-start'>
       <button class='sm:display-none py-2 opacity-90 flex ac bf-i-ph-list !before:m-0 c-gray11' id='hamburger-button'>
         <span class='sr-only'>منو</span>
@@ -24,7 +24,7 @@ import { ThemeSwitch } from 'astro-color-scheme';
       </a>
     </div>
     <div class='flex ac justify-end'>
-      <ThemeSwitch strategy='button' defaultTheme='system' >
+      <ThemeSwitch defaultTheme='system'>
         <button class='bf-i-ph-sun dark:bf-i-ph-moon c-gray11 !before:m-0 c-gray11'>
           <span class='sr-only'>تغییر تم</span>
         </button>
@@ -32,6 +32,7 @@ import { ThemeSwitch } from 'astro-color-scheme';
     </div>
   </div>
 </header>
+
 <!-- ); -->
 <!-- }; -->
 

@@ -1,0 +1,34 @@
+---
+// interface Props {
+//   defaultTheme?: 'dark' | 'light' | 'system';
+// }
+// const { defaultTheme } = Astro.props;
+---
+
+<div data-astro-color-scheme-switch><slot /></div>
+
+<script>
+  // this script run once, even if there are multiple instances of ThemeSwitch
+
+  function updateTheme(selectedTheme: string) {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const resolvedTheme = selectedTheme === 'system' ? systemTheme : selectedTheme;
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(resolvedTheme);
+    document.documentElement.setAttribute('data-theme', resolvedTheme);
+    localStorage.setItem('theme', selectedTheme);
+  }
+
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  updateTheme(localStorage.getItem('theme') ?? systemTheme);
+
+  const themeSwitches = document.querySelectorAll('[data-astro-color-scheme-switch]');
+  themeSwitches.forEach((themeSwitch) => {
+    const button = themeSwitch.querySelector('button');
+    button?.addEventListener('click', (event) => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      updateTheme(newTheme);
+    });
+  });
+</script>

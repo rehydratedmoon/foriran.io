@@ -1,5 +1,5 @@
 ---
-import { ThemeSwitch } from 'astro-color-scheme';
+import ThemeSwitch from '../components/ThemeSwitch.astro';
 import NavLink from './NavLink.astro';
 // import ThemeToggler from "./ThemeToggler";
 // import { useStore } from '@nanostores/solid';
@@ -57,12 +57,11 @@ const props = Astro.props;
       </NavLink>
     </div>
     <div class='mt-auto flex flex-col gap-6'>
-        <!-- <ThemeSwitch strategy='button' defaultTheme='system'>
-          <button class='bf-i-ph-sun dark:bf-i-ph-moon before:m-0 c-gray11'>
-            <span class=''>تغییر تم</span>
-          </button>
-        </ThemeSwitch> -->
-    
+      <ThemeSwitch defaultTheme='system'>
+        <button class='bf-i-ph-sun dark:bf-i-ph-moon !before:m-0 c-gray11 '>
+          <span class='sr-only'>تغییر تم</span>
+        </button>
+      </ThemeSwitch>
     </div>
   </nav>
 </div>
