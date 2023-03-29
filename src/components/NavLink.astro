@@ -1,11 +1,12 @@
 ---
 interface Props {
   href: string;
+  icon: string;
   class?: string;
   [key: string]: any;
 }
 
-const { icon, href, class = "" } = Astro.props;
+const { icon, href, ...props } = Astro.props;
 const currentPath = Astro.url.pathname;
 console.log('🚀 ~ currentPath:', currentPath);
 ---
@@ -14,7 +15,7 @@ console.log('🚀 ~ currentPath:', currentPath);
   href={href}
   class={`pis-2  ls-tighter 
 ${icon} focus-visible:${icon}-duotone hover:${icon}-duotone  aria-[current=page]:${icon}-duotone  aria-[current=page]:c-prm11
-${class}`}
+${props.class}`}
   aria-current={currentPath === href ? 'page' : undefined}
 >
   <slot />
