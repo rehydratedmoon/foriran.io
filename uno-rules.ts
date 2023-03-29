@@ -6,7 +6,7 @@ const btnRules = {
   'btn-prm':
     'btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)',
   'btn-prm-grd':
-    'btn-common b-transparent bg-gradient-to-l from-blue9 to-indigo9 c-white  hover:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) focus-visible:(bg-prm10 bg-gradient-to-l from-violet10 to-purple10) active:(bg-prm11 bg-gradient-to-l from-violet11 to-purple11) disabled:(btn-disabled)',
+    'btn-common b-transparent bg-origin-border bg-gradient-to-l from-blue9 to-indigo9 c-white  hover:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) focus-visible:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) active:(bg-prm11 bg-gradient-to-l from-blue11 to-indigo11) disabled:(btn-disabled)',
   btn: ' btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray10) focus-visible:(bg-gray10 b-gray10) active:(bg-gray11 b-gray11) disabled:(btn-disabled)',
   'btn-ghost-prm':
     'btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)',
@@ -72,6 +72,10 @@ export const rules: Rule[] = [
   [/^content-\[(.*)\]$/, ([, cnt]) => ({ content: `"${cnt}"` })],
   [
     /^grid-min-col-(.*)$/,
+    ([, minColWidth]) => ({ 'grid-template-columns': `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),
+  ],
+  [
+    /^g-col\>\=(.*)$/,
     ([, minColWidth]) => ({ 'grid-template-columns': `repeat(auto-fill, minmax(min(${minColWidth}, 100%), 1fr))` }),
   ],
   [/^g-auto-rows-\[(.*)\]$/, ([, val]) => ({ 'grid-auto-rows': val })],

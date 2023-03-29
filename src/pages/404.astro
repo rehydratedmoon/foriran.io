@@ -1,8 +1,19 @@
 ---
+import GlobalLayout from '../layouts/GlobalLayout.astro';
 ---
 
-<div class='h-full flex flex-col jc'>
-  <h1>خطای ۴۰۴</h1>
-  <p>صفحه‌ای با این آدرس وجود ندارد.</p>
-  <a href='/' class='mt-10 w-fit btn-prm-grd af-i-ph-arrow-left'> بازگشت به صفحه خانه</a>
-</div>
+<GlobalLayout title='۴۰۴ | برای ایران' hasSecondSideBar={false}>
+  <div class='h-full w-full flex flex-col ac jc gap-8'>
+    <div class='space-y-1em text-center'>
+      <h1 class='fw-900 text-12vw sm:text-7xl'>خطای ۴۰۴</h1>
+      <p class=''>برگه‌ای با این نشانی نداریم.</p>
+      <a
+        href='/'
+        class='block b-4 bg-clip-border !bg-red6 !mt-8 mx-auto w-fit text-center btn-prm-grd af-i-ph-arrow-left'
+      >
+        بازگشت به خانه</a
+      >
+    </div>
+    <img src='/images/404.svg' alt='' width='520' height='520' class='max-h-80 dark:filter-invert dark:opacity-70' />
+  </div>
+</GlobalLayout>
