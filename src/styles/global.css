@@ -58,7 +58,6 @@ h6,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
 #__next {
   height: 100%;
 }
@@ -211,3 +210,32 @@ ol {
       .switcher_stack > :nth-last-child(n + 4) ~ * {
         flex-basis: 100%;
       } */
+
+:target {
+  animation: target-bg-flash 2s, target-outline-flash 4s;
+}
+@keyframes target-bg-flash {
+  from {
+    background-color: var(--rdx-colors-gray-3);
+    outline: 1px solid var(--rdx-colors-gray-6);
+    /* outline-width: 2px; */
+  }
+  to {
+    /* nothing  */
+  }
+}
+@keyframes target-outline-flash {
+  from {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: gray;
+    outline-offset: -3px;
+  }
+  to {
+    outline-width: 2px;
+    outline-style: solid;
+    /* nothing  */
+    outline-color: transparent;
+    outline-offset: -3px;
+  }
+}

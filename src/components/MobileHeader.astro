@@ -13,11 +13,11 @@ import ThemeSwitch from '../components/ThemeSwitch.astro';
     <div class='flex ac jc'>
       <a
         href='/'
-        class='py-2 leading-none text-lg ls-tight flex gap-2 ac c-orange10 sm:display-none lh-5'
+        class='py-2 leading-none text-lg ls-tight flex gap-2 ac sm:display-none lh-5'
         aria-hidden='true'
       >
         {/* <img src="/logo.svg" alt="برای ایران" class="w-6 h-6 inline-block " /> */}
-        <span aria-hidden='true' class='fw-700 c-violet12 font-family-heading leading-none ls-tighter'>
+        <span aria-hidden='true' class='fw-700  font-family-heading leading-none ls-tighter'>
           برای ایــران{' '}
         </span>
         <span class='sr-only'>برای ایران</span>
@@ -25,7 +25,7 @@ import ThemeSwitch from '../components/ThemeSwitch.astro';
     </div>
     <div class='flex ac justify-end'>
       <ThemeSwitch defaultTheme='system'>
-        <button class='bf-i-ph-sun dark:bf-i-ph-moon c-gray11 !before:m-0 c-gray11'>
+        <button class='bf-i-ph-sun hover:bf-i-ph-sun-duotone dark:bf-i-ph-moon dark:hover:bf-i-ph-moon-duotone c-gray11 !before:m-0 c-gray11'>
           <span class='sr-only'>تغییر تم</span>
         </button>
       </ThemeSwitch>
