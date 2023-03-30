@@ -22,7 +22,7 @@ pubDate: 2023-02-20
     <img src="/images/human-organs/pulmonology.png" className=" max-w-20 w-full"/>
     <img src="/images/human-organs/urology.png" className=" max-w-20 w-full"/>
 </div>
-<div class='mt-20 text-2xs c-gray8'>
+<div class='mt-20 text-2xs c-sand8'>
     منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/earlobe" title="earlobe icons">Earlobe icons created by Kalashnyk - Flaticon</a>
 </div>
 
@@ -33,7 +33,7 @@ pubDate: 2023-02-20
     <img src="/images/human-organs/nose.png" className=" max-w-20 w-full"/>
     <img src="/images/human-organs/ear.png" className=" max-w-20 w-full"/>
 </div>
-<div class='mt-20 text-2xs c-gray8'>
+<div class='mt-20 text-2xs c-sand8'>
     منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by Darius Dan - Flaticon</a>
 </div>
 

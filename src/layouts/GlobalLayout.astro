@@ -24,7 +24,7 @@ const { title, hasSecondSideBar = true } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang='fa' dir='rtl' class='h-full bg-gray1 c-gray12'>
+<html lang='fa' dir='rtl' class='h-full bg-sand1 c-sand12'>
   <head>
     <MetaTags />
     <title>{title}</title>
@@ -38,10 +38,10 @@ const { title, hasSecondSideBar = true } = Astro.props;
       </>
     )
   }
-  <body class='h-full bg-gray1 c-gray12'>
+  <body class='h-full bg-sand1 c-sand12'>
     <div data-comment='side menu container' class='mx-auto max-w-page h-full'>
       <MobileSideMenuOverlay />
-      <div class='sidebar top-0 bg-gray1 p-4 pis-2 z-30 w-sidebar' id='side-menu'>
+      <div class='sidebar top-0 bg-sand1 p-4 pis-2 z-30 w-sidebar' id='side-menu'>
         <Nav class='sm:b-ie-1 b-gray6 h-full flex flex-col gap-6' currentPath={currentPath} />
       </div>
       <div id='not-sidebar' class='main_content grid min-h-full' style='grid-template-rows: auto 1fr auto'>

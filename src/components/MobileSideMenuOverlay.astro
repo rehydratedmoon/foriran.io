@@ -3,17 +3,17 @@
 
 <div
   id='side-menu-overlay'
-  class='side-menu_overlay sm:display-none fixed z-20 inset-0 bg-grayA-9 transition-opacity duration-400 ease-in-out'
+  class='side-menu_overlay sm:display-none fixed z-20 inset-0 bg-sandA-9 transition-opacity duration-400 ease-in-out'
   title='Close Menu'
 >
   <span class='sr-only'>بستن منو</span>
 </div>
 
 <script>
-  import { closeMenu , openMenu } from  '../scripts/sideMenu';
+  import { closeMenu, openMenu } from '../scripts/sideMenu';
 
   const sideMenuOverlay = document.querySelector('#side-menu-overlay');
   sideMenuOverlay?.addEventListener('click', (e) => {
-    closeMenu()
+    closeMenu();
   });
 </script>

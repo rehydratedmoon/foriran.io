@@ -2,7 +2,7 @@ import type { MarkdownHeading } from 'astro';
 // import type { FunctionalComponent } from 'preact';
 import { unescape } from 'html-escaper';
 // import { useState, useEffect, useRef } from 'preact/hooks';
-import { createSignal,  onMount } from 'solid-js';
+import { createSignal, onMount } from 'solid-js';
 type ItemOffsets = {
   id: string;
   topOffset: number;
@@ -75,7 +75,7 @@ const TableOfContents = (props: { headings?: MarkdownHeading[] }) => {
 
   return (
     <>
-      <h2 id={onThisPageID} class='font-family-content c-gray11 text-sm pt-2'>
+      <h2 id={onThisPageID} class='font-family-content c-sand11 text-sm pt-2'>
         فهرست
       </h2>
       <ul ref={toc} class=' list-none p-0 b-r-1 b-gray6'>
@@ -85,10 +85,10 @@ const TableOfContents = (props: { headings?: MarkdownHeading[] }) => {
             .filter(({ depth }) => depth === 2 || depth === 3)
             .map((heading) => (
               <li
-                class={`c-gray10  truncate mt-0 mb-0  ${
+                class={`c-sand10  truncate mt-0 mb-0  ${
                   heading.depth === 2 ? 'mt-1 mb-1  leading-7  py-0 fw-300  pis-4 text-sm' : ''
-                }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : ''} ${
-                  currentID() === heading.slug ? 'bg-gray3 b-r-1 b-blue9' : 'b-transparent'
+                }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-sand11' : ''} ${
+                  currentID() === heading.slug ? 'bg-sand3 b-r-1 b-blue9' : 'b-transparent'
                 }`}
               >
                 <a href={`#${heading.slug}`} onClick={onLinkClick}>

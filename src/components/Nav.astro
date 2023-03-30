@@ -6,10 +6,13 @@ const props = Astro.props;
 
 // compiler must see the classes to create them. do not create these with a for loop.
 const navIcons = {
-  'safety': 'bf-i-ph-shield-plus focus-visible:bf-i-ph-shield-plus-duotone hover:bf-i-ph-shield-plus-duotone  aria-[current=page]:bf-i-ph-shield-plus-duotone ',
-  'terms': 'bf-i-ph-book-bookmark focus-visible:bf-i-ph-book-bookmark-duotone hover:bf-i-ph-book-bookmark-duotone  aria-[current=page]:bf-i-ph-book-bookmark-duotone ',
-  'oppression':  'bf-i-ph-lightning focus-visible:bf-i-ph-lightning-duotone hover:bf-i-ph-lightning-duotone  aria-[current=page]:bf-i-ph-lightning-duotone '
-}
+  safety:
+    'bf-i-ph-shield-plus focus-visible:bf-i-ph-shield-plus-duotone hover:bf-i-ph-shield-plus-duotone  aria-[current=page]:bf-i-ph-shield-plus-duotone ',
+  terms:
+    'bf-i-ph-book-bookmark focus-visible:bf-i-ph-book-bookmark-duotone hover:bf-i-ph-book-bookmark-duotone  aria-[current=page]:bf-i-ph-book-bookmark-duotone ',
+  oppression:
+    'bf-i-ph-lightning focus-visible:bf-i-ph-lightning-duotone hover:bf-i-ph-lightning-duotone  aria-[current=page]:bf-i-ph-lightning-duotone ',
+};
 ---
 
 <nav class={props.class}>
@@ -24,14 +27,14 @@ const navIcons = {
     برو به بخش اصلی
   </NavLink>
   <div class='mt-15 sm:mt-10 flex flex-col gap-6 mb-auto'>
-    <NavLink href='/posts/safety' class={navIcons.safety}  >ایمنی</NavLink>
-    <NavLink href='/posts/terms' class={navIcons.terms} >واژه‌ه‌نامه</NavLink>
-    <NavLink href='/posts/oppression-methods' class={navIcons.oppression} >تکنیک‌های سرکوب</NavLink>
+    <NavLink href='/posts/safety' class={navIcons.safety}>ایمنی</NavLink>
+    <NavLink href='/posts/terms' class={navIcons.terms}>واژه‌ه‌نامه</NavLink>
+    <NavLink href='/posts/oppression-methods' class={navIcons.oppression}>تکنیک‌های سرکوب</NavLink>
   </div>
   <div class='mt-auto flex flex-col gap-6'>
     <ThemeSwitch defaultTheme='system'>
       <button
-        class='px-2 bf-i-ph-sun hover:bf-i-ph-sun-duotone dark:bf-i-ph-moon dark:hover:bf-i-ph-moon-duotone !before:m-0 c-gray11'
+        class='px-2 bf-i-ph-sun hover:bf-i-ph-sun-duotone dark:bf-i-ph-moon dark:hover:bf-i-ph-moon-duotone !before:m-0 c-sand11'
       >
         <span class='sr-only'>تغییر تم</span>
       </button>

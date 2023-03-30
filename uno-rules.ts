@@ -1,21 +1,21 @@
 import type { Rule, UserShortcuts } from 'unocss';
 
 const btnRules = {
-  'btn-disabled': '!bg-none !c-gray10 !bg-gray5 !b-gray5 !cursor-not-allowed',
+  'btn-disabled': '!bg-none !c-sand10 !bg-sand5 !b-gray5 !cursor-not-allowed',
   'btn-common': 'b-1 text-lg fw-500 px-6 py-2 rd-xl cursor-pointer',
   'btn-prm':
     'btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)',
   'btn-prm-grd':
     'btn-common b-transparent bg-origin-border bg-gradient-to-l from-blue9 to-indigo9 c-white  hover:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) focus-visible:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) active:(bg-prm11 bg-gradient-to-l from-blue11 to-indigo11) disabled:(btn-disabled)',
-  btn: ' btn-common b-gray10 bg-gray9 c-white  hover:(bg-gray10 b-gray10) focus-visible:(bg-gray10 b-gray10) active:(bg-gray11 b-gray11) disabled:(btn-disabled)',
+  btn: ' btn-common b-gray10 bg-sand9 c-white  hover:(bg-sand10 b-gray10) focus-visible:(bg-sand10 b-gray10) active:(bg-sand11 b-gray11) disabled:(btn-disabled)',
   'btn-ghost-prm':
-    'btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)',
+    'btn-common b-gray9 c-sand11 active:(b-gray11 bg-sand1) hover:(b-gray9  bg-sand1)  focus-visible:(b-gray9  bg-sand1) disabled:(btn-disabled)',
   'btn-ghost':
-    'btn-common b-gray9 c-gray11 active:(b-gray11 bg-gray1) hover:(b-gray9  bg-gray1)  focus-visible:(b-gray9  bg-gray1) disabled:(btn-disabled)',
+    'btn-common b-gray9 c-sand11 active:(b-gray11 bg-sand1) hover:(b-gray9  bg-sand1)  focus-visible:(b-gray9  bg-sand1) disabled:(btn-disabled)',
   'btn-link-prm':
     'btn-common b-transparent c-prm11 active:(b-orange3 bg-orange3) hover:(b-orange2  bg-orange2) focus-visible:(b-orange2 bg-orange2) disabled:(btn-disabled)',
   'btn-text':
-    'btn-common b-transparent bg-transparent c-gray12 hover:(bg-gray2 b-gray2) focus-visible:(bg-gray2 b-gray2) active:(bg-gray3 b-gray3) disabled:(btn-disabled)',
+    'btn-common b-transparent bg-transparent c-sand12 hover:(bg-sand2 b-gray2) focus-visible:(bg-sand2 b-gray2) active:(bg-sand3 b-gray3) disabled:(btn-disabled)',
   'btn-danger':
     'btn-common b-red10 bg-red10 c-white  hover:(bg-red9 b-red9) focus-visible:(bg-red9 b-red9) active:(bg-red11 b-red9) disabled:(btn-disabled)',
 };
@@ -125,8 +125,8 @@ export const rules: Rule[] = [
 export const shortcuts: UserShortcuts = [
   {
     'iso-rel': 'relative isolate',
-    field: 'px-2 py-1 rd b-0 bg-gray3',
-    chip: 'no-underline rd-xl px-4 py-2 bg-gray3 c-gray11 hover:(bg-gray4)',
+    field: 'px-2 py-1 rd b-0 bg-sand3',
+    chip: 'no-underline rd-xl px-4 py-2 bg-sand3 c-sand11 hover:(bg-sand4)',
     'chip-link': 'chip data-[in-path]:(bg-orange4 c-orange11)',
     jc: 'justify-center',
     jb: 'justify-between',
@@ -147,16 +147,16 @@ export const shortcuts: UserShortcuts = [
     'warning-line': 'bf-i-ph-warning before:c-yellow11 before:opacity-100 text-sm c-yellow10',
     'error-line': 'bf-i-ph-x-circle before:c-red11 before:opacity-100 text-sm c-red10',
     'danger-line': 'bf-i-ph-warning-octagon before:c-red11 before:opacity-100 text-sm c-red10',
-    snack: 'b b-gray7 bg-gray3 c-gray11 rd-lg p-4 text-sm',
-    H1: 'text-4xl fw-900 ls-tightest c-gray12',
-    H2: 'text-3xl fw-900 ls-tight c-gray12',
-    H3: 'text-xl fw-900 ls-wide c-gray12 ',
-    H4: 'fw-900 ls-widest c-gray12',
+    snack: 'b b-gray7 bg-sand3 c-sand11 rd-lg p-4 text-sm',
+    H1: 'text-4xl fw-900 ls-tightest c-sand12',
+    H2: 'text-3xl fw-900 ls-tight c-sand12',
+    H3: 'text-xl fw-900 ls-wide c-sand12 ',
+    H4: 'fw-900 ls-widest c-sand12',
     text: 'fw-400 text-base',
-    'text-note': 'c-gray11 text-sm',
-    'text-tiny-note': 'c-gray11 fs-xs',
+    'text-note': 'c-sand11 text-sm',
+    'text-tiny-note': 'c-sand11 fs-xs',
     'card-ghost': 'rd-xl p-4 b b-gray6',
-    'card-solid': 'rd-xl p-4 b b-transparent bg-gray9 ',
+    'card-solid': 'rd-xl p-4 b b-transparent bg-sand9 ',
     'table-header-cell':
       'b-gray5 px-2 py-1 pt-2 first-of-type:(pis-4 rd-tl-xl)  last-of-type:(pie-4  last-of-type:rd-tr-xl)  b-e-1 b-b-1',
     'table-body-cell': 'px-2 py-1 first-of-type:pis-4  last-of-type:pie-4 b-e-1 b-b-1 b-gray5',
