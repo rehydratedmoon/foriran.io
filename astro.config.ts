@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import UnoCSS from 'unocss/astro';
 import solidJs from '@astrojs/solid-js';
-import preact from '@astrojs/preact';
-import react from '@astrojs/react';
+// import preact from '@astrojs/preact';
+// import react from '@astrojs/react';
 // import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 // import addClasses from './add-classes.mjs';
@@ -16,25 +16,25 @@ export default defineConfig({
   integrations: [
     UnoCSS(),
     solidJs(),
-    preact(),
+    // preact(),
     // Enable React for the Algolia search component.
-    react(),
+    // react(),
 
     // mdx(),
     sitemap(),
   ],
-  vite: {
-    plugins: [
-      VitePWA({
-        devOptions: {
-          enabled: true,
-        },
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
-        },
-      }),
-    ],
-  },
+  // vite: {
+  //   plugins: [
+  //     VitePWA({
+  //       devOptions: {
+  //         enabled: true,
+  //       },
+  //       workbox: {
+  //         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+  //       },
+  //     }),
+  //   ],
+  // },
   // publicDir: {
   //   includeAssets: ['fonts/*.ttf', 'images/*.png'],
   // },

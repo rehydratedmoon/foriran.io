@@ -10,29 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "0.18.2",
-    "@astrojs/preact": "2.1.0",
-    "@astrojs/react": "2.1.0",
-    "@astrojs/rss": "2.3.1",
-    "@astrojs/sitemap": "1.2.1",
     "@astrojs/solid-js": "^2.1.0",
     "@nanostores/solid": "^0.3.2",
     "astro": "^2.1.4",
-    "astro-color-scheme": "^1.0.1",
     "html-escaper": "3.0.3",
-    "markdown-it": "13.0.1",
     "nanostores": "^0.7.4",
-    "preact": "10.13.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sanitize-html": "2.10.0",
-    "sass": "^1.59.3",
-    "solid-js": "^1.4.3",
-    "unocss": "^0.50.6",
-    "vite-plugin-pwa": "0.14.6",
-    "workbox-window": "6.5.4"
+    "solid-js": "^1.4.3"
   },
   "devDependencies": {
+    "@astrojs/mdx": "0.18.2",
+    "@astrojs/rss": "2.3.1",
+    "@astrojs/sitemap": "1.2.1",
     "@iconify-json/ic": "^1.1.13",
     "@iconify-json/logos": "^1.1.23",
     "@iconify-json/mdi": "^1.1.50",
@@ -47,9 +35,15 @@
     "@unocss/reset": "^0.50.6",
     "@unocss/transformer-compile-class": "^0.50.6",
     "@unocss/transformer-variant-group": "^0.50.6",
+    "markdown-it": "13.0.1",
     "prettier": "^2.8.6",
     "prettier-plugin-astro": "^0.8.0",
+    "sanitize-html": "2.10.0",
+    "sass": "^1.60.0",
+    "unocss": "^0.50.6",
     "unocss-preset-radix": "^2.0.1",
-    "unocss-preset-theme": "0.3.1"
+    "unocss-preset-theme": "0.3.1",
+    "vite-plugin-pwa": "0.14.6",
+    "workbox-window": "6.5.4"
   }
 }
