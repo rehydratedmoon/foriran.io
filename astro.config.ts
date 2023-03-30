@@ -35,9 +35,9 @@ export default defineConfig({
       }),
     ],
   },
-  publicDir: {
-    includeAssets: ['fonts/*.ttf', 'images/*.png'],
-  },
+  // publicDir: {
+  //   includeAssets: ['fonts/*.ttf', 'images/*.png'],
+  // },
   // experimental: {
   //   assets: true
   // }
