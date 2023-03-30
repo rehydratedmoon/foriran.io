@@ -2,9 +2,9 @@
 import ThemeSwitch from '../components/ThemeSwitch.astro';
 import NavLink from './NavLink.astro';
 
-const navLinkProps = { onClick: null };
 const props = Astro.props;
 
+// compiler must see the classes to create them. do not create these with a for loop.
 const navIcons = {
   'safety': 'bf-i-ph-shield-plus focus-visible:bf-i-ph-shield-plus-duotone hover:bf-i-ph-shield-plus-duotone  aria-[current=page]:bf-i-ph-shield-plus-duotone ',
   'terms': 'bf-i-ph-book-bookmark focus-visible:bf-i-ph-book-bookmark-duotone hover:bf-i-ph-book-bookmark-duotone  aria-[current=page]:bf-i-ph-book-bookmark-duotone ',
@@ -24,9 +24,9 @@ const navIcons = {
     برو به بخش اصلی
   </NavLink>
   <div class='mt-15 sm:mt-10 flex flex-col gap-6 mb-auto'>
-    <NavLink href='/posts/safety' class={navIcons.safety}  {...navLinkProps}>ایمنی</NavLink>
-    <NavLink href='/posts/terms' class={navIcons.terms} {...navLinkProps}>واژه‌ه‌نامه</NavLink>
-    <NavLink href='/posts/oppression-methods' class={navIcons.oppression} {...navLinkProps}>تکنیک‌های سرکوب</NavLink>
+    <NavLink href='/posts/safety' class={navIcons.safety}  >ایمنی</NavLink>
+    <NavLink href='/posts/terms' class={navIcons.terms} >واژه‌ه‌نامه</NavLink>
+    <NavLink href='/posts/oppression-methods' class={navIcons.oppression} >تکنیک‌های سرکوب</NavLink>
   </div>
   <div class='mt-auto flex flex-col gap-6'>
     <ThemeSwitch defaultTheme='system'>

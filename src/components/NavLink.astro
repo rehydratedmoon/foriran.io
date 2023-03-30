@@ -1,12 +1,11 @@
 ---
 interface Props {
   href: string;
-  icon: string;
   class?: string;
   [key: string]: any;
 }
 
-const { icon, href, ...props } = Astro.props;
+const {  href, ...props } = Astro.props;
 const currentPath = Astro.url.pathname;
 console.log('🚀 ~ currentPath:', currentPath);
 ---
@@ -14,7 +13,6 @@ console.log('🚀 ~ currentPath:', currentPath);
 <a
   href={href}
   class={`pis-2  ls-tighter aria-[current=page]:c-prm11
-
 ${props.class}`}
   aria-current={currentPath === href ? 'page' : undefined}
   data-link-in-menu
