@@ -1,4 +1,4 @@
-﻿@font-face {
+﻿/* @font-face {
   font-display: swap;
   font-display: swap;
   font-family: Estedad;
@@ -7,7 +7,7 @@
   src: url("../fonts/ttf/Estedad-Black.ttf");
   src: url("../fonts/woff2/Estedad-Black.woff2") format("woff2"),
     url("../fonts/ttf/Estedad-Black.ttf") format("truetype");
-}
+} */
 @font-face {
   font-display: swap;
   font-family: Estedad;
@@ -34,14 +34,14 @@
   src: url("../fonts/woff2/Estedad-Light.woff2") format("woff2"),
     url("../fonts/ttf/Estedad-Light.ttf") format("truetype");
 }
-@font-face {
+/* @font-face {
   font-display: swap;
   font-family: Estedad;
   font-style: normal;
   font-weight: 200;
   src: url("../fonts/ttf/Estedad-Thin.ttf");
   src: url("../fonts/woff2/Estedad-Thin.woff2") format("woff2"), url("../fonts/ttf/Estedad-Thin.ttf") format("truetype");
-}
+} */
 @font-face {
   font-display: swap;
   font-family: Estedad;
