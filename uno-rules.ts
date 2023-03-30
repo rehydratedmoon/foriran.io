@@ -175,6 +175,11 @@ export const shortcuts: UserShortcuts = [
   ],
   [/^ol-(.*)$/, ([, val]) => `outline-${val}`],
   [/^ol-(.*)$/, ([, val]: string[]) => `outline-${val}`],
+  [
+    /^nav-i-(.*)$/,
+    ([, icon]) =>
+      `bf-i-${icon} focus-visible:bf-i-${icon}-duotone hover:bf-i-${icon}-duotone  aria-[current=page]:bf-i-${icon}-duotone  `,
+  ],
 ];
 
 export const fontSize: Record<string, string | [string, string]> = {

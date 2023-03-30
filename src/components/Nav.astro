@@ -13,15 +13,14 @@ const props = Astro.props;
   </a>
   <NavLink
     href={props.currentPath + '#main-content'}
-    icon='bf-i-ph-arrow-left-bold'
-    class='mis-2 mt-3 pis-3 pie-6 py-1 abs right-0 c-blue11 fw-500 rd-xs italic text-sm bf-i-ph-arrow-left-bold -translate-y-100 focus-visible:translate-y-0 sm:focus-visible:translate-y-10'
+    class='nav-i-ph-arrow-left mis-2 mt-3 pis-3 pie-6 py-1 abs right-0 c-blue11 fw-500 rd-xs italic text-sm bf-i-ph-arrow-left-bold -translate-y-100 focus-visible:translate-y-0 sm:focus-visible:translate-y-10'
   >
     برو به بخش اصلی
   </NavLink>
   <div class='mt-15 sm:mt-10 flex flex-col gap-6 mb-auto'>
-    <NavLink href='/posts/safety' icon='bf-i-ph-shield-plus'  {...navLinkProps}>ایمنی</NavLink>
-    <NavLink href='/posts/terms' icon='bf-i-ph-book-bookmark' {...navLinkProps}>واژه‌ه‌نامه</NavLink>
-    <NavLink href='/posts/oppression-methods' icon='bf-i-ph-lightning' {...navLinkProps}>تکنیک‌های سرکوب</NavLink>
+    <NavLink href='/posts/safety' class='nav-i-ph-shield-plus'  {...navLinkProps}>ایمنی</NavLink>
+    <NavLink href='/posts/terms' class='nav-i-ph-book-bookmark' {...navLinkProps}>واژه‌ه‌نامه</NavLink>
+    <NavLink href='/posts/oppression-methods' class='nav-i-ph-lightning' {...navLinkProps}>تکنیک‌های سرکوب</NavLink>
   </div>
   <div class='mt-auto flex flex-col gap-6'>
     <ThemeSwitch defaultTheme='system'>
