@@ -47,7 +47,7 @@ const { title, hasSecondSideBar = true } = Astro.props;
       <div id='not-sidebar' class='main_content grid min-h-full' style='grid-template-rows: auto 1fr auto'>
         <MobileHeader />
         <div class={`grid g-cols-1fr ${hasSecondSideBar ? 'md:g-cols-[1fr_var(--width-sidebar)]' : ''}`}>
-          <main class='p-4 sm:p-0 scroll-ma-8' id='main-content'>
+          <main class='p-4 sm:p-0 scroll-ma-16' id='main-content'>
             <slot />
           </main>
           {
