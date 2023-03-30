@@ -2,7 +2,7 @@ import type { MarkdownHeading } from 'astro';
 // import type { FunctionalComponent } from 'preact';
 import { unescape } from 'html-escaper';
 // import { useState, useEffect, useRef } from 'preact/hooks';
-import { createSignal, onCleanup, onMount } from 'solid-js';
+import { createSignal,  onMount } from 'solid-js';
 type ItemOffsets = {
   id: string;
   topOffset: number;
