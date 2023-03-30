@@ -1,57 +1,35 @@
 ---
 import ThemeSwitch from '../components/ThemeSwitch.astro';
 import NavLink from './NavLink.astro';
-// import ThemeToggler from "./ThemeToggler";
-// import { useStore } from '@nanostores/solid';
-// import { isSideMenuOpen } from '../stores/sideMenuStore';
-// type SideMenuProps = {
-//   isSideMenuOpen: boolean;
-//   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-// };
+
 const navLinkProps = { onClick: null };
 const props = Astro.props;
 ---
 
-<!-- const Nav = (props) => { --><!-- const $isSideMenuOpen = useStore(isSideMenuOpen); --><!-- const closeMenu = () => isSideMenuOpen.set(false); -->
 <nav class={props.class}>
   <a href='/' class='pis-2 p-2 no-underline display-none sm:flex gap-4 ac text-xl' title='صفحه خانه'>
-    {/* <img src="/images/derafsh.svg" alt="برای ایران" class="w-8 h-8 translate-x-0.5 dark:filter-invert" /> */}
-    <span aria-hidden='true' class='fw-700 font-family-heading leading-none ls-tighter'>
-      برای ایــران{' '}
-    </span>
+    <span aria-hidden='true' class='fw-700 font-family-heading leading-none ls-tighter'> برای ایــران</span>
     <span class='sr-only'>برای ایران</span>
   </a>
-  <a
+  <NavLink
     href={props.currentPath + '#main-content'}
-    class='mis-2 mt-3 pis-3 pie-6 py-1  abs right-0  c-blue11 fw-500 rd-xs italic text-sm bf-i-ph-arrow-left-bold -translate-y-100 focus:translate-y-10'
+    icon='bf-i-ph-arrow-left-bold'
+    class='mis-2 mt-3 pis-3 pie-6 py-1 abs right-0 c-blue11 fw-500 rd-xs italic text-sm bf-i-ph-arrow-left-bold -translate-y-100 focus-visible:translate-y-0 sm:focus-visible:translate-y-10'
   >
-    برو به بخش اصلی صفحه
-  </a>
+    برو به بخش اصلی
+  </NavLink>
   <div class='mt-15 sm:mt-10 flex flex-col gap-6 mb-auto'>
-    <NavLink href='/posts/safety' icon='bf-i-ph-shield-plus' {...navLinkProps}>ایمنی</NavLink>
-    {
-      /* <NavLink href="/posts/fight" class=" bf-i-ph-lightning data-[in-path]:bf-i-ph-lightning-fill" {...navLinkProps}>
-          نبرد
-          </NavLink> */
-    }
+    <NavLink href='/posts/safety' icon='bf-i-ph-shield-plus' ' {...navLinkProps}>ایمنی</NavLink>
     <NavLink href='/posts/terms' icon='bf-i-ph-book-bookmark' {...navLinkProps}>واژه‌ه‌نامه</NavLink>
     <NavLink href='/posts/oppression-methods' icon='bf-i-ph-lightning' {...navLinkProps}>تکنیک‌های سرکوب</NavLink>
   </div>
   <div class='mt-auto flex flex-col gap-6'>
     <ThemeSwitch defaultTheme='system'>
-      <button class='px-2 bf-i-ph-sun hover:bf-i-ph-sun-duotone dark:bf-i-ph-moon dark:hover:bf-i-ph-moon-duotone !before:m-0 c-gray11'>
+      <button
+        class='px-2 bf-i-ph-sun hover:bf-i-ph-sun-duotone dark:bf-i-ph-moon dark:hover:bf-i-ph-moon-duotone !before:m-0 c-gray11'
+      >
         <span class='sr-only'>تغییر تم</span>
       </button>
     </ThemeSwitch>
   </div>
 </nav>
-<!-- ); -->
-<!-- }; -->
-
-<!-- export default Nav; -->
-
-<!-- // old stuff or comments -->
-<!-- 
-//  <Link href={`/revolution-phases`} class="in-sub-path:underline bf-i-ph-arrows-out">
-//           فاز‌های انقلاب
-//         </Link> -->

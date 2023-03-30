@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import UnoCSS from 'unocss/astro';
-import solidJs from "@astrojs/solid-js";
+import solidJs from '@astrojs/solid-js';
 import preact from '@astrojs/preact';
 import react from '@astrojs/react';
 // import mdx from '@astrojs/mdx';
@@ -23,14 +23,26 @@ export default defineConfig({
     // mdx(),
     sitemap(),
   ],
-    vite: {
-    plugins: [VitePWA()],
+  vite: {
+    plugins: [
+      VitePWA({
+        devOptions: {
+          enabled: true,
+        },
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        },
+      }),
+    ],
+  },
+  publicDir: {
+    includeAssets: ['fonts/*.ttf', 'images/*.png'],
   },
   // experimental: {
   //   assets: true
   // }
-// // to enable these features in the future.
-    // markdown: {
+  // // to enable these features in the future.
+  // markdown: {
   //   remarkPlugins: ['remark-code-titles'],
   //   rehypePlugins: [
   //     'rehype-slug',

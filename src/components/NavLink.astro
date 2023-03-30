@@ -17,6 +17,21 @@ console.log('🚀 ~ currentPath:', currentPath);
 ${icon} focus-visible:${icon}-duotone hover:${icon}-duotone  aria-[current=page]:${icon}-duotone  aria-[current=page]:c-prm11
 ${props.class}`}
   aria-current={currentPath === href ? 'page' : undefined}
+  data-link-in-menu
+  {...props}
 >
   <slot />
 </a>
+
+<script>
+  import { closeMenu , openMenu } from  '../scripts/sideMenu';
+
+  const menuLinks = document.querySelectorAll('[data-link-in-menu]');
+
+  menuLinks?.forEach((menuLink) => {
+    menuLink?.addEventListener('click', (event) => {
+      //  close the side menu
+      closeMenu();
+    });
+  });
+</script>
