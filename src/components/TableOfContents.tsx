@@ -83,7 +83,7 @@ const TableOfContents = (props: { headings?: MarkdownHeading[]}) => {
           .filter(({ depth }) => depth === 2 || depth === 3)
           .map((heading) => (
             <li
-              class={`c-gray10 truncate mt-0 mb-0  ${heading.depth === 2 ? 'mt-4  mb-2 leading-7  py-0 fw-300  pis-4 text-sm' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray2 b-r-1 b-blue9' : '' }`}
+              class={`c-gray10 truncate mt-0 mb-0  ${heading.depth === 2 ? 'mt-1 mb-1  leading-7  py-0 fw-300  pis-4 text-sm' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray3 b-r-1 b-blue9' : '' }`}
             >
               <a href={`#${heading.slug}`} onClick={onLinkClick}>
                 {unescape(heading.text)}
