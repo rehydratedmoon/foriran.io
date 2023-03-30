@@ -42,6 +42,6 @@ import ThemeSwitch from '../components/ThemeSwitch.astro';
         window.removeEventListener('keydown', closeMenu);
       }
     };  
-    window.addEventListener('keydown', closeMenu);
+    window.addEventListener('keydown', handleEscape);
   });
 </script>
