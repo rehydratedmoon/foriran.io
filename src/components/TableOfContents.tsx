@@ -10,6 +10,7 @@ type ItemOffsets = {
 
 const TableOfContents = (props: { headings?: MarkdownHeading[]}) => {
   // const toc = useRef<HTMLUListElement>();
+  console.log('building table of content');
   let toc;
   const onThisPageID = 'on-this-page-heading';
   // const itemOffsets = useRef<ItemOffsets[]>([]);
@@ -52,7 +53,7 @@ const TableOfContents = (props: { headings?: MarkdownHeading[]}) => {
     const observerOptions: IntersectionObserverInit = {
       // Negative top margin accounts for `scroll-margin`.
       // Negative bottom margin means heading needs to be towards top of viewport to trigger intersection.
-      rootMargin: '0 0% -66% 0',
+      rootMargin: '0% 0% -66% 0%',
       threshold: 1,
     };
     onMount(() => {
@@ -82,7 +83,7 @@ const TableOfContents = (props: { headings?: MarkdownHeading[]}) => {
           .filter(({ depth }) => depth === 2 || depth === 3)
           .map((heading) => (
             <li
-              class={`c-gray10 truncate my-0 ${heading.depth === 2 ? 'leading-7  py-0 fw-300  pis-4 text-sm' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray3' : '' }`}
+              class={`c-gray10 truncate mt-0 mb-0  ${heading.depth === 2 ? 'mt-4  mb-2 leading-7  py-0 fw-300  pis-4 text-sm' : "" }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-gray11' : "" } ${currentID() === heading.slug ? 'bg-gray2 b-r-1 b-blue9' : '' }`}
             >
               <a href={`#${heading.slug}`} onClick={onLinkClick}>
                 {unescape(heading.text)}
