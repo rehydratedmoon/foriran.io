@@ -5,24 +5,27 @@ interface Props {
   [key: string]: any;
 }
 
-const {  href, ...props } = Astro.props;
+const { href, ...props } = Astro.props;
+let attrs = {};
 const currentPath = Astro.url.pathname;
-console.log('🚀 ~ currentPath:', currentPath);
+if (currentPath.startsWith(href)) {
+  attrs['aria-current'] = 'page';
+}
 ---
 
 <a
   href={href}
   class={`pis-2  ls-tighter aria-[current=page]:c-prm11
 ${props.class}`}
-  aria-current={currentPath === href ? 'page' : undefined}
   data-link-in-menu
+  {...attrs}
   {...props}
 >
   <slot />
 </a>
 
 <script>
-  import { closeMenu , openMenu } from  '../scripts/sideMenu';
+  import { closeMenu, openMenu } from '../scripts/sideMenu';
 
   const menuLinks = document.querySelectorAll('[data-link-in-menu]');
 
