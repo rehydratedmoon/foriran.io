@@ -25,11 +25,11 @@ To contribute with the website please create an issue and state what you are int
 
 We used Astro for frontend becasue
 
-- it's simple and fast. It's crucial, specially for people in Iran on slow internet. 
+- It's fast, which is crucial, specially for people in Iran on slow internet. 
 
 ![image](https://user-images.githubusercontent.com/115207762/228970569-8e01bac5-4e92-4314-acdc-c53e71ba91d8.png)
 
-- It has greate stuff to manage content.
+- Easy to use plus, it has great stuff to manage content.
 
 - Also you can use components from react/vue/solid/svelte/... inside Astro using adaptors. So more people can contribute.
 
