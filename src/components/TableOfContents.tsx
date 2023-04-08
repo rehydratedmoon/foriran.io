@@ -10,7 +10,6 @@ type ItemOffsets = {
 
 const TableOfContents = (props: { headings?: MarkdownHeading[] }) => {
   // const toc = useRef<HTMLUListElement>();
-  console.log('building table of content');
   let toc;
   const onThisPageID = 'on-this-page-heading';
   // const itemOffsets = useRef<ItemOffsets[]>([]);
@@ -58,7 +57,6 @@ const TableOfContents = (props: { headings?: MarkdownHeading[] }) => {
   };
   onMount(() => {
     const headingsObserver = new IntersectionObserver(setCurrent, observerOptions);
-    console.log('🚀 ~ headingsObserver:', headingsObserver);
 
     // Observe all the headings in the main page content.
     onMount(() => {
@@ -85,7 +83,7 @@ const TableOfContents = (props: { headings?: MarkdownHeading[] }) => {
             .filter(({ depth }) => depth === 2 || depth === 3)
             .map((heading) => (
               <li
-                class={`c-sand10  truncate mt-0 mb-0  ${
+                class={`c-sand11  truncate mt-0 mb-0  ${
                   heading.depth === 2 ? 'mt-1 mb-1  leading-7  py-0 fw-300  pis-4 text-sm' : ''
                 }  ${heading.depth === 3 ? 'py-0.4 pis-10 fw-300 text-xs c-sand11' : ''} ${
                   currentID() === heading.slug ? 'bg-sand3 b-r-1 b-blue9' : 'b-transparent'

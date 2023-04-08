@@ -6,8 +6,10 @@ import type { MarkdownHeading } from 'astro';
 export interface Props {
   title: string;
   headings: MarkdownHeading[];
+  updatedAt?: Date;
+  publishedAt?: Date;
 }
-const { title, headings } = Astro.props;
+const { title, headings, updatedAt, publishedAt } = Astro.props;
 ---
 
 <GlobalLayout title={title}>
@@ -17,10 +19,21 @@ const { title, headings } = Astro.props;
   <div slot='second-side-bar' class='sticky top-0 px-4 b-gray6 c-sand11'>
     <TableOfContents headings={headings} client:load />
     <div class='mt-16 c-sand10 text-sm'>
-      <p class='bf-i-ph-calendar-thin !before:mie-2'>
-        بروز شده در:
-        <time></time>
-      </p>
+      {
+        publishedAt && (
+          <p class='bf-i-ph-calendar-thin !before:mie-2'>
+            <time>{new Date(publishedAt).toDateString()}</time>
+          </p>
+        )
+      }
+      {
+        updatedAt && (
+          <p class='bf-i-ph-calendar-thin !before:mie-2'>
+            // بروز شده در:
+            <time>{new Date(updatedAt).toDateString()}</time>
+          </p>
+        )
+      }
       <a class='bf-i-ph-pen-thin hover:bf-i-ph-pen-duotone !before:mie-2'>ویرایش</a>
     </div>
   </div>

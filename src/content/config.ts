@@ -14,7 +14,7 @@ export const collections = {
 				alt: z.string(),
 			})
 			.optional(),
-      publishedAt: z.date().transform(d => new Date(d)).optional(),
+      publishedAt: z.date().transform(d => new Date(d)),
       updatedAt: z.date().transform(d => new Date(d)).optional()
     }),
   }),

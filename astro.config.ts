@@ -7,12 +7,14 @@ import solidJs from '@astrojs/solid-js';
 import sitemap from '@astrojs/sitemap';
 // import addClasses from './add-classes.mjs';
 import { VitePWA } from 'vite-plugin-pwa';
-
+// import { chromium  } from '@playwright/test';
+// import puppeteer from 'puppeteer-core';
+import { renderMermaid } from './src/plugins/mermaid';
 // https://astro.build/config
 export default defineConfig({
   // srcDir: "./",
   // contentDir: './content',
-  site: `https://foriran.io`,
+site: `https://foriran.io`,
   integrations: [
     UnoCSS(),
     solidJs(),
@@ -42,13 +44,25 @@ export default defineConfig({
   //   assets: true
   // }
   // // to enable these features in the future.
-  // markdown: {
-  //   remarkPlugins: ['remark-code-titles'],
-  //   rehypePlugins: [
-  //     'rehype-slug',
-  //     ['rehype-autolink-headings', { behavior: 'prepend' }],
-  //     ['rehype-toc', { headings: ['h2', 'h3'] }],
-  //     [addClasses, { 'h1,h2,h3': 'title' }],
-  //   ],
-  // },
+
+  markdown: {
+    syntaxHighlight: false,
+    // remarkPlugins: ['remark-mermaidjs', { launchOptions: { executablePath: chromium.executablePath() } }],
+    rehypePlugins: [renderMermaid],
+    // 'rehype-slug',
+    // ['rehype-autolink-headings', { behavior: 'prepend' }],
+    // ['rehype-toc', { headings: ['h2', 'h3'] }],
+    // [addClasses, { 'h1,h2,h3': 'title' }],
+    // ],
+    // shikiConfig: {
+    //   // Choose from Shiki's built-in themes (or add your own)
+    //   // https://github.com/shikijs/shiki/blob/main/docs/themes.md
+    //   // Add custom languages
+    //   // Note: Shiki has countless langs built-in, including .astro!
+    //   // https://github.com/shikijs/shiki/blob/main/docs/languages.md
+    //   langs: ['javascript'],
+    //   // Enable word wrap to prevent horizontal scrolling
+    //   wrap: true,
+    // },
+  },
 });

@@ -1,3 +1,8 @@
+---
+layout: ../layouts/GlobalLayout.astro
+title: سیاست محرمانگی
+---
+
 <div dir="ltr" lang="en" style="direction:rtl;" class='space-y-1.5em'>
 
 <h1 style="text-align:center; font-weight:700;" >Privacy Policy</h1>

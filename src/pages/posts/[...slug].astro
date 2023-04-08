@@ -1,20 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.slug  },
     props: { post },
   }));
 }
 // 2. When it's time to render, you can get the entry directly from the prop
+interface Props {
+  post: CollectionEntry<"posts">
+}
 const { post } = Astro.props;
+
 const { Content, headings } = await post.render();
 ---
 
-<PostLayout title={post.data.title + ' | برای ایران'} headings={headings}>
+<PostLayout title={post.data.title + ' | برای ایران'} headings={headings} publishedAt={post.data.publishedAt} updatedAt={post.data.updatedAt}>
   <article class='article__wrapper'>
     <!-- <h1>{post.data.title}</h1> -->
     {!headings.some((h) => h.depth === 1) && <h1>{post.data.title}</h1>}

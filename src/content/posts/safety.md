@@ -1,12 +1,12 @@
 ---
 title: ایمنی در نبرد
-pubDate: 2023-02-20
+publishedAt: 2023-02-20
 ---
 
 # ایمنی در نبرد
 
 <figure >
-    <img className="!max-w-100 mx-auto dark-filter-invert " src="/images/safety-graph.svg" alt=""/>
+    <img className="!max-w-100 mx-auto dark-filter-invert " src="/diagrams/safety.svg" alt=""/>
     <figcaption>انواع ایمنی</figcaption>
 </figure>
 
