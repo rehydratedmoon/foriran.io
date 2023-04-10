@@ -36,11 +36,11 @@ window.addEventListener('load', () => {
   refreshSW = registerSW({
     immediate: true,
     onOfflineReady() {
-      pwaToastMessage.innerHTML = 'App ready to work offline'
+      pwaToastMessage.innerHTML = 'همه محتواها دریافت شد و بدون اینترنت نیز در دسترس هستند.'
       showPwaToast(true)
     },
     onNeedRefresh() {
-      pwaToastMessage.innerHTML = 'New content available, click on reload button to update'
+      pwaToastMessage.innerHTML = 'برای دریافت محتواهای تازه دکمه بروزرسانی را بزنید.'
       showPwaToast(false)
     },
     onRegisteredSW(swScriptUrl) {
