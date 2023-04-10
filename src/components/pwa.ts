@@ -10,35 +10,35 @@ window.addEventListener('load', () => {
 
   const refreshCallback = () => refreshSW?.(true);
 
-  const hidePwaToast = (raf = false) => {
-    if (raf) {
-      requestAnimationFrame(() => hidePwaToast(false));
+  const hidePwaToast = ({ withRAF = false }) => {
+    if (withRAF) {
+      requestAnimationFrame(() => hidePwaToast({ withRAF: false }));
       return;
     }
     if (pwaToast.classList.contains('refresh')) pwaRefreshBtn.removeEventListener('click', refreshCallback);
 
     pwaToast.classList.remove('show', 'refresh');
   };
-  const showPwaToast = (offline: boolean) => {
-    if (!offline) pwaRefreshBtn.addEventListener('click', refreshCallback);
+  const showPwaToast = ({ event }) => {
+    if (event === 'need-refresh') pwaRefreshBtn.addEventListener('click', refreshCallback);
     requestAnimationFrame(() => {
-      hidePwaToast(false);
-      if (!offline) pwaToast.classList.add('refresh');
+      hidePwaToast({ withRAF: false });
+      if (event === 'need-refresh') pwaToast.classList.add('refresh');
       pwaToast.classList.add('show');
     });
   };
 
-  pwaCloseBtn.addEventListener('click', () => hidePwaToast(true));
+  pwaCloseBtn.addEventListener('click', () => hidePwaToast({ withRAF: true }));
 
   refreshSW = registerSW({
     immediate: true,
     onOfflineReady() {
       pwaToastMessage.innerHTML = 'App ready to work offline';
-      showPwaToast(true);
+      showPwaToast({ event: 'offline-ready' });
     },
     onNeedRefresh() {
       pwaToastMessage.innerHTML = 'New content available, click on reload button to update';
-      showPwaToast(false);
+      showPwaToast({ event: 'need-refresh' });
     },
     onRegisteredSW(swScriptUrl) {
       // eslint-disable-next-line no-console

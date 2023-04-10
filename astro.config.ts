@@ -29,8 +29,8 @@ export default defineConfig({
       manifest: {
         name: 'برای ایران',
         short_name: 'برای ایران',
-        theme_color: '#f5f5f5',
-        background_color: '#f5f5f5',
+        // theme_color: '#000000',
+        // background_color: '#000000',
         display: 'standalone',
         scope: '/',
         orientation: 'portrait-primary',
