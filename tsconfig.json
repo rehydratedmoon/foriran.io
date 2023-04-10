@@ -6,7 +6,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@stores": ["src/stores/*"],
-    }
+      "@stores": ["src/stores/*"]
+    },
+    "types": ["vite-plugin-pwa/info"]
   }
 }

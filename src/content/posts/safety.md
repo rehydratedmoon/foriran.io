@@ -6,7 +6,7 @@ publishedAt: 2023-02-20
 # ایمنی در نبرد
 
 <figure >
-    <img className="!max-w-100 mx-auto dark-filter-invert " src="/diagrams/safety.svg" alt=""/>
+    <img className="!max-w-100 mx-auto dark-filter-invert " src="/diagrams/safety-types.svg" alt=""/>
     <figcaption>انواع ایمنی</figcaption>
 </figure>
 
@@ -18,9 +18,9 @@ publishedAt: 2023-02-20
 کنید.
 
 <div class='flex gap-6 !my-8'>
-    <img src="/images/human-organs/cardiology.png" className=" max-w-20 w-full"/>
-    <img src="/images/human-organs/pulmonology.png" className=" max-w-20 w-full"/>
-    <img src="/images/human-organs/urology.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-heart.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-pulmonology.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-urology.png" className=" max-w-20 w-full"/>
 </div>
 <div class='mt-20 text-2xs c-sand8'>
     منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/earlobe" title="earlobe icons">Earlobe icons created by Kalashnyk - Flaticon</a>
@@ -29,9 +29,9 @@ publishedAt: 2023-02-20
 ورودی‌های بدن را بپوشانید.
 
 <div class='flex gap-6 !my-8'>
-    <img src="/images/human-organs/eye.png" className=" max-w-20 w-full"/>
-    <img src="/images/human-organs/nose.png" className=" max-w-20 w-full"/>
-    <img src="/images/human-organs/ear.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-eye.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-nose.png" className=" max-w-20 w-full"/>
+    <img src="/images/human-organs/safety-ear.png" className=" max-w-20 w-full"/>
 </div>
 <div class='mt-20 text-2xs c-sand8'>
     منبع آیکون‌ها: <a href="https://www.flaticon.com/free-icons/eye" title="eye icons">Eye icons created by Darius Dan - Flaticon</a>

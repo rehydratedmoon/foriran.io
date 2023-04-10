@@ -11,6 +11,7 @@ import MobileHeader from '../components/MobileHeader.astro';
 import Nav from '../components/Nav.astro';
 import MobileSideMenuOverlay from '../components/MobileSideMenuOverlay.astro';
 import MetaTags from '../components/MetaTags.astro';
+import PWAReloadPrompt from '../components/PWAReloadPrompt.astro';
 // import ReloadPrompt from '../components/ReloadPrompt.astro';
 
 export interface Props {
@@ -61,5 +62,6 @@ const { title, hasSecondSideBar = true } = Astro.props;
         <Footer />
       </div>
     </div>
+    <PWAReloadPrompt />
   </body>
 </html>
