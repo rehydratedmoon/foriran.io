@@ -61,34 +61,5 @@ const { title, hasSecondSideBar = true } = Astro.props;
         <Footer />
       </div>
     </div>
-    <!-- <ReloadPrompt /> -->
-
-    <!-- <script >
-      const graphs = document.getElementsByClassName('mermaid');
-      console.log("🚀 ~ graphs:", graphs)
-      if (document.getElementsByClassName('mermaid').length > 0) {
-        const { default: mermaid } = await import('mermaid');
-        mermaid.initialize({
-          startOnLoad: false,
-          fontFamily: 'var(--sans-font)',
-          // @ts-ignore This works, but TS expects a enum for some reason
-          theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
-        });
-
-        for (const graph of graphs) {
-          const content = graph.getAttribute('data-content');
-          console.log("🚀 ~ content:", content)
-          if (!content) continue;
-          let svg = document.createElement('svg');
-          const id = (svg.id = 'mermaid-' + Math.round(Math.random() * 100000));
-          graph.appendChild(svg);
-          console.log("🚀 ~ svg:", svg)
-          mermaid.render(id, content, (result: string) => {
-            console.log("🚀 ~ result:", result)
-            graph.innerHTML = result;
-          });
-        }
-      }
-    </script> -->
   </body>
 </html>
