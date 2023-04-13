@@ -22,7 +22,8 @@ export default defineConfig({
     // mdx(),
     sitemap(),
     AstroPWA({
-      mode: 'development',
+      selfDestroying: true,
+      mode: 'production',
       base: '/',
       scope: '/',
       includeAssets: ['fonts/*.woff2', 'images/*.png', 'images/*.svg', 'diagrams/*.png', 'diagrams/*.svg'],
@@ -48,6 +49,8 @@ export default defineConfig({
       workbox: {
         navigateFallback: '/404',
         globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+        sourcemap: true,
+
       },
       devOptions: {
         enabled: true,
