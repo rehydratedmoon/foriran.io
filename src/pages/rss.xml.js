@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { SITE_NAME, SITE_DESCRIPTION } from '../consts';
+import { SITE } from '../consts';
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';
@@ -8,8 +8,8 @@ const parser = new MarkdownIt();
 export async function get(context) {
   const posts = await getCollection('posts');
   return rss({
-    title: SITE_NAME,
-    description: SITE_DESCRIPTION,
+    title: SITE.NAME,
+    description: SITE.DESCRIPTION,
     site: context.site,
     items: posts.map((post) => ({
       // ...post.data,
