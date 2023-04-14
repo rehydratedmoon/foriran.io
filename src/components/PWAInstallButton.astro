@@ -1,0 +1,47 @@
+---
+---
+
+<div class='space-y-6'>
+  <button class='btn-prm fw-500 bf-i-ph-download-simple' id='pwa-install-button' disabled> نصب اپلیکیشن</button>
+  <div id='pwa-not-supported-message' class='snack-warning'>
+    <p>مرورگر‌ شما از نصب PWA پیشتیبانی نمی‌کند.</p>
+    <p>می‌توانید از مرورگر کروم برای اندروید و ویندوز، و مرورگر سافاری برای iOS استفاده کنید.</p>
+    <p>
+      فهرست مرورگرهای دارای امکانات PWA را
+      {` `}
+      <a href='https://caniuse.com/web-app-manifest'> از اینجا</a>
+      {` `}
+      ببینید.
+    </p>
+  </div>
+</div>
+
+<script>
+  let promptEvent: Event | null = null;
+  let installed = false;
+  const pwaInstallButton = document.querySelector('#pwa-install-button');
+  const pwaNotSupportedMessage = document.querySelector('#pwa-not-supported-message');
+  // const handler: EventListenerOrEventListenerObject =
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    console.log('before install...');
+    promptEvent = e;
+    console.log('🚀 ~ promptEvent:', promptEvent);
+    pwaInstallButton?.removeAttribute('disabled');
+    pwaNotSupportedMessage?.style?.setProperty('display', 'none');
+  });
+
+  pwaInstallButton?.addEventListener('click', async function (e) {
+    e.preventDefault();
+    console.log('🚀 ~ promptEvent:', promptEvent);
+    if (promptEvent === null) return;
+    promptEvent?.prompt();
+    let result = await promptEvent.userChoice;
+    if (result && result.outcome === 'accepted') {
+      installed = true;
+      console.log('🚀 ~ user accepted to install pwa');
+      localStorage.setItem('isPWAInstalled', 'true');
+    }
+    promptEvent = null;
+  });
+</script>

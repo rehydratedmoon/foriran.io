@@ -18,19 +18,24 @@ export default defineConfig({
     // preact(),
     // Enable React for the Algolia search component.
     // react(),
-
     // mdx(),
     sitemap(),
     AstroPWA({
-      selfDestroying: true,
-      mode: 'production',
+      mode: 'development',
       base: '/',
       scope: '/',
-      includeAssets: ['fonts/*.woff2', 'images/*.png', 'images/*.svg', 'diagrams/*.png', 'diagrams/*.svg'],
+      includeAssets: [
+        'favicon.svg',
+        'fonts/*.woff2',
+        'images/*.png',
+        'images/*.svg',
+        'diagrams/*.png',
+        'diagrams/*.svg',
+      ],
       manifest: {
         name: 'برای ایران',
         short_name: 'برای ایران',
-        // theme_color: '#000000',
+        theme_color: '#ffffff',
         // background_color: '#000000',
         display: 'standalone',
         scope: '/',
@@ -50,7 +55,6 @@ export default defineConfig({
         navigateFallback: '/404',
         globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
         sourcemap: true,
-
       },
       devOptions: {
         enabled: true,

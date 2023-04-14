@@ -36,6 +36,7 @@ specifiers:
   sanitize-html: 2.10.0
   sass: ^1.60.0
   solid-js: ^1.4.3
+  solid-toast: ^0.5.0
   ts-dedent: ^2.2.0
   unist-util-visit: ^4.1.2
   unocss: ^0.50.6
@@ -55,6 +56,7 @@ dependencies:
   remark-mermaid: 0.2.0
   remark-mermaidjs: 4.1.1
   solid-js: 1.6.15
+  solid-toast: 0.5.0_solid-js@1.6.15
   ts-dedent: 2.2.0
   unist-util-visit: 4.1.2
 
@@ -5734,6 +5736,14 @@ packages:
     resolution: {integrity: sha512-xEuMUIdDf4YRFT4i3XEJCNg4Y21lZiWWPSEqj0R3UnLLpENGJVXkqpmbIyRU5CuMImKPIEu5CYgmFKL7Npfe1A==}
     dependencies:
       csstype: 3.1.1
+    dev: false
+
+  /solid-toast/0.5.0_solid-js@1.6.15:
+    resolution: {integrity: sha512-t770JakjyS2P9b8Qa1zMLOD51KYKWXbTAyJePVUoYex5c5FH5S/HtUBUbZAWFcqRCKmAE8KhyIiCvDZA8bOnxQ==}
+    peerDependencies:
+      solid-js: ^1.5.4
+    dependencies:
+      solid-js: 1.6.15
     dev: false
 
   /source-map-js/1.0.2:
