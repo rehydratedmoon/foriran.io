@@ -20,7 +20,6 @@ const { Content, headings } = await post.render();
 
 <PostLayout title={post.data.title + ' | برای ایران'} headings={headings} publishedAt={post.data.publishedAt} updatedAt={post.data.updatedAt}>
   <article class='article__wrapper'>
-    <!-- <h1>{post.data.title}</h1> -->
     {!headings.some((h) => h.depth === 1) && <h1>{post.data.title}</h1>}
     <Content />
   </article>

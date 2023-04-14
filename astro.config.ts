@@ -42,6 +42,8 @@ export default defineConfig({
         orientation: 'portrait-primary',
         start_url: '/',
         description: 'گردآوری و سازماندهی اطلاعات خیزش زن زندگی آزادی',
+        lang: 'fa',
+        
         icons: [
           {
             src: '/pwa/app-icon.svg',
