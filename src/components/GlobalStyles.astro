@@ -1,0 +1,320 @@
+---
+---
+
+<style is:global>
+  /* FONT FACES */
+  @font-face {
+    font-display: swap;
+    font-family: onvan;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/onvan/fonts/ttf/onvan.ttf');
+    src: url('/fonts/onvan/fonts/woff2/onvan.woff2') format('woff2'), url('/fonts/onvan/fonts/ttf/onvan.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: Estedad;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/estedad/fonts/ttf/Estedad-Bold.ttf');
+    src: url('/fonts/woff2/Estedad-Bold.woff2') format('woff2'), url('/fonts/ttf/Estedad-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-display: swap;
+    font-family: Estedad;
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/estedad/fonts/ttf/Estedad-Medium.ttf');
+    src: url('/fonts/estedad/fonts/woff2/Estedad-Medium.woff2') format('woff2'),
+      url('/fonts/estedad/fonts/ttf/Estedad-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-display: swap;
+    font-family: Estedad;
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/estedad/fonts/ttf/Estedad-Light.ttf');
+    src: url('/fonts/estedad/fonts/woff2/Estedad-Light.woff2') format('woff2'), url('/fonts/estedad/fonts/ttf/Estedad-Light.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: Estedad;
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/estedad/fonts/ttf/Estedad-Regular.ttf');
+    src: url('/fonts/estedad/fonts/woff2/Estedad-Regular.woff2') format('woff2'),
+      url('/fonts/estedad/fonts/ttf/Estedad-Regular.ttf') format('truetype');
+  }
+  /* RESET */
+  /*
+  1. Use a more-intuitive box-sizing model.
+*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /*
+  2. Remove default margin
+*/
+  * {
+    margin: 0;
+  }
+  /*
+  3. Allow percentage-based heights in the application
+*/
+  html,
+  body {
+    height: 100%;
+  }
+  /*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+  6. Improve media defaults
+*/
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+  7. Remove built-in form typography styles
+*/
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /*
+  8. Avoid text overflows
+*/
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* END OF  RESET  */
+
+  :root {
+    /* LOGICAL CSS VARIABLE HACK */
+    --TRUE: initial;
+    --FALSE: ;
+    --is-side-menu-open: var(--FALSE);
+    --is-side-menu-close: var(--TRUE);
+  }
+
+  .dark {
+    color-scheme: dark;
+    --is-light-theme: var(--TRUE);
+    --is-dark-theme: var(--FALSE);
+  }
+
+  .light {
+    color-scheme: light;
+    --is-light-theme: var(--FALSE);
+    --is-dark-theme: var(--TRUE);
+  }
+
+  .max-w-page {
+    max-width: min(100%, 75rem);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    direction: rtl;
+  }
+
+  html,
+  body,
+  .font-family-content {
+    --font-family-content: 'Estedad', 'iransans', 'vazirmatn', 'Roboto', 'Arial', 'sans-serif', -apple-system,
+      BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: var(--font-family-content);
+  }
+
+  body {
+    /* Usually line height is set to 1.5. But for the Estedad font, 2 is more readable. */
+    --line-height: 2;
+    line-height: var(--line-height);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-family-heading {
+    font-family: onvan, 'Estedad', 'IRANSans', 'vazirmatn', 'Roboto', 'sans-serif', -apple-system, BlinkMacSystemFont,
+      Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  /* Side Menu Styles */
+
+  :root {
+    --width-sidebar: 12.5rem;
+    --side-menu-transition-time: 0.6s;
+  }
+
+  @media (min-width: 64.01rem) {
+    :root {
+      --width-sidebar: 15rem;
+    }
+  }
+
+  .w-sidebar {
+    width: var(--width-sidebar);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --side-menu-transition-time: 1ms;
+    }
+  }
+
+  .sidebar {
+    --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+    --side-menu-transition-time: 0.6s;
+  }
+
+  @media (min-width: 40.01rem) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      inset-block-start: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .sidebar {
+      position: fixed;
+      inset-block: 0;
+      inset-inline-start: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+
+      visibility: var(--is-side-menu-open, visible) var(--is-side-menu-close, hidden); /* not keyboard accessible when closed */
+      transform: var(--is-side-menu-open, translateX(0)) var(--is-side-menu-close, translateX(110vw));
+      will-change: transform;
+      transition: transform var(--side-menu-transition-time) var(--easeOutExpo),
+        visibility var(--side-menu-transition-time) linear;
+    }
+  }
+
+  .side-menu_overlay {
+    opacity: var(--is-side-menu-close, 0) var(--is-side-menu-open, 100);
+    user-select: var(--is-side-menu-close, none) var(--is-side-menu-open, initial);
+    cursor: var(--is-side-menu-close, initial) var(--is-side-menu-open, pointer);
+    pointer-events: var(--is-side-menu-close, none) var(--is-side-menu-open, initial);
+  }
+
+  @media (min-width: 40.01rem) {
+    .main_content {
+      margin-inline-start: var(--width-sidebar);
+    }
+  }
+  /* End of Side menu styles */
+
+  .in-text-link,
+  p a {
+    color: var(--is-dark-theme, #8cb4ff) var(--is-light-theme, #0069c2);
+    color: revert;
+    text-decoration-line: underline;
+  }
+
+  ul {
+    padding-inline-start: 1.25rem;
+    list-style-type: disc;
+  }
+
+  ol {
+    padding-inline-start: 1.25rem;
+    list-style-type: decimal;
+    list-style-type: -moz-persian;
+    list-style-type: persian;
+  }
+
+  .space-y-1em > * + * {
+    margin-top: 1em;
+  }
+
+  .space-y-1\.2em > * + * {
+    margin-top: 1.2em;
+  }
+
+  .space-y-1\.5em > * + * {
+    margin-top: 1.5em;
+  }
+
+  .space-y-2em > * + * {
+    margin-top: 2em;
+  }
+
+  .inline-block {
+    display: inline-block;
+  }
+
+  /* a flex box that switch from row to stack without wrapping */
+  .switcher_stack {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .switcher_stack > * {
+    flex-grow: 1;
+    flex-basis: calc((30rem - 100%) * 999);
+  }
+
+  :target {
+    animation: target-bg-flash 2s, target-outline-flash 4s;
+  }
+  @keyframes target-bg-flash {
+    from {
+      background-color: var(--rdx-colors-gray-3);
+      outline: 1px solid var(--rdx-colors-gray-6);
+    }
+    to {
+      /* nothing  */
+    }
+  }
+  @keyframes target-outline-flash {
+    from {
+      outline-width: 2px;
+      outline-style: solid;
+      outline-color: gray;
+      outline-offset: -3px;
+    }
+    to {
+      outline-width: 2px;
+      outline-style: solid;
+      outline-color: transparent;
+      outline-offset: -3px;
+    }
+  }
+</style>
