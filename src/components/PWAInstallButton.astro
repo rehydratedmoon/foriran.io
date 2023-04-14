@@ -24,22 +24,18 @@
   // const handler: EventListenerOrEventListenerObject =
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
-    console.log('before install...');
     promptEvent = e;
-    console.log('🚀 ~ promptEvent:', promptEvent);
     pwaInstallButton?.removeAttribute('disabled');
     pwaNotSupportedMessage?.style?.setProperty('display', 'none');
   });
 
   pwaInstallButton?.addEventListener('click', async function (e) {
     e.preventDefault();
-    console.log('🚀 ~ promptEvent:', promptEvent);
     if (promptEvent === null) return;
     promptEvent?.prompt();
     let result = await promptEvent.userChoice;
     if (result && result.outcome === 'accepted') {
       installed = true;
-      console.log('🚀 ~ user accepted to install pwa');
       localStorage.setItem('isPWAInstalled', 'true');
     }
     promptEvent = null;

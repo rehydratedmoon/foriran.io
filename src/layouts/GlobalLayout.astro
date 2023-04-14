@@ -69,6 +69,6 @@ const { title, hasSecondSideBar = true } = Astro.props;
         </Footer>
       </div>
     </div>
-    <Toaster client:load />
+    <Toaster toastOptions={{ duration: 5000,  position: 'bottom-right' }} client:load />
   </body>
 </html>

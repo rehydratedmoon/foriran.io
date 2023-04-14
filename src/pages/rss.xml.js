@@ -14,14 +14,14 @@ export async function get(context) {
     items: posts.map((post) => ({
       // ...post.data,
       title: post.data.title, // required
-      pubDate: (new Date(post.data.publishedAt)).toDateString() , // required
+      pubDate: new Date(post.data.publishedAt).toDateString(), // required
       description: post.data.description, //optioanl
       customData: post.data.customData, // optioanl
       link: `/posts/${post.slug}/`,
       content: sanitizeHtml(parser.render(post.body)),
       ...post.data,
     })),
-    // customData: `<language>en-us</language>`,
+    customData: `<language>fa</language>`,
     stylesheet: '/rss/styles.xsl', //for style the feed
   });
 }
