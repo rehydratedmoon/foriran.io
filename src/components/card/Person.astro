@@ -1,0 +1,49 @@
+---
+const { data } = Astro.props;
+---
+
+<li class='b-1 b-gray6 p-4 rd-xl flex flex-col gap-4'>
+  <div class='flex flex-wrap gap-4'>
+    <img src={data.image} alt='' class='rd-lg w-20 h-20 aspect-1/1 object-cover' />
+    <div>
+      <h2 class='H4 font-family-content'>{data.nameFa}</h2>
+      {data.yearOfBirth && <p class='c-gray11 text-xs'>سال تولد: {data.yearOfBirth}</p>}
+      <div class='flex gap-4 c-gray11 text-xs'>
+        {
+          data.instagram && (
+            <a
+              href={`https://www.instagram.com/${data.instagram}`}
+              target='_blank'
+              class='bf-i-ph-instagram-logo before:mie-0'
+            >
+              <span class='sr-only'> اینستاگرام</span>
+            </a>
+          )
+        }
+        {
+          data.twitter && (
+            <a
+              href={`https://www.twitter.com/@${data.twitter}/`}
+              target='_blank'
+              class='bf-i-ph-twitter-logo before:mie-0'
+            >
+              <span class='sr-only'> توییتر</span>
+            </a>
+          )
+        }
+        {
+          data.telegram && (
+            <a href={`https://t.me/${data.telegram}/`} target='_blank' class='bf-i-ph-telegram-logo before:mie-0'>
+              <span class='sr-only'> تلگرام</span>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- <details>
+    <summary class='text-xl'>جزئیات</summary>
+    <p>گرایش سیاسی: ؟؟؟</p>
+  </details> -->
+</li>
