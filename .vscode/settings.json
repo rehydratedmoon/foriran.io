@@ -18,5 +18,50 @@
     "titleBar.inactiveBackground": "#a1dcf299",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#a1dcf2"
+  "peacock.color": "#a1dcf2",
+  "frontMatter.content.supportedFileTypes": ["md", "markdown", "mdx", "mdoc"],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "people",
+      "pageBundle": false,
+      "previewPath": "'blog'",
+      "filePrefix": null,
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "single": true
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "name": "yearOfBirth",
+          "type": "string"
+        },
+        {
+          "name": "instagram",
+          "type": "string"
+        },
+        {
+          "name": "twitter",
+          "type": "string"
+        },
+        {
+          "name": "telegram",
+          "type": "string"
+        },
+        {
+          "name": "politicalOrientation",
+          "type": "string"
+        }
+      ]
+    }
+  ]
 }
