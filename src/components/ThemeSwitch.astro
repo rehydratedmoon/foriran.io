@@ -1,8 +1,4 @@
 ---
-// interface Props {
-//   defaultTheme?: 'dark' | 'light' | 'system';
-// }
-// const { defaultTheme } = Astro.props;
 ---
 
 <div data-astro-color-scheme-switch><slot /></div>
@@ -12,7 +8,8 @@
 
   function updateTheme(selectedTheme: string) {
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const resolvedTheme = selectedTheme === 'system' ? systemTheme : selectedTheme;
+    let resolvedTheme = selectedTheme === 'system' ? systemTheme : selectedTheme;
+    if (!resolvedTheme) resolvedTheme = systemTheme;
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(resolvedTheme);
     document.documentElement.setAttribute('data-theme', resolvedTheme);

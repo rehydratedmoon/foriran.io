@@ -1,10 +1,13 @@
 ---
 // import InstallPWAButton from '../components/InstallPWAButton.astro';
+import CriticalStyles from '../components/CriticalStyles.astro';
 import PWAInstallButton from '../components/PWAInstallButton.astro';
 import GlobalLayout from '../layouts/GlobalLayout.astro';
 ---
 
 <GlobalLayout title='برای ایران'>
+    <CriticalStyles slot='head' />
+
   <div class='space-y-32'>
     <section class=''>
       <img

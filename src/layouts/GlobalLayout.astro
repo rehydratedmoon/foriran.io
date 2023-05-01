@@ -1,11 +1,11 @@
 ---
 import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/tailwind.css';
-// import '../styles/reset.css';
+import '../styles/reset.css';
 import 'uno.css';
-// import '../styles/global.css';
-// import '../../public/fonts/estedad/css/estedad.css';
-// import '../../public/fonts/onvan/css/onvan.css';
+import '../styles/global.css';
+import '../../public/fonts/estedad/css/estedad.css';
+import '../../public/fonts/onvan/css/onvan.css';
 import Footer from '../components/Footer.astro';
 import MobileHeader from '../components/MobileHeader.astro';
 import Nav from '../components/Nav.astro';
@@ -13,7 +13,7 @@ import MobileSideMenuOverlay from '../components/MobileSideMenuOverlay.astro';
 import MetaTags from '../components/MetaTags.astro';
 import { pwaInfo } from 'virtual:pwa-info';
 import { Toaster } from 'solid-toast';
-import GlobalStyles from '../components/GlobalStyles.astro';
+import CriticalStyles from '../components/CriticalStyles.astro';
 
 // replaced dynamically
 const buildDate = __DATE__;
@@ -31,21 +31,21 @@ const { title, hasSecondSideBar = true } = Astro.props;
 <!DOCTYPE html>
 <html lang='fa' dir='rtl' class='h-full bg-sand1 c-sand12'>
   <head>
+    <!-- <script>
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      // updateTheme(localStorage.getItem('theme') ?? systemTheme);
+      const selectedTheme = localStorage.getItem('theme');
+      const resolvedTheme = selectedTheme === 'system' ? systemTheme : selectedTheme || systemTheme;
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(resolvedTheme);
+      document.documentElement.setAttribute('data-theme', resolvedTheme);
+    </script> -->
+    <slot name='head' />
     <MetaTags />
-    <GlobalStyles />
     <title>{title}</title>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src='/src/pwaAutoUpdate.ts'></script>
   </head>
-  {
-    import.meta.env.DEV && (
-      <>
-        <meta name='googlebot' content='noindex' />
-        <meta name='robots' content='noindex' />
-        <meta name='robots' content='nofollow' />
-      </>
-    )
-  }
   <body class='h-full bg-sand1 c-sand12'>
     <div data-comment='side menu container' class='mx-auto max-w-page h-full'>
       <MobileSideMenuOverlay />
@@ -71,6 +71,6 @@ const { title, hasSecondSideBar = true } = Astro.props;
         </Footer>
       </div>
     </div>
-    <Toaster toastOptions={{ duration: 5000,  position: 'bottom-right' }} client:load />
+    <Toaster toastOptions={{ duration: 5000, position: 'bottom-right' }} client:load />
   </body>
 </html>
