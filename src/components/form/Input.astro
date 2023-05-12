@@ -1,0 +1,12 @@
+---
+import ErrMsg from '@comps/form/ErrMsg.astro';
+const { name, errors, label = name , type = 'text', initialValues = {} } = Astro.props;
+---
+
+<label class='display-contents'>
+  <span class="capitalize">{label ?? name }</span>
+  <input name={name} type={type} class='field' value={initialValues?.[name] ?? ""} />
+</label>
+<div class="g-col-[1/-1]">
+  <ErrMsg errors={errors} name='name' />
+</div>

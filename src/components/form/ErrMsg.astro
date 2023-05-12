@@ -1,0 +1,13 @@
+---
+const { errors, name } = Astro.props;
+---
+
+<>
+  {
+    errors && name && errors[name] && (
+      <p role='alert' class='italic c-red11'>
+        {errors[name]?._errors[0]}
+      </p>
+    )
+  }
+</>
