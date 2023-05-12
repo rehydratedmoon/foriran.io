@@ -5,14 +5,12 @@ import neo4j from '@db/neo4j';
 
 import { getUser } from '@auth/session';
 const user = await getUser(Astro.request);
-// if (!user) return Astro.redirect('/login');
 let records = null;
 let error = null;
-const session = neo4j.session();
+const session = neo4j.session({ database: import.meta.env.DB_USERNAME });
 try {
   const result = await session.run('MATCH (a:Person) RETURN a');
   records = result.records?.map((rec) => rec.get(0));
-  console.log('🚀 ~ records:', records);
 } catch (err) {
   error = err;
 } finally {
@@ -32,6 +30,22 @@ try {
     )
   }
   <ul class='mt-10 list-none grid grid-min-col-15rem gap-4'>
-    {records && records.map((person) =><li><Person data={person.properties} /></li>)}
+    {
+      records &&
+        records.map((person) => (
+          <li>
+            <Person data={person.properties} />
+          </li>
+        ))
+    }
   </ul>
+
+  {
+    error && (
+      <div class='snack-error'>
+        <h2>Error</h2>
+        <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>{JSON.stringify(error, null, 2)}</pre>
+      </div>
+    )
+  }
 </GlobalLayout>
