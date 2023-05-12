@@ -1,19 +1,19 @@
 ---
-import '@unocss/reset/sanitize/sanitize.css';
-import '@unocss/reset/tailwind.css';
+// import '@unocss/reset/sanitize/sanitize.css';
+// import '@unocss/reset/tailwind.css';
 import '../styles/reset.css';
 import 'uno.css';
 import '../styles/global.css';
 import '../../public/fonts/estedad/css/estedad.css';
 import '../../public/fonts/onvan/css/onvan.css';
-import Footer from '../components/Footer.astro';
-import MobileHeader from '../components/MobileHeader.astro';
-import Nav from '../components/Nav.astro';
-import MobileSideMenuOverlay from '../components/MobileSideMenuOverlay.astro';
-import MetaTags from '../components/MetaTags.astro';
+import Footer from '@comps/layout-components/Footer.astro';
+import MobileHeader from '@comps/layout-components/MobileHeader.astro';
+import Nav from '@comps/layout-components/Nav.astro';
+import MobileSideMenuOverlay from '@comps/layout-components/MobileSideMenuOverlay.astro';
+import MetaTags from '@comps/layout-components/MetaTags.astro';
 import { pwaInfo } from 'virtual:pwa-info';
 import { Toaster } from 'solid-toast';
-import CriticalStyles from '../components/CriticalStyles.astro';
+// import CriticalStyles from '@comps/layout-components/CriticalStyles.astro';
 
 // replaced dynamically
 const buildDate = __DATE__;
