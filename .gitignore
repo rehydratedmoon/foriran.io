@@ -55,5 +55,5 @@ trash
 **/public/worker-*.js.map
 
 /dev-dist 
-
+/unused
 /.idea
