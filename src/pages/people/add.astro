@@ -3,7 +3,7 @@
 import GlobalLayout from '@layouts/GlobalLayout.astro';
 import { getUser } from '@auth/session';
 const user = await getUser(Astro.request);
-if (!user) return Astro.redirect('/auth/login');
+if (!user) return Astro.redirect('/login');
 import { z } from 'zod';
 import Form from './_Form.astro';
 import executeQuery from '@db/exQ';

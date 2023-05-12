@@ -4,7 +4,7 @@ import { getUser } from '@auth/session';
 import { z } from 'zod';
 
 const user = await getUser(Astro.request);
-if (!user) return Astro.redirect('/auth/login');
+if (!user) return Astro.redirect('/login');
 import executeQuery from '@db/exQ';
 import Form from '../_Form.astro';
 
