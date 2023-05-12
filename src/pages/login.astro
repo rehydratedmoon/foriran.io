@@ -1,9 +1,9 @@
 ---
 import GlobalLayout from '@layouts/GlobalLayout.astro';
-import FormLogin from '@components/auth/FormLogin';
 import Input from '@components/form/Input.astro';
 import { z } from 'zod';
 import supabase from '@db/supabase';
+import ErrMsg from '@components/form/ErrMsg.astro';
 
 const schema = z.object({
   email: z.string().min(1, 'Please Enter your Email').email('Please enter a valid email'),
@@ -18,14 +18,13 @@ if (Astro.request.method === 'POST') {
     const safeParse = schema.safeParse(formValues);
     if (!safeParse.success) {
       errors = safeParse.error.format();
-      throw '';
     }
     if (safeParse.success) {
       const { data, error } = await supabase.auth.signInWithOtp({
         email: formValues.email,
       });
       if (error) serverError = error;
-      if (!error) isEmailSent;
+      if (!error) isEmailSent = true;
     }
   } catch (err) {
     serverError = err;
@@ -34,17 +33,15 @@ if (Astro.request.method === 'POST') {
 ---
 
 <GlobalLayout title='Login'>
-  <!-- <FormLogin client:load /> -->
-
   <form method='POST' class='ltr space-y-4 p-2 text-xl' dir='ltr'>
     <div class='grid g-cols-[auto_1fr] gap-2'>
       <Input name='email' type='email' />
+      <ErrMsg errors={errors} name='email' />
     </div>
     <div class='grid'>
       <button type='submit' class=`btn-prm !text-3xl`>Submit</button>
     </div>
   </form>
-
   {
     serverError && (
       <div>
