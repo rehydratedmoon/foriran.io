@@ -1,0 +1,43 @@
+---
+import { getUser } from '@auth/session';
+import executeQuery from '@db/exQ';
+import GlobalLayout from '@layouts/GlobalLayout.astro';
+const { id } = Astro.params;
+let { records, error } = await executeQuery(`MATCH (n:Person { id: $id})  RETURN n`, { id });
+let record = records?.[0]?.get(0);
+const user = await getUser(Astro.request);
+---
+
+<GlobalLayout title={record?.properties?.nameFa}>
+  {error && <p class='snack-error'>An Error happened. {error?.message}</p>}
+  {
+    record && (
+      <div class='space-y-4 '>
+        <img src={record.properties.image} alt='' class='!mt-4 b-1 b-gray6 rd-xl w-40 h-40' />
+        <h1 class='H1'>{record.properties.nameFa}</h1>
+        <div class='ltr' dir='ltr'>
+          <dl class='grid g-cols-[auto_1fr]  b-1 b-gray6 rd-xl overflow-hidden '>
+            {Object.keys(record.properties).map((key) => (
+              <div class='display-contents '>
+                <dt class='fw-700 b-1 b-gray6 px-2 py-4 '>{key}</dt>
+                <dd class='b-1 b-gray6 px-2 py-4'>{record.properties[key]}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    )
+  }
+  {
+    user && record && (
+      <div class='flex gap-2 '>
+        <a href={`/people/${id}/edit`} class='bf-i-ph-pencil px-6 py-2 rd-lg b-1 b-gray7'>
+          ویرایش
+        </a>
+        <a href={`/people/add`} class='bf-i-ph-plus px-6 py-2 rd-lg b-1 b-gray7 '>
+          رکورد جدید
+        </a>
+      </div>
+    )
+  }
+</GlobalLayout>

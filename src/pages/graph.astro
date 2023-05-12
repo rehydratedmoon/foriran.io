@@ -1,0 +1,124 @@
+---
+import GlobalLayout from '../layouts/GlobalLayout.astro';
+const records = await fetch('http://localhost:3000/api/people.json').then((res) => res.json());
+
+const graph = {
+  nodes: records.data,
+  links: [],
+};
+
+// var graph = {
+//   nodes: [
+//     { name: 'Alice' },
+//     { name: 'Bob' },
+//     { name: 'Chen' },
+//     { name: 'Dawg' },
+//     { name: 'Ethan' },
+//     { name: 'George' },
+//     { name: 'Frank' },
+//     { name: 'Hanes' },
+//   ],
+//   links: [
+//     { source: 'Alice', target: 'Bob' },
+//     { source: 'Chen', target: 'Bob' },
+//     { source: 'Dawg', target: 'Chen' },
+//     { source: 'Hanes', target: 'Frank' },
+//     { source: 'Hanes', target: 'George' },
+//     { source: 'Dawg', target: 'Ethan' },
+//   ],
+// };
+---
+
+<GlobalLayout title='A map for the uprising' hasSecondSideBar={false}>
+  <h1 class='H1'>نقشه خیزش زن زندگی آزادی</h1>
+  <p>فهرستی از افرادی که در خیزش زن زندگی آزادی مطرح بودند</p>
+
+  <!-- a svg for links connecting the centers together -->
+  <!-- there is a div with pos relative na children with pos absolute for the nodes  -->
+  <svg id='graph-svg' width='960' height='600' class='bg-blue1 b-1 b-gray5 rd-xl mt-4'></svg>
+  <ul id='graph-ul' class='relative w-100 h-50 bg-blue4'></ul>
+
+  <script is:inline src='https://d3js.org/d3.v7.min.js'></script>
+
+  <script>
+    //initilize svg or grab svg
+    var svg = d3.select('svg');
+    var ul = d3.select('#graph-ul');
+    console.log('🚀 ~ ul:', ul);
+    var width = svg.attr('width');
+    var height = svg.attr('height');
+
+    var graphData = {
+      nodes: [{ name: 'A' }, { name: 'B' }, { name: 'C' }, { name: 'D' }],
+      links: [
+        { source: 'A', target: 'B' },
+        { source: 'B', target: 'C' },
+        { source: 'D', target: 'C' },
+      ],
+    };
+
+    var simulation = d3
+      .forceSimulation(graphData.nodes)
+      .force('charge', d3.forceManyBody().strength(-30))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force(
+        'link',
+        d3.forceLink(graphData.links).id((nd) => nd.name)
+      )
+      .on('tick', () => {
+        nodes.style('left', (nd) => nd.x).style('top', (nd) => nd.y);
+        links
+          .attr('x1', (nd) => nd.source.x)
+          .attr('y1', (nd) => nd.source.y)
+          .attr('x2', (nd) => nd.target.x)
+          .attr('y2', (nd) => nd.target.y);
+        console.log(simulation.alpha());
+      });
+
+    var links = svg
+      .append('g')
+      .selectAll('line')
+      .data(graphData.links)
+      .enter()
+      .append('line')
+      .attr('stroke-width', 3)
+      .style('stroke', 'orange');
+
+    links.append('text').text((nd) => nd.name);
+
+    var nodes = ul
+      .selectAll('li')
+      .data(graphData.nodes)
+      .enter()
+      .append('li')
+      .style('position', 'absolute')
+      .style('top', nd => nd.y)
+      .style('left', nd => nd.x)
+      .style('position', 'absolute')
+      .style('width', '2rem')
+      .style('height', '2rem')
+      .style('border-radius', 10)
+      .style('background-color', 'red');
+    console.log('🚀 ~ ul:', ul);
+
+    nodes.call(() => d3.drag().on('start', dragStarted).on('drag', dragged).on('end', dragEnded));
+
+    function dragStarted(nd) {
+      //your alpha hit 0 it stops! make it run again
+      simulation.alphaTarget(0.3).restart();
+      nd.fx = d3.event.x;
+      nd.fy = d3.event.y;
+    }
+    function dragged(nd) {
+      nd.fx = d3.event.x;
+      nd.fy = d3.event.y;
+    }
+
+    function dragEnded(nd) {
+      // alpha min is 0, head there
+      simulation.alphaTarget(0);
+      nd.fx = null;
+      nd.fy = null;
+    }
+  </script>
+</GlobalLayout>

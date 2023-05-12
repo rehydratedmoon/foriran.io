@@ -1,0 +1,80 @@
+---
+// import FormPersonAdd from '@comps/graph/people/FormPersonAdd';
+import GlobalLayout from '@layouts/GlobalLayout.astro';
+import { getUser } from '@auth/session';
+const user = await getUser(Astro.request);
+if (!user) return Astro.redirect('/auth/login');
+import { z } from 'zod';
+import Form from './_Form.astro';
+import executeQuery from '@db/exQ';
+
+const schema = z.object({
+  name: z.string().min(1, 'Please enter a name.'),
+  nameFa: z.string().min(1, 'Please enter the name in Farsi.'),
+  image: z.string().min(1, 'Please enter the image URL.'),
+  instagram: z.string().nullable().optional(),
+  twitter: z.string().nullable().optional(),
+  telegram: z.string().nullable().optional(),
+  youtube: z.string().nullable().optional(),
+  website: z.string().nullable().optional(),
+  wikipedia: z.string().nullable().optional(),
+  other_link: z.string().nullable().optional(),
+});
+
+let errors = null;
+let serverError = null;
+let isRecordAdded = null;
+let record = null;
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const formValues = Object.fromEntries(formData.entries());
+    const safeParse = schema.safeParse(formValues);
+    if (!safeParse.success) {
+      errors = safeParse.error.format();
+      throw '';
+    }
+    if (safeParse.success) {
+      const properties = formValues;
+      let qRes = await executeQuery(
+        `
+      CREATE (n:Person)
+      SET n = $properties 
+      SET n.id =  apoc.create.uuid()
+      RETURN n`,
+        {
+          properties,
+        }
+      );
+      record = qRes?.records?.[0]?.get(0);
+      serverError = qRes.error;
+      isRecordAdded = true;
+    }
+  } catch (err) {
+    serverError = err;
+  }
+}
+---
+
+<GlobalLayout title='add person'>
+  <h2 class='H2'>Add a record</h2>
+  <!-- <FormPersonAdd client:load /> -->
+  <Form errors={errors} initialData={record?.properties} buttonText='Add' />
+  {
+    serverError && (
+      <div>
+        <h2>Server Error</h2>
+        <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>{JSON.stringify(serverError, null, 2)}</pre>
+        </div>
+        )
+      }
+  {
+    isRecordAdded && (
+      <div class='snack-success'>
+        <h2>Record added Successfully</h2>
+        <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>{JSON.stringify(record, null, 2)}</pre>
+      </div>
+    )
+  }
+</GlobalLayout>

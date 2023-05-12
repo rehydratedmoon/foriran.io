@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 const posts = await getCollection('posts');
+export const prerender = true;
+
 ---
 
 <h1>posts</h1>

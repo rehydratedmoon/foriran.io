@@ -1,0 +1,37 @@
+---
+import Person from '@comps/card/Person.astro';
+import GlobalLayout from '@layouts/GlobalLayout.astro';
+import neo4j from '@db/neo4j';
+
+import { getUser } from '@auth/session';
+const user = await getUser(Astro.request);
+// if (!user) return Astro.redirect('/login');
+let records = null;
+let error = null;
+const session = neo4j.session();
+try {
+  const result = await session.run('MATCH (a:Person) RETURN a');
+  records = result.records?.map((rec) => rec.get(0));
+  console.log('🚀 ~ records:', records);
+} catch (err) {
+  error = err;
+} finally {
+  await session.close();
+}
+// const records = await fetch('http://localhost:3000/api/people.json').then((res) => res.json());
+---
+
+<GlobalLayout title='A map for the uprising'>
+  <h1 class='H1'>نقشه خیزش زن زندگی آزادی</h1>
+  <p>فهرستی از افرادی که در خیزش زن زندگی آزادی مطرح بودند</p>
+  {
+    user && (
+      <a href='/people/add' class='btn-prm bf-i-ph-plus mt-8 inline-block'>
+        افزودن فرد جدید
+      </a>
+    )
+  }
+  <ul class='mt-10 list-none grid grid-min-col-15rem gap-4'>
+    {records && records.map((person) =><li><Person data={person.properties} /></li>)}
+  </ul>
+</GlobalLayout>
