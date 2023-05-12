@@ -6,6 +6,8 @@ const props = Astro.props;
 
 // compiler must see the classes to create them. do not create these with a for loop.
 const navIcons = {
+  graph:
+    'bf-i-ph-map-trifold  focus-visible:bf-i-ph-map-trifold-duotone hover:bf-i-ph-map-trifold-duotone  aria-[current=page]:bf-i-ph-map-trifold-duotone ',
   planning:
     'bf-i-ph-compass  focus-visible:bf-i-ph-compass-duotone hover:bf-i-ph-compass-duotone  aria-[current=page]:bf-i-ph-compass-duotone ',
   safety:
@@ -29,6 +31,7 @@ const navIcons = {
     برو به بخش اصلی
   </NavLink>
   <div class='mt-15 sm:mt-10 flex flex-col gap-6 mb-auto'>
+    <!-- <NavLink href='/graph' class={navIcons.graph}>نقشه خیزش</NavLink> -->
     <NavLink href='/posts/planning' class={navIcons.planning}>برنامه‌ریزی</NavLink>
     <NavLink href='/posts/safety' class={navIcons.safety}>ایمنی</NavLink>
     <NavLink href='/posts/terms' class={navIcons.terms}>واژه‌ه‌نامه</NavLink>

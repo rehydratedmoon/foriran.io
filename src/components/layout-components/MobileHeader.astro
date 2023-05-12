@@ -35,7 +35,7 @@ import ThemeSwitch from '@comps/theme/ThemeSwitch.astro';
 </header>
 
 <script>
-  import { closeMenu, openMenu } from '../scripts/sideMenu';
+  import { closeMenu, openMenu } from '../../scripts/sideMenu';
   const menuButton = document.querySelector('#hamburger-button');
   menuButton?.addEventListener('click', (e) => {
     openMenu();
