@@ -12,18 +12,22 @@
   "dependencies": {
     "@astrojs/markdown-remark": "^2.1.2",
     "@astrojs/solid-js": "^2.1.0",
+    "@astrojs/vercel": "^3.2.5",
+    "@modular-forms/solid": "^0.13.1",
     "@nanostores/solid": "^0.3.2",
     "@playwright/test": "^1.32.1",
-    "astro": "^2.1.4",
+    "astro": "^2.3.1",
+    "cookie": "^0.5.0",
     "html-escaper": "3.0.3",
     "nanostores": "^0.7.4",
-    "neo4j-driver": "^5.7.0",
+    "neo4j-driver": "^5.8.0",
     "remark-mermaid": "^0.2.0",
     "remark-mermaidjs": "^4.1.1",
     "solid-js": "^1.4.3",
     "solid-toast": "^0.5.0",
     "ts-dedent": "^2.2.0",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^4.1.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@astrojs/mdx": "0.18.2",
@@ -34,6 +38,7 @@
     "@iconify-json/mdi": "^1.1.50",
     "@iconify-json/ph": "^1.1.5",
     "@radix-ui/colors": "^0.1.8",
+    "@supabase/supabase-js": "^2.21.0",
     "@types/mdx": "^2.0.3",
     "@types/mermaid": "^9.2.0",
     "@types/react": "^18.0.29",
