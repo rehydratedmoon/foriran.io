@@ -4,7 +4,7 @@ const btnRules = {
   'btn-disabled': '!bg-none !c-sand10 !bg-sand5 !b-gray5 !cursor-not-allowed',
   'btn-common': 'b-1 text-lg fw-500 px-6 py-2 rd-xl cursor-pointer',
   'btn-prm':
-    'btn-common  b-prm9 bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)',
+    'btn-common  b-prm9 !bg-prm9 c-white  hover:(bg-prm10 b-prm10) focus-visible:(bg-prm10 b-prm10) active:(bg-prm11 b-prm11) disabled:(btn-disabled)',
   'btn-prm-grd':
     'btn-common b-transparent bg-origin-border bg-gradient-to-l from-blue9 to-indigo9 c-white  hover:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) focus-visible:(bg-prm10 bg-gradient-to-l from-blue10 to-indigo10) active:(bg-prm11 bg-gradient-to-l from-blue11 to-indigo11) disabled:(btn-disabled)',
   btn: ' btn-common b-gray10 bg-sand9 c-white  hover:(bg-sand10 b-gray10) focus-visible:(bg-sand10 b-gray10) active:(bg-sand11 b-gray11) disabled:(btn-disabled)',

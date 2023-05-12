@@ -4,10 +4,15 @@
     "removeComments": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@comps/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@stores": ["src/stores/*"]
+      "@auth/*": ["src/auth/*"],
+      "@scripts": ["src/scripts/*"],
+      "@consts": ["src/consts.ts"],
+      "@db/*": ["src/db/*"]
     },
     "types": ["vite-plugin-pwa/info"]
   }

@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { SITE } from '../consts';
+import { SITE } from '@consts';
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 import sanitizeHtml from 'sanitize-html';
 import MarkdownIt from 'markdown-it';

@@ -3,67 +3,59 @@ import UnoCSS from 'unocss/astro';
 import solidJs from '@astrojs/solid-js';
 import sitemap from '@astrojs/sitemap';
 import AstroPWA from '@vite-pwa/astro';
+import vercel from '@astrojs/vercel/serverless';
+import mdx from '@astrojs/mdx';
 
+
+// https://astro.build/config
 export default defineConfig({
   site: `https://foriran.io`,
+  output: 'server',
   vite: {
     logLevel: 'info',
     define: {
-      __DATE__: `'${new Date().toISOString()}'`,
-    },
+      __DATE__: `'${new Date().toISOString()}'`
+    }
   },
-  integrations: [
-    UnoCSS(),
-    solidJs(),
-    // preact(),
-    // Enable React for the Algolia search component.
-    // react(),
-    // mdx(),
-    sitemap(),
-    AstroPWA({
-      mode: 'development',
-      base: '/',
+  integrations: [UnoCSS(), solidJs(),
+  // preact(),
+  // Enable React for the Algolia search component.
+  // react(),
+  // mdx(),
+  sitemap(), mdx(), AstroPWA({
+    mode: 'development',
+    base: '/',
+    scope: '/',
+    includeAssets: ['favicon.svg', 'fonts/*.woff2', 'images/*.png', 'images/*.svg', 'diagrams/*.png', 'diagrams/*.svg'],
+    manifest: {
+      name: 'برای ایران',
+      short_name: 'برای ایران',
+      theme_color: '#ffffff',
+      // background_color: '#000000',
+      display: 'standalone',
       scope: '/',
-      includeAssets: [
-        'favicon.svg',
-        'fonts/*.woff2',
-        'images/*.png',
-        'images/*.svg',
-        'diagrams/*.png',
-        'diagrams/*.svg',
-      ],
-      manifest: {
-        name: 'برای ایران',
-        short_name: 'برای ایران',
-        theme_color: '#ffffff',
-        // background_color: '#000000',
-        display: 'standalone',
-        scope: '/',
-        orientation: 'portrait-primary',
-        start_url: '/',
-        description: 'گردآوری و سازماندهی اطلاعات خیزش زن زندگی آزادی',
-        lang: 'fa',
-        
-        icons: [
-          {
-            src: '/pwa/app-icon.svg',
-            sizes: '48x48 72x72 96x96 128x128 192x192 256x256 384x384 512x512',
-            type: 'image/svg+xml',
-            purpose: 'any',
-          },
-        ],
-      },
-      workbox: {
-        navigateFallback: '/404',
-        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
-        sourcemap: true,
-      },
-      devOptions: {
-        enabled: true,
-        navigateFallbackAllowlist: [/^\/404$/],
-      },
-    }),
-  ],
+      orientation: 'portrait-primary',
+      start_url: '/',
+      description: 'گردآوری و سازماندهی اطلاعات خیزش زن زندگی آزادی',
+      lang: 'fa',
+      icons: [{
+        src: '/pwa/app-icon.svg',
+        sizes: '48x48 72x72 96x96 128x128 192x192 256x256 384x384 512x512',
+        type: 'image/svg+xml',
+        purpose: 'any'
+      }]
+    },
+    workbox: {
+      navigateFallback: '/404',
+      globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+      sourcemap: true
+    },
+    devOptions: {
+      enabled: true,
+      navigateFallbackAllowlist: [/^\/404$/]
+    }
+  })],
+  adapter: vercel()
 });
 
 // archived vite-pwa-plugin configs. removed in favor of @vite-pwa/astro which is easer to install
