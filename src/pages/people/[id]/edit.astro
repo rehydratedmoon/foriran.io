@@ -1,12 +1,21 @@
 ---
 import GlobalLayout from '@layouts/GlobalLayout.astro';
-import { getUser } from '@auth/session';
-import { z } from 'zod';
-
-const user = await getUser(Astro.request);
-if (!user) return Astro.redirect('/login');
 import executeQuery from '@db/exQ';
 import Form from '../_Form.astro';
+
+import { z } from 'zod';
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
+let record = null;
+let errors = null;
+let serverError = null;
+let isRecordAdded = null;
+
+  const { id } = Astro.params;
+  let { records, error } = await executeQuery(`MATCH (n:Person { id: $id})  RETURN n`, { id });
+  if (error) serverError = error;
+  record = records?.[0]?.get(0);
 
 const schema = z.object({
   name: z.string().min(1, 'Please enter a name.'),
@@ -14,18 +23,6 @@ const schema = z.object({
   image: z.string().min(1, 'Please enter the image URL.'),
   instagram: z.string().nullable().optional(),
 });
-
-let errors = null;
-let serverError = null;
-let isRecordAdded = null;
-let record = null;
-
-let id = Astro.url.searchParams.get('id');
-if (Astro.request.method === 'GET' && id) {
-  const qRes = await executeQuery('MATCH (n:Person) WHERE n.id = $id RETURN n', { id });
-  if (qRes.error) serverError = qRes.error;
-  record = qRes?.records?.[0]?.get(0);
-}
 
 if (Astro.request.method === 'POST') {
   try {
@@ -38,15 +35,14 @@ if (Astro.request.method === 'POST') {
     }
     if (safeParse.success) {
       const properties = formValues;
-      let qRes = await executeQuery('MATCH (n:Person) WHERE n.id = $id SET n = $properties RETURN n', {
+      const { records, error } = await executeQuery('MATCH (n:Person) WHERE n.id = $id SET n = $properties RETURN n', {
         properties,
         id,
       });
 
-      record = qRes?.records?.[0]?.get(0);
-      serverError = qRes.error;
+      if (error) serverError = error;
+      record = records?.[0]?.get(0);
       isRecordAdded = true;
-      return Astro.redirect(`/people/add-edit?id=${record.properties.id}`);
     }
   } catch (err) {
     serverError = err;
@@ -56,7 +52,8 @@ if (Astro.request.method === 'POST') {
 
 <GlobalLayout title='add person'>
   <h2 class='H2'>Edit</h2>
-  <Form errors={errors} initialData={record.properties} buttonText='Update' />
+
+  <Form errors={errors} initialValues={record?.properties} buttonText='Update' />
   {
     serverError && (
       <div>
@@ -68,7 +65,7 @@ if (Astro.request.method === 'POST') {
   {
     isRecordAdded && (
       <div class='snack-success'>
-        <h2>Record added Successfully</h2>
+        <h2>Record edited  Successfully</h2>
       </div>
     )
   }

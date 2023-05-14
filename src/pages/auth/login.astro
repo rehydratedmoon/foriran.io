@@ -22,6 +22,9 @@ if (Astro.request.method === 'POST') {
     if (safeParse.success) {
       const { data, error } = await supabase.auth.signInWithOtp({
         email: formValues.email,
+        options: {
+          emailRedirectTo: 'https://foriran.io/magic-link',
+        },
       });
       if (error) serverError = error;
       if (!error) isEmailSent = true;

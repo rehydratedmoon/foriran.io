@@ -4,23 +4,15 @@ import GlobalLayout from '@layouts/GlobalLayout.astro';
 import neo4j from '@db/neo4j';
 
 import { getUser } from '@auth/session';
+import executeQuery from '@db/exQ';
 const user = await getUser(Astro.request);
-let records = null;
-let error = null;
-const session = neo4j.session({ database: import.meta.env.DB_USERNAME });
-try {
-  const result = await session.run('MATCH (a:Person) RETURN a');
-  records = result.records?.map((rec) => rec.get(0));
-} catch (err) {
-  error = err;
-} finally {
-  await session.close();
-}
+const { records, error } = await executeQuery(`MATCH (n:Person)      RETURN n`);
+const people = records?.map((rec) => rec.get(0));
 ---
 
 <GlobalLayout title='A map for the uprising'>
-  <h1 class='H1'>نقشه خیزش زن زندگی آزادی</h1>
-  <p>فهرستی از افرادی که در خیزش زن زندگی آزادی مطرح بودند</p>
+  <h1 class='H1'>فهرست افراد در خیزش زن زندگی آزادی</h1>
+  <p>در این فهرست افرادی را که در خیزش زن زندگی آزادی نقشی داشته‌اند آورده‌ایم.</p>
   {
     user && (
       <a href='/people/add' class='btn-prm bf-i-ph-plus mt-8 inline-block'>
@@ -30,8 +22,8 @@ try {
   }
   <ul class='mt-10 list-none grid grid-min-col-15rem gap-4'>
     {
-      records &&
-        records.map((person) => (
+      people &&
+        people.map((person) => (
           <li>
             <Person data={person.properties} />
           </li>

@@ -1,0 +1,14 @@
+---
+const { data } = Astro.props;
+---
+
+<a href=`/people/${data.id}`>
+  <div class='b-1 b-gray6 p-2 rd-full flex flex-col ac gap-4 w-22 h-22'>
+    <img src={data.image} alt='' class='rd-full w-20 h-20 aspect-1/1 object-cover' />
+  </div>
+</a>
+
+<!-- <details>
+    <summary class='text-xl'>جزئیات</summary>
+    <p>گرایش سیاسی: ؟؟؟</p>
+  </details> -->

@@ -6,6 +6,9 @@ const graph = {
   nodes: records.data,
   links: [],
 };
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
 
 // var graph = {
 //   nodes: [

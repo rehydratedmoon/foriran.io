@@ -1,0 +1,134 @@
+---
+import GlobalLayout from '@layouts/GlobalLayout.astro';
+// import PersonNode from '@components/card/PersonNode.astro';
+import executeQuery from '@db/exQ';
+const { records, error } = await executeQuery(`MATCH (n:Person)      RETURN n`);
+const people = records?.map((rec) => rec.get(0));
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
+---
+
+<GlobalLayout title='A map for the uprising'>
+  <h1 class='H1'>فهرست افراد در خیزش زن زندگی آزادی</h1>
+  <p>در این فهرست افرادی را که در خیزش زن زندگی آزادی نقشی داشته‌اند آورده‌ایم.</p>
+  <!-- {
+      error && (
+        <div class='snack-error'>
+          <h2>Error</h2>
+          <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>{JSON.stringify(error, null, 2)}</pre>
+        </div>
+      )
+    } -->
+  <!-- <ul class='mt-10 list-none grid  gap-4'>
+    {
+      records &&
+      records.map((person) => (
+        <li>
+          <PersonNode data={person.properties} />
+          </li>
+          ))
+        }
+  </ul> -->
+  <!-- <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>
+    {JSON.stringify(people, null, 2)}
+  </pre> -->
+
+  <div class='grid mt-10' style='width:960px; height:600px;'>
+    <div class='g-col-[1/-1] g-row-[1/-1] b-1 b-green6 rd-xl relative'>
+      <svg class='aspect-ratio-8/5' width='960' height='600'></svg>
+    </div>
+    <ul class='g-col-[1/-1] g-row-[1/-1] b-1 b-orange6 rd-xl relative aspect-ratio-8/5'></ul>
+  </div>
+</GlobalLayout>
+
+<script is:inline src='https://d3js.org/d3.v7.min.js'></script>
+<script define:vars={{ people }}>
+  console.log('🚀 ~ people:', people);
+  //initilize svg or grab svg
+  var ul = d3.select('ul');
+  var svg = d3.select('svg');
+
+  var width = 960;
+  var height = 600;
+
+  var graphData = {
+    // nodes: [{ name: 'A' }, { name: 'B' }, { name: 'C' }, { name: 'D' }],
+    nodes: people.map((p) => p.properties),
+    links: people.map((p, index, arr) => ({ source: p.properties.name, target: arr[index + 1 < arr.length ? index + 1 : 0].properties.name })),
+    //  [
+    //   { source: 'A', target: 'B' },
+    //   { source: 'B', target: 'C' },
+    //   { source: 'D', target: 'C' },
+    // ],
+  };
+
+  var simulation = d3
+    .forceSimulation(graphData.nodes)
+    .force('charge', d3.forceManyBody().strength(-60))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force(
+      'link',
+      d3.forceLink(graphData.links).id((d) => d.name)
+    )
+    .on('tick', ticked);
+
+  var links = svg
+    .append('g')
+    .selectAll('line')
+    .data(graphData.links)
+    .enter()
+    .append('line')
+    .attr('stroke-width', 3)
+    .style('stroke', 'orange');
+
+  links.append('text').text((d) => d.name);
+
+  var nodes = ul
+    .selectAll('div')
+    .data(graphData.nodes)
+    .enter()
+    .append('img')
+    .attr('src', (d) => d.image)
+    .attr('alt', (d) => d.nameFa)
+    .style('display', 'block')
+    .style('width', '30px')
+    .style('height', '40px')
+    .style('transform', 'translate(-50%, -50%)')
+    .style('background', 'red')
+    .style('position', 'absolute');
+
+  var drag = d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended);
+
+  nodes.call(drag);
+
+  function ticked() {
+    //updating the position
+    nodes.style('left', (d) => `${d.x / 9.6}%`).style('top', (d) => `${d.y / 6}%`);
+
+    links
+      .attr('x1', (d) => d.source.x)
+      .attr('y1', (d) => d.source.y)
+      .attr('x2', (d) => d.target.x)
+      .attr('y2', (d) => d.target.y);
+    console.log(simulation.alpha());
+  }
+
+  function dragstarted(d) {
+    //your alpha hit 0 it stops! make it run again
+    simulation.alphaTarget(0.3).restart();
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+
+  function dragended(d) {
+    // alpha min is 0, head there
+    simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+</script>

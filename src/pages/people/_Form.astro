@@ -1,21 +1,21 @@
 ---
-const { errors, initialData , buttonText } = Astro.props;
+const { errors, initialValues , buttonText } = Astro.props;
 import Input from '@comps/form/Input.astro';
 
 ---
 
 <form method='POST' class='ltr space-y-4 p-2 text-xl' dir='ltr'>
   <div class='grid g-cols-[auto_1fr] gap-2'>
-    <Input initialData={initialData} errors={errors} name='name' label='Name in English' />
-    <Input initialData={initialData} errors={errors} name='nameFa' label='Name in Farsi' />
-    <Input initialData={initialData} errors={errors} name='image' />
-    <Input initialData={initialData} errors={errors} name='instagram' />
-    <Input initialData={initialData} errors={errors} name='twitter' />
-    <Input initialData={initialData} errors={errors} name='telegram' />
-    <Input initialData={initialData} errors={errors} name='website' />
-    <Input initialData={initialData} errors={errors} name='youtube' />
-    <Input initialData={initialData} errors={errors} name='wikipedia' />
-    <Input initialData={initialData} errors={errors} name='other_link' label='Other Links' />
+    <Input initialValues={initialValues} errors={errors} name='name' label='Name in English' />
+    <Input initialValues={initialValues} errors={errors} name='nameFa' label='Name in Farsi' />
+    <Input initialValues={initialValues} errors={errors} name='image' />
+    <Input initialValues={initialValues} errors={errors} name='instagram' />
+    <Input initialValues={initialValues} errors={errors} name='twitter' />
+    <Input initialValues={initialValues} errors={errors} name='telegram' />
+    <Input initialValues={initialValues} errors={errors} name='website' />
+    <Input initialValues={initialValues} errors={errors} name='youtube' />
+    <Input initialValues={initialValues} errors={errors} name='wikipedia' />
+    <Input initialValues={initialValues} errors={errors} name='other_link' label='Other Links' />
   </div>
   <div class="grid">
     <button type='submit' class=`btn-prm !text-3xl`>{buttonText ?? "submit" }</button>

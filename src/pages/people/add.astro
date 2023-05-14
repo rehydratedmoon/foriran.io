@@ -1,9 +1,13 @@
 ---
 // import FormPersonAdd from '@comps/graph/people/FormPersonAdd';
 import GlobalLayout from '@layouts/GlobalLayout.astro';
-import { getUser } from '@auth/session';
-const user = await getUser(Astro.request);
-if (!user) return Astro.redirect('/login');
+// import { getUser } from '@auth/session';
+// const user = await getUser(Astro.request);
+// if (!user) return Astro.redirect('/login');
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
+
 import { z } from 'zod';
 import Form from './_Form.astro';
 import executeQuery from '@db/exQ';
@@ -66,9 +70,9 @@ if (Astro.request.method === 'POST') {
       <div>
         <h2>Server Error</h2>
         <pre class='rd-xl b-1 b-dashed b-gray5 bg-gray2 c-gray11 p-4'>{JSON.stringify(serverError, null, 2)}</pre>
-        </div>
-        )
-      }
+      </div>
+    )
+  }
   {
     isRecordAdded && (
       <div class='snack-success'>

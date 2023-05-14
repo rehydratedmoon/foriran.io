@@ -1,0 +1,19 @@
+---
+if (Astro.request.method === "POST") {
+  console.log(Astro.url);
+} 
+
+Astro.redirect('/auth/login');
+---
+
+<div>
+  <h1 class='H1'>Magic Link</h1>
+</div>
+
+<script>
+  const newHref = window.location.href.toString().replace('/#', '?');
+  window.location.href = newHref;
+  fetch(newHref, {
+    method: 'POST',
+  });
+</script>
