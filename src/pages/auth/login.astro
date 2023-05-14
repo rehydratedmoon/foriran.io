@@ -4,7 +4,9 @@ import Input from '@components/form/Input.astro';
 import { z } from 'zod';
 import supabase from '@db/supabase';
 import ErrMsg from '@components/form/ErrMsg.astro';
-
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
 const schema = z.object({
   email: z.string().min(1, 'Please Enter your Email').email('Please enter a valid email'),
 });

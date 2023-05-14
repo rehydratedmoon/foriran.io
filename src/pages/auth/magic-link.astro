@@ -1,9 +1,13 @@
 ---
+if (!import.meta.env.DEV) {
+  Astro.redirect('/404');
+}
 if (Astro.request.method === "POST") {
   console.log(Astro.url);
 } 
 
 Astro.redirect('/auth/login');
+
 ---
 
 <div>
