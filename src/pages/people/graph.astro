@@ -2,6 +2,7 @@
 import GlobalLayout from '@layouts/GlobalLayout.astro';
 // import PersonNode from '@components/card/PersonNode.astro';
 import executeQuery from '@db/exQ';
+import GraphView from './_GraphView';
 const { records, error } = await executeQuery(`MATCH (n:Person)      RETURN n`);
 const people = records?.map((rec) => rec.get(0));
 if (!import.meta.env.DEV) {
@@ -12,6 +13,7 @@ if (!import.meta.env.DEV) {
 <GlobalLayout title='A map for the uprising'>
   <h1 class='H1'>فهرست افراد در خیزش زن زندگی آزادی</h1>
   <p>در این فهرست افرادی را که در خیزش زن زندگی آزادی نقشی داشته‌اند آورده‌ایم.</p>
+  <GraphView people={people} client:load />
   <!-- {
       error && (
         <div class='snack-error'>
@@ -34,18 +36,10 @@ if (!import.meta.env.DEV) {
     {JSON.stringify(people, null, 2)}
   </pre> -->
 
-  <div class='grid mt-10' style='width:960px; height:600px;'>
-    <div class='g-col-[1/-1] g-row-[1/-1] b-1 b-green6 rd-xl relative'>
-      <svg class='aspect-ratio-8/5' width='960' height='600'></svg>
-    </div>
-    <ul class='g-col-[1/-1] g-row-[1/-1] b-1 b-orange6 rd-xl relative aspect-ratio-8/5'></ul>
-  </div>
 </GlobalLayout>
 
-<script is:inline src='https://d3js.org/d3.v7.min.js'></script>
-<script define:vars={{ people }}>
-  console.log('🚀 ~ people:', people);
-  //initilize svg or grab svg
+<!-- <script is:inline src='https://d3js.org/d3.v7.min.js'></script> -->
+<!-- <script define:vars={{ people }}>
   var ul = d3.select('ul');
   var svg = d3.select('svg');
 
@@ -131,4 +125,4 @@ if (!import.meta.env.DEV) {
     d.fx = null;
     d.fy = null;
   }
-</script>
+</script> -->

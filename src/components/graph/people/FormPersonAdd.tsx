@@ -2,7 +2,6 @@
 // import { createForm, required } from '@modular-forms/solid';
 
 // import { createMemo, JSX, Show, splitProps } from 'solid-js';
-// import InputText from '../../form/InputText';
 // import { createSignal } from 'solid-js';
 
 // type FormTypes = {
