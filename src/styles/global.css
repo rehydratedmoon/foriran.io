@@ -6,6 +6,7 @@
     --FALSE: ;
     --is-side-menu-open: var(--FALSE);
     --is-side-menu-close: var(--TRUE);
+    color-scheme: dark light;
   }
 
   .dark {
