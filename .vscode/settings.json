@@ -1,5 +1,12 @@
 {
   "workbench.colorCustomizations": {
+    "panel.background": "#191818",
+    "list.hoverBackground": "#7c502166",
+    "list.focusBackground": "#7c502173",
+    "list.inactiveSelectionBackground": "#a5815677",
+    "list.activeSelectionBackground": "#d7805e97",
+    "list.highlightForeground": "#e3b583",
+    "focusBorder": "#fad235",
     "activityBar.activeBackground": "#ceedf8",
     "activityBar.background": "#ceedf8",
     "activityBar.foreground": "#15202b",
@@ -16,7 +23,9 @@
     "titleBar.activeBackground": "#a1dcf2",
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#a1dcf299",
-    "titleBar.inactiveForeground": "#15202b99"
+    "titleBar.inactiveForeground": "#15202b99",
+    "minimap.background": "#00000088",
+    "scrollbar.shadow": "#00000088"
   },
   "peacock.color": "#a1dcf2",
   "frontMatter.content.supportedFileTypes": ["md", "markdown", "mdx", "mdoc"],

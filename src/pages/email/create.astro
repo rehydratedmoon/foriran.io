@@ -1,8 +1,8 @@
 ---
 import GlobalLayout from '@layouts/GlobalLayout.astro';
-import Create from './_create';
+import CreateEmail from './_create';
 ---
 
-<GlobalLayout title='ساخت قالب ایمیل'>
-  <Create client:load />
+<GlobalLayout title='ساخت قالب ایمیل' hasSecondSideBar={false}>
+  <CreateEmail client:load />
 </GlobalLayout>

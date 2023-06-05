@@ -126,6 +126,7 @@ export const shortcuts: UserShortcuts = [
   {
     'iso-rel': 'relative isolate',
     field: 'px-2 py-1 rd b-0 bg-sand3',
+    label: 'text-sm fw-500' ,
     chip: 'no-underline rd-xl px-4 py-2 bg-sand3 c-sand11 hover:(bg-sand4)',
     'chip-link': 'chip data-[in-path]:(bg-orange4 c-orange11)',
     jc: 'justify-center',
